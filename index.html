@@ -78,7 +78,6 @@
         .system-notice { text-align: center; font-size: 12px; color: #2b8a3e; background: rgba(47, 158, 68, 0.1); padding: 8px; border-radius: 6px; margin: 5px 0; font-weight: bold; border: 1px solid #b2f2bb; }
         .admin-notice { background: #ffe3e3; color: #c92a2a; border: 1px solid #ff8787; font-weight: bold; }
 
-        /* تعديل النوافذ المنبثقة لتظهر بتصميم أنيق ومنبثق بالكامل على الموبايل والشاشات */
         .modal-screen { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 90%; max-width: 420px; height: 80vh; background: var(--panel-bg); z-index: 300; flex-direction: column; border-radius: 12px; border: 1px solid var(--border-color); box-shadow: 0 10px 30px rgba(0,0,0,0.3); overflow: hidden; }
         .modal-header { background: var(--header-bg); padding: 12px 15px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); font-weight: bold; color: var(--primary-color); }
         .modal-close-btn { background: #d90429; color: #fff; border: none; padding: 5px 12px; border-radius: 4px; cursor: pointer; font-size: 13px; }
@@ -175,9 +174,7 @@
             <span>محادثة خاصة مع: <b id="privateChatTargetName">---</b></span>
             <button class="modal-close-btn" onclick="closePrivateChatScreen()">إغلاق</button>
         </div>
-        <div class="modal-body" id="privateChatContainer" style="background: var(--bg-color);">
-            <!-- رسائل الخاص -->
-        </div>
+        <div class="modal-body" id="privateChatContainer" style="background: var(--bg-color);"></div>
         <div class="input-bar">
             <input type="file" id="privateImageInput" accept="image/*" style="display:none" onchange="sendPrivateImage(event)">
             <button class="input-btn" onclick="document.getElementById('privateImageInput').click()" title="إرسال صورة">📷</button>
@@ -186,7 +183,7 @@
         </div>
     </div>
 
-    <!-- نافذة قائمة المحادثات الخاصة النشطة (منبثقة عند الضغط على زر الخاص في الشريط السفلي للموبايل) -->
+    <!-- نافذة قائمة المحادثات الخاصة النشطة -->
     <div id="privateListScreen" class="modal-screen">
         <div class="modal-header">
             <span>قائمة المحادثات الخاصة</span>
@@ -274,7 +271,7 @@
                     <div class="message system-notice">أهلاً بك في شات مناي فلسطين PS. تم التحديث بنجاح.</div>
                 </div>
 
-                <!-- قائمة السمايلات الـ 50 -->
+                <!-- قائمة السمايلات -->
                 <div id="emojiPicker">
                     <button class="emoji-btn" onclick="addEmoji('😀')">😀</button><button class="emoji-btn" onclick="addEmoji('😃')">😃</button><button class="emoji-btn" onclick="addEmoji('😄')">😄</button><button class="emoji-btn" onclick="addEmoji('😁')">😁</button><button class="emoji-btn" onclick="addEmoji('😆')">😆</button>
                     <button class="emoji-btn" onclick="addEmoji('😅')">😅</button><button class="emoji-btn" onclick="addEmoji('🤣')">🤣</button><button class="emoji-btn" onclick="addEmoji('😂')">😂</button><button class="emoji-btn" onclick="addEmoji('🙂')">🙂</button><button class="emoji-btn" onclick="addEmoji('🙃')">🙃</button>
@@ -298,7 +295,7 @@
                 </div>
             </div>
 
-            <!-- قائمة المتواجدين الجانبية (كمبيوتر) -->
+            <!-- قائمة المتواجدين الجانبية -->
             <div class="sidebar-online">
                 <div class="sidebar-title">المتواجدون (<span id="onlineCountPC">0</span>)</div>
                 <div id="sidebarUsersList" style="display:flex; flex-direction:column; gap:5px;"></div>
@@ -763,6 +760,126 @@
             document.getElementById('messageInput').value += emoji;
             toggleEmojiPicker();
         }
+
+        // --- نظام الـ 100 اسم وهمي (Bots) المتنقلة بين الغرف ---
+        const roomsPool = [
+            "غرفة مناي 🇵🇸", 
+            "غرفة فلسطين العامة 🇵🇸", 
+            "غرفة الأردن النشامى 🇯🇴", 
+            "غرفة مصر المحروسة 🇪🇬", 
+            "غرفة السعودية 🇸🇦"
+        ];
+
+        const fakeNamesPool = [
+            "أحمد الفلسطينى", "محمد العراقي", "ساره الأردنية", "فاطمة المصري", "خالد السعيد",
+            "يوسف الأحمد", "ريم الفهد", "عمر الفاروق", "نور الهدى", "زينب علي",
+            "إبراهيم خليل", "مريم حسن", "عبدالله الرشيد", "آية أحمد", "مهند القاسم",
+            "رانيا محمود", "سامي الجابر", "ليلى عبد الله", "حمزة الطيطي", "هبة طارق",
+            "رائد الشريف", "دعاء سمير", "ماجد الكردي", "سلمى رشوان", "طارق العلي",
+            "سناء درويش", "باسم يوسف", "نادين اللحام", "زياد الرحبي", "سمر النابلسي",
+            "جمال الدين", "فداء القدس", "علاء الدين", "يسرى عثمان", "محمود صيام",
+            "مها الخطيب", "عاصم البasha", "سهير جابر", "سيف الإسلام", "جهاد أبو راس",
+            "أمير الذوق", "سوار فلسطين", "طير الحنون", "ياسمين الشام", "نسيم الليل",
+            "شمس الأرانب", "بحر الصفا", "قمر الدجى", "صقر الجبل", "أسد الرافدين",
+            "نسر الأردن", "فارس نجد", "زهرة الياسمين", "عطر الحنين", "لحظة ود",
+            "همس القوافي", "طيف الخيال", "وجع الحروف", "صمت الهواجر", "طبيب الإحساس",
+            "عاشق فلسطين", "نبض القدس", "فجر الحرية", "رؤى العوضي", "تامر حسني",
+            "مروة النجار", "هشام الشافعي", "داليا الألفي", "كمال السعدني", "نهى عبدالتواب",
+            "رمضان بركات", "سحر الجندي", "عادل امام", "يسرا الهواري", "شريف منير",
+            "منى زكي", "أحمد حلمي", "نانسي عجرم", "تامر حسني", "ساجدة الرحمن",
+            "عبدالرحمن", "عائشة رضي", "خديجة أم", "عمر بن الخطاب", "عثمان عفان",
+            "علي أبي طالب", "أبو بكر الصديق", "بلال المؤذن", "حمزة الأسد", "سعد وقاص",
+            "خالد بن الوليد", "طارق بن زياد", "عقبة نافع", "صلاح الدين", "قطز المظفر",
+            "بيبرس البندقية", "عزالدين القسام", "ياسر عرفات", "أحمد ياسين", "فتحي الشقاقي"
+        ];
+
+        let botInstances = [];
+
+        function initGlobalBotsSystem() {
+            // تجهيز 100 بوت ببياناتهم الفريدة
+            for (let i = 0; i < 100; i++) {
+                let name = fakeNamesPool[i % fakeNamesPool.length] + " " + (Math.floor(Math.random() * 89) + 10);
+                let gender = i % 2 === 0 ? "ذكر" : "أنثى";
+                let avatar = gender === "ذكر" ? "https://i.imgur.com/8Km9tLL.png" : "https://i.imgur.com/GZ4w2Cm.png";
+                let color = '#' + Math.floor(Math.random()*16777215).toString(16);
+                
+                botInstances.push({
+                    id: i,
+                    name: name,
+                    gender: gender,
+                    avatar: avatar,
+                    color: color,
+                    currentRoom: "",
+                    firebaseRefKey: null
+                });
+            }
+
+            // تشغيل دورة تنقل واستقرار البوتات بشكل عشوائي مستمر
+            setInterval(manageBotsActivity, 8000);
+        }
+
+        function manageBotsActivity() {
+            // اختيار عدد عشوائي من البوتات لتغيير مكانهم أو الدخول والخروج في كل دورة
+            botInstances.forEach(bot => {
+                let actionProbability = Math.random();
+
+                if (actionProbability < 0.4 && !bot.currentRoom) {
+                    // دخول البوت إلى غرفة عشوائية
+                    let targetRoom = roomsPool[Math.floor(Math.random() * roomsPool.length)];
+                    bot.currentRoom = targetRoom;
+
+                    let ref = db.ref(`rooms_data/${targetRoom}/online_users`).push();
+                    bot.firebaseRefKey = ref.key;
+                    
+                    ref.set({
+                        name: bot.name,
+                        gender: bot.gender,
+                        avatar: bot.avatar,
+                        role: "عضو",
+                        status: "متصل 🟢",
+                        color: bot.color
+                    });
+                    ref.onDisconnect().remove();
+
+                } else if (actionProbability >= 0.4 && actionProbability < 0.65 && bot.currentRoom) {
+                    // مغادرة البوت للغرفة الحالية
+                    if (bot.firebaseRefKey) {
+                        db.ref(`rooms_data/${bot.currentRoom}/online_users/${bot.firebaseRefKey}`).remove();
+                        bot.currentRoom = "";
+                        bot.firebaseRefKey = null;
+                    }
+
+                } else if (actionProbability >= 0.65 && actionProbability < 0.85 && bot.currentRoom) {
+                    // انتقال البوت من غرفة إلى غرفة أخرى
+                    let oldRoom = bot.currentRoom;
+                    let availableRooms = roomsPool.filter(r => r !== oldRoom);
+                    let newRoom = availableRooms[Math.floor(Math.random() * availableRooms.length)];
+
+                    if (bot.firebaseRefKey) {
+                        db.ref(`rooms_data/${oldRoom}/online_users/${bot.firebaseRefKey}`).remove();
+                    }
+
+                    bot.currentRoom = newRoom;
+                    let ref = db.ref(`rooms_data/${newRoom}/online_users`).push();
+                    bot.firebaseRefKey = ref.key;
+
+                    ref.set({
+                        name: bot.name,
+                        gender: bot.gender,
+                        avatar: bot.avatar,
+                        role: "عضو",
+                        status: "متصل 🟢",
+                        color: bot.color
+                    });
+                    ref.onDisconnect().remove();
+                }
+            });
+        }
+
+        // تشغيل نظام البوتات المائة تلقائياً بعد تحميل الصفحة
+        window.addEventListener('load', () => {
+            setTimeout(initGlobalBotsSystem, 2000);
+        });
     </script>
 </body>
 </html>
