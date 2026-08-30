@@ -1,7 +1,4 @@
-رفع صورة وملفات في العام والخاص 
-نظام الهدايا والكروت
-رصيد مجاني مليون نقطة لارسال هداية  متعددة الاشكال  
-قيمة كل هدية ١  نقطة<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
@@ -48,10 +45,10 @@
         .top-main-bar { background-color: var(--header-bg); color: #fff; display: flex; justify-content: space-between; align-items: center; padding: 10px 15px; font-size: 13px; border-bottom: 1px solid var(--border-color); }
         .exit-chat-btn { background: #d90429; color: #fff; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; font-size: 12px; font-weight: bold; }
 
-        .chat-layout { flex: 1; display: flex; overflow: hidden; position: relative; }
+        .chat-layout { flex: 1; display: flex; overflow: hidden; position: relative; flex-direction: column; }
         .main-chat-wrapper { flex: 1; display: flex; flex-direction: column; overflow: hidden; background-color: var(--bg-color); }
         
-        .sidebar-online { width: 240px; background: var(--panel-bg); border-right: 1px solid var(--border-color); display: flex; flex-direction: column; padding: 10px; overflow-y: auto; }
+        .sidebar-online { width: 240px; background: var(--panel-bg); border-right: 1px solid var(--border-color); display: none; flex-direction: column; padding: 10px; overflow-y: auto; }
         .sidebar-title { font-size: 13px; font-weight: bold; color: var(--primary-color); margin-bottom: 8px; border-bottom: 1px solid var(--border-color); padding-bottom: 5px; }
         .online-user-item { display: flex; align-items: center; gap: 8px; padding: 6px; border-radius: 6px; cursor: pointer; margin-bottom: 4px; background: var(--bg-color); border: 1px solid var(--border-color); font-size: 12px; }
         .online-user-item img { width: 30px; height: 30px; border-radius: 50%; object-fit: cover; }
@@ -92,17 +89,18 @@
         .input-btn { background: none; border: none; font-size: 18px; cursor: pointer; color: var(--text-color); position: relative; }
         .send-btn { background: var(--primary-color); border: none; color: #fff; padding: 8px 16px; border-radius: 20px; cursor: pointer; font-size: 14px; }
 
+        /* شريط التنقل السفلي الثابت للهاتف */
         .bottom-nav { background-color: var(--header-bg); display: flex; justify-content: space-around; padding: 10px 0; border-top: 1px solid var(--border-color); font-size: 11px; color: #fff; z-index: 200; }
         .nav-item { display: flex; flex-direction: column; align-items: center; cursor: pointer; color: #a5b4fc; position: relative; }
-        .badge-dot { position: absolute; top: 0; right: 8px; background: #d90429; color: #fff; border-radius: 50%; width: 14px; height: 14px; font-size: 9px; display: flex; justify-content: center; align-items: center; display: none; }
+        .badge-dot { position: absolute; top: 0; right: 8px; background: #d90429; color: #fff; border-radius: 50%; width: 14px; height: 14px; font-size: 9px; display: flex; justify-content: center; align-items: center; }
 
         .list-row { display: flex; justify-content: space-between; align-items: center; padding: 10px; background: var(--panel-bg); border-bottom: 1px solid var(--border-color); border-radius: 6px; margin-bottom: 6px; cursor: pointer; }
         .setting-group { display: flex; flex-direction: column; gap: 5px; margin-bottom: 12px; }
         .setting-group label { font-size: 12px; color: var(--primary-color); font-weight: bold; }
         .setting-group select, .setting-group input { padding: 8px; border-radius: 5px; border: 1px solid var(--border-color); background: var(--bg-color); color: var(--text-color); font-size: 13px; }
 
-        @media (max-width: 768px) {
-            .sidebar-online { display: none; }
+        @media (min-width: 768px) {
+            .sidebar-online { display: flex; }
         }
     </style>
 </head>
@@ -140,7 +138,7 @@
         </div>
     </div>
 
-    <!-- نافذة تفاصيل العضو عند النقر عليه -->
+    <!-- نافذة تفاصيل العضو -->
     <div id="userProfileModal">
         <div class="profile-card">
             <img id="profileAvatar" src="" alt="Avatar">
@@ -153,7 +151,7 @@
         </div>
     </div>
 
-    <!-- نافذة متجر الهدايا والكروت -->
+    <!-- نافذة متجر الهدايا -->
     <div id="giftModal">
         <div class="gift-box-modal">
             <h4 style="color: var(--primary-color);">🎁 أرسل هدية (تكلفة 1 نقطة)</h4>
@@ -250,9 +248,7 @@
 
         <div class="chat-layout">
             <div class="main-chat-wrapper">
-                <div class="chat-container" id="chatContainer">
-                    <div class="message system-notice">أهلاً بك في <span class="shining-text">شات مناي فلسطين</span>. تم منحك مليون نقطة مجانية لإرسال الهدايا المميزة!</div>
-                </div>
+                <div class="chat-container" id="chatContainer"></div>
 
                 <div id="emojiPicker">
                     <button class="emoji-btn" onclick="addEmoji('😀')">😀</button><button class="emoji-btn" onclick="addEmoji('😂')">😂</button><button class="emoji-btn" onclick="addEmoji('❤️')">❤️</button><button class="emoji-btn" onclick="addEmoji('🔥')">🔥</button><button class="emoji-btn" onclick="addEmoji('🇵🇸')">🇵🇸</button><button class="emoji-btn" onclick="addEmoji('🇯🇴')">🇯🇴</button>
@@ -267,17 +263,17 @@
                 </div>
             </div>
 
-            <!-- قائمة المتواجدين الجانبية -->
+            <!-- قائمة المتواجدين الجانبية (للحواسب) -->
             <div class="sidebar-online">
                 <div class="sidebar-title">المتواجدون (<span id="onlineCountPC">0</span>)</div>
                 <div id="sidebarUsersList" style="display:flex; flex-direction:column; gap:5px;"></div>
             </div>
         </div>
 
-        <!-- شريط التنقل السفلي الثابت -->
+        <!-- شريط التنقل السفلي الثابت (مطلوب للهاتف) -->
         <div class="bottom-nav">
             <div class="nav-item" onclick="openModal('settingsScreen')">⚙️<span>الإعدادات</span></div>
-            <div class="nav-item" onclick="openModal('onlineScreen')">👥<span>المتصلين</span><span id="onlineBadge" class="badge-dot"></span></div>
+            <div class="nav-item" onclick="openModal('onlineScreen')">👥<span>المتصلين</span><span id="onlineBadge" class="badge-dot">0</span></div>
             <div class="nav-item" onclick="openModal('roomsScreen')">🏠<span>الغرف</span></div>
             <div class="nav-item" onclick="openModal('settingsScreen')">💬<span>الحساب</span></div>
         </div>
@@ -309,7 +305,7 @@
         let currentAge = "24";
         let currentRoom = "غرفة فلسطين العامة 🇵🇸";
         let userRole = "عضو";
-        let userPoints = 1000000; // مليون نقطة مجانية رصيد ابتدائي
+        let userPoints = 1000000;
         let customColor = localStorage.getItem('chat_user_color') || ('#' + Math.floor(Math.random()*16777215).toString(16));
         let userStatus = "متصل 🟢";
         let userRef = null;
@@ -389,6 +385,36 @@
             updatePointsUI();
             loadMessages();
             loadOnlineUsers();
+            startWelcomeMessagesTimer(); // تفعيل نظام رسائل الترحيب التلقائية كل 40 ثانية
+        }
+
+        // نظام رسائل الترحيب التلقائية باسم مناي بوميض وألوان وقلوب وورد كل 40 ثانية
+        function startWelcomeMessagesTimer() {
+            const welcomeTemplates = [
+                "✨ <span class='shining-text'>مناي</span> ترحيب خاص ومميز لجميع الأصدقاء والأحبة! نتمنى لكم أوقاتاً ممتعة وسعيدة معنا 🌹💖",
+                "🚀 <span class='shining-text'>مناي</span> يحيي كل المتواجدين الآن، نذكركم بمتابعة أحلى اللحظات وسهرات طيبة 🌺💕",
+                "🌟 <span class='shining-text'>مناي</span> عائلة الشات ترحب بكم جميعاً، نسعد بتواجدكم الجميل معنا طوال الوقت 🫀🌷",
+                "💎 <span class='shining-text'>مناي</span> تتمنى لكم محادثات طيبة وأوقات رائعة بصحبتنا الطيبة 🌸💖"
+            ];
+
+            // إرسال أول ترحيب فور الدخول
+            triggerWelcomeMessage(welcomeTemplates[0]);
+
+            // تكرار الترحيب كل 40 ثانية
+            setInterval(() => {
+                let randomText = welcomeTemplates[Math.floor(Math.random() * welcomeTemplates.length)];
+                triggerWelcomeMessage(randomText);
+            }, 40000);
+        }
+
+        function triggerWelcomeMessage(textHTML) {
+            let container = document.getElementById('chatContainer');
+            if(!container) return;
+            let msgDiv = document.createElement('div');
+            msgDiv.className = 'message system-notice';
+            msgDiv.innerHTML = textHTML + ` <span style="float:left; font-size:10px; color:#555;">${new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</span>`;
+            container.appendChild(msgDiv);
+            container.scrollTop = container.scrollHeight;
         }
 
         function switchRoom(roomName, flag) {
@@ -427,13 +453,12 @@
             }
         }
 
-        // إرسال هدية (تخصم 1 نقطة وترسل للعام أو الخاص حسب النشط)
         function sendGift(giftSymbol, giftName) {
             if(userPoints < 1) {
                 alert('عذراً، رصيدك من النقاط قد نفد!');
                 return;
             }
-            userPoints -= 1; // خصم نقطة واحدة
+            userPoints -= 1;
             updatePointsUI();
             closeModal('giftModal');
 
@@ -449,7 +474,6 @@
             });
         }
 
-        // رفع الملفات والصور للعام
         function uploadFileGeneral(input) {
             let file = input.files[0];
             if(!file) return;
@@ -470,7 +494,6 @@
             reader.readAsDataURL(file);
         }
 
-        // رفع الملفات والصور للخاص
         function uploadFilePrivate(input) {
             let file = input.files[0];
             if(!file || !activePrivateChatKey) return;
@@ -520,6 +543,7 @@
             let mobileList = document.getElementById('onlineUsersListMobile');
             let countPC = document.getElementById('onlineCountPC');
             let countMobile = document.getElementById('onlineCountMobile');
+            let onlineBadge = document.getElementById('onlineBadge');
 
             db.ref(`rooms_data/${currentRoom}/online_users`).on('value', (snapshot) => {
                 sidebarList.innerHTML = '';
@@ -543,8 +567,9 @@
                     mobileList.innerHTML += itemHTML;
                 });
 
-                countPC.innerText = count;
-                countMobile.innerText = count;
+                if(countPC) countPC.innerText = count;
+                if(countMobile) countMobile.innerText = count;
+                if(onlineBadge) onlineBadge.innerText = count;
             });
         }
 
@@ -582,9 +607,6 @@
         function closePrivateChatRoomModal() {
             document.getElementById('privateChatRoomModal').style.display = 'none';
             activePrivateChatKey = null;
-            if(activePrivateChatKey) {
-                db.ref(`private_chats/${activePrivateChatKey}/messages`).off();
-            }
         }
 
         function sendPrivateMessage() {
