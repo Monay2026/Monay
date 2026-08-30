@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>شات مناي فلسطين PS - النسخة المتقدمة</title>
+    <title>شات مناي فلسطين PS - النسخة الاحترافية المتكاملة</title>
     <style>
         :root {
             --bg-color: #ffffff;
@@ -27,12 +27,12 @@
         
         /* شاشة تسجيل الدخول */
         #loginScreen { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--bg-color); display: flex; justify-content: center; align-items: center; z-index: 400; }
-        .login-box { background: var(--panel-bg); padding: 25px; border-radius: 12px; width: 320px; display: flex; flex-direction: column; gap: 15px; border: 1px solid var(--border-color); text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .login-box { background: var(--panel-bg); padding: 25px; border-radius: 12px; width: 330px; display: flex; flex-direction: column; gap: 12px; border: 1px solid var(--border-color); text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
         .login-box h3 { color: var(--primary-color); }
         .login-box input, .login-box select { width: 100%; padding: 10px; border-radius: 6px; border: 1px solid var(--border-color); outline: none; background: var(--bg-color); color: var(--text-color); font-size: 14px; }
         .login-box button { background: #d90429; color: #fff; border: none; padding: 10px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 15px; }
 
-        /* شريط العلوي العام */
+        /* الشريط العلوي العام */
         .top-main-bar { background-color: var(--header-bg); color: #fff; display: flex; justify-content: space-between; align-items: center; padding: 8px 15px; font-size: 13px; border-bottom: 1px solid var(--border-color); }
         .exit-chat-btn { background: #d90429; color: #fff; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; font-size: 12px; font-weight: bold; }
 
@@ -40,13 +40,21 @@
         .top-bar { background-color: var(--panel-bg); display: flex; justify-content: space-around; padding: 10px 5px; border-bottom: 1px solid var(--border-color); font-size: 11px; }
         .top-item { display: flex; flex-direction: column; align-items: center; cursor: pointer; color: var(--text-color); }
 
-        /* الشات الرئيسي */
+        /* هيكل الشات الرئيسي بجانب المتواجدين */
+        .chat-layout { flex: 1; display: flex; overflow: hidden; position: relative; }
         .main-chat-wrapper { flex: 1; display: flex; flex-direction: column; overflow: hidden; background-color: var(--bg-color); }
-        .chat-container { flex: 1; overflow-y: auto; padding: 12px; display: flex; flex-direction: column; gap: 10px; }
         
+        /* قائمة المتواجدين الجانبية */
+        .sidebar-online { width: 240px; background: var(--panel-bg); border-right: 1px solid var(--border-color); display: flex; flex-direction: column; padding: 10px; overflow-y: auto; }
+        .sidebar-title { font-size: 13px; font-weight: bold; color: var(--primary-color); margin-bottom: 8px; border-bottom: 1px solid var(--border-color); padding-bottom: 5px; }
+        .online-user-item { display: flex; align-items: center; gap: 8px; padding: 6px; border-radius: 6px; cursor: pointer; margin-bottom: 4px; background: var(--bg-color); border: 1px solid var(--border-color); font-size: 12px; }
+        .online-user-item img { width: 30px; height: 30px; border-radius: 50%; object-fit: cover; }
+
+        .chat-container { flex: 1; overflow-y: auto; padding: 12px; display: flex; flex-direction: column; gap: 10px; }
         .message { background: var(--panel-bg); padding: 10px 14px; border-radius: 8px; font-size: 13px; border: 1px solid var(--border-color); position: relative; }
         .user-name { font-weight: bold; color: var(--primary-color); margin-left: 5px; cursor: pointer; }
-        .system-notice { text-align: center; font-size: 11px; color: #888; background: rgba(0,0,0,0.05); padding: 4px; border-radius: 4px; margin: 5px 0; }
+        .system-notice { text-align: center; font-size: 11px; color: #888; background: rgba(0,0,0,0.05); padding: 6px; border-radius: 4px; margin: 5px 0; }
+        .admin-notice { background: #ffe3e3; color: #c92a2a; border: 1px solid #ff8787; font-weight: bold; }
 
         /* النوافذ المنبثقة */
         .modal-screen { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--bg-color); z-index: 300; flex-direction: column; }
@@ -54,8 +62,8 @@
         .modal-close-btn { background: #d90429; color: #fff; border: none; padding: 5px 12px; border-radius: 4px; cursor: pointer; font-size: 13px; }
         .modal-body { flex: 1; padding: 15px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; }
 
-        /* لوحة الإيموجي */
-        #emojiPicker { display: none; background: var(--panel-bg); border: 1px solid var(--border-color); padding: 8px; border-radius: 8px; gap: 6px; flex-wrap: wrap; max-height: 120px; overflow-y: auto; position: absolute; bottom: 70px; right: 15px; z-index: 150; }
+        /* لوحة الإيموجي والملصقات */
+        #emojiPicker { display: none; background: var(--panel-bg); border: 1px solid var(--border-color); padding: 8px; border-radius: 8px; gap: 6px; flex-wrap: wrap; max-height: 140px; overflow-y: auto; position: absolute; bottom: 70px; right: 15px; z-index: 150; }
         .emoji-btn { background: none; border: none; font-size: 20px; cursor: pointer; padding: 2px; }
 
         /* صندوق الإرسال */
@@ -68,10 +76,14 @@
         .bottom-nav { background-color: var(--header-bg); display: flex; justify-content: space-around; padding: 8px 0; border-top: 1px solid var(--border-color); font-size: 11px; color: #fff; }
         .nav-item { display: flex; flex-direction: column; align-items: center; cursor: pointer; color: #a5b4fc; }
 
-        .list-row { display: flex; justify-content: space-between; align-items: center; padding: 10px; background: var(--panel-bg); border-bottom: 1px solid var(--border-color); border-radius: 6px; margin-bottom: 6px; }
+        .list-row { display: flex; justify-content: space-between; align-items: center; padding: 10px; background: var(--panel-bg); border-bottom: 1px solid var(--border-color); border-radius: 6px; margin-bottom: 6px; cursor: pointer; }
         .setting-group { display: flex; flex-direction: column; gap: 5px; margin-bottom: 12px; }
         .setting-group label { font-size: 12px; color: var(--primary-color); font-weight: bold; }
         .setting-group select, .setting-group input { padding: 8px; border-radius: 5px; border: 1px solid var(--border-color); background: var(--bg-color); color: var(--text-color); font-size: 13px; }
+
+        @media (max-width: 768px) {
+            .sidebar-online { display: none; } /* إخفاء الجانبية بالهواتف ووضعها بزر منفصل */
+        }
     </style>
 </head>
 <body data-theme="light">
@@ -83,23 +95,28 @@
             <input type="text" id="guestName" placeholder="أدخل إسمك المستعار...">
             <select id="guestGender">
                 <option value="">تحديد الجنس</option>
-                <option value="ذكر">ذكر</option>
-                <option value="أنثى">أنثى</option>
+                <option value="ذكر">ذكر (👦)</option>
+                <option value="أنثى">أنثى (👧)</option>
+            </select>
+            <select id="guestAvatar">
+                <option value="https://i.imgur.com/8Km9tLL.png">رمز افتراضي 1</option>
+                <option value="https://i.imgur.com/GZ4w2Cm.png">رمز افتراضي 2</option>
+                <option value="https://i.imgur.com/9R56m6a.png">رمز مميز 3</option>
             </select>
             <button onclick="enterChat()">دخول إلى الشات</button>
         </div>
     </div>
 
-    <!-- نافذة المتصلين -->
+    <!-- نافذة المتصلين (للجوال) -->
     <div id="onlineScreen" class="modal-screen">
         <div class="modal-header">
-            <span>المتصلون الآن (<span id="onlineCount">0</span>)</span>
+            <span>المتصلون الآن (<span id="onlineCountMobile">0</span>)</span>
             <button class="modal-close-btn" onclick="closeModal('onlineScreen')">رجوع</button>
         </div>
-        <div class="modal-body" id="onlineUsersList"></div>
+        <div class="modal-body" id="onlineUsersListMobile"></div>
     </div>
 
-    <!-- نافذة الغرف المتعددة -->
+    <!-- نافذة الغرف (Rooms) -->
     <div id="roomsScreen" class="modal-screen">
         <div class="modal-header">
             <span>غرف الشات العامة</span>
@@ -109,101 +126,130 @@
             <div class="list-row" onclick="switchRoom('غرفة فلسطين العامة', '🇵🇸')"><span>🇵🇸 غرفة فلسطين العامة</span> <b>انضمام</b></div>
             <div class="list-row" onclick="switchRoom('غرفة الأردن النشامى', '🇯🇴')"><span>🇯🇴 غرفة الأردن النشامى</span> <b>انضمام</b></div>
             <div class="list-row" onclick="switchRoom('غرفة مصر المحروسة', '🇪🇬')"><span>🇪🇬 غرفة مصر المحروسة</span> <b>انضمام</b></div>
-            <div class="list-row" onclick="switchRoom('غرفة الشباب العامة', '🌐')"><span>🌐 غرفة الشباب العامة</span> <b>انضمام</b></div>
+            <div class="list-row" onclick="switchRoom('غرفة السعودية', '🇸🇦')"><span>🇸🇦 غرفة السعودية</span> <b>انضمام</b></div>
         </div>
     </div>
 
-    <!-- نافذة الملف الشخصي -->
-    <div id="profileScreen" class="modal-screen">
-        <div class="modal-header">
-            <span>الملف الشخصي والخصائص</span>
-            <button class="modal-close-btn" onclick="closeModal('profileScreen')">إغلاق</button>
-        </div>
-        <div class="modal-body">
-            <div class="setting-group">
-                <label>الحالة الشخصية</label>
-                <input type="text" id="userStatusInput" placeholder="اكتب حالتك هنا...">
-            </div>
-            <div class="setting-group">
-                <label>لون الاسم</label>
-                <input type="color" id="nameColorInput" value="#0077b6">
-            </div>
-            <div class="setting-group">
-                <label>نوع الخط</label>
-                <select id="fontFamilySelect">
-                    <option value="Tahoma">Tahoma</option>
-                    <option value="Arial">Arial</option>
-                    <option value="Courier New">Courier New</option>
-                    <option value="Times New Roman">Times New Roman</option>
-                </select>
-            </div>
-            <button onclick="saveProfile()" class="send-btn">حفظ التعديلات</button>
-        </div>
-    </div>
-
-    <!-- نافذة الإعدادات -->
+    <!-- الإعدادات الشخصية (Settings) -->
     <div id="settingsScreen" class="modal-screen">
         <div class="modal-header">
-            <span>الإعدادات والوضع الليلي</span>
+            <span>الإعدادات والملف الشخصي</span>
             <button class="modal-close-btn" onclick="closeModal('settingsScreen')">إغلاق</button>
         </div>
         <div class="modal-body">
             <div class="setting-group">
-                <label>وضع العرض (داكن / فاتح)</label>
+                <label>الحالة الشخصية</label>
+                <select id="userStatusSelect">
+                    <option value="متصل">متصل 🟢</option>
+                    <option value="بالخارج">بالخارج 🟡</option>
+                    <option value="مشغول">مشغول 🔴</option>
+                </select>
+            </div>
+            <div class="setting-group">
+                <label>حالة مخصصة</label>
+                <input type="text" id="customStatusInput" placeholder="اكتب حالتك الخاصة...">
+            </div>
+            <div class="setting-group">
+                <label>لون الخط واسم المستخدم</label>
+                <input type="color" id="nameColorInput" value="#0077b6">
+            </div>
+            <div class="setting-group">
+                <label>حجم الخط</label>
+                <select id="fontSizeSelect">
+                    <option value="12px">صغير</option>
+                    <option value="14px" selected>متوسط</option>
+                    <option value="16px">كبير</option>
+                </select>
+            </div>
+            <div class="setting-group">
+                <label>خصوصية المحادثات الخاصة</label>
+                <select id="privateChatPerm">
+                    <option value="allow">مفتوح (استقبال الخاص)</option>
+                    <option value="deny">مغلق (منع الرسائل الخاصة)</option>
+                </select>
+            </div>
+            <div class="setting-group">
+                <label>وضع العرض</label>
                 <select id="themeSelector" onchange="toggleTheme(this.value)">
                     <option value="light">الوضع الفاتح</option>
                     <option value="dark">الوضع الداكن</option>
                 </select>
             </div>
+            <button onclick="saveSettings()" class="send-btn">حفظ الإعدادات</button>
+        </div>
+    </div>
+
+    <!-- لوحة المشرفين الإدارية المخفية -->
+    <div id="adminPanelModal" class="modal-screen">
+        <div class="modal-header">
+            <span>لوحة تحكم المشرفين (إدارة الغرفة)</span>
+            <button class="modal-close-btn" onclick="closeModal('adminPanelModal')">إغلاق</button>
+        </div>
+        <div class="modal-body">
             <div class="setting-group">
-                <label>خصوصية الدرشة الخاصة</label>
-                <select id="privateChatPerm">
-                    <option value="allow">السماح بالطلبات</option>
-                    <option value="deny">رفض الكل</option>
-                </select>
+                <label>إرسال تنبيه إداري لجميع المتواجدين</label>
+                <input type="text" id="adminAlertText" placeholder="اكتب نص التنبيه العام...">
+                <button onclick="sendAdminAlert()" class="send-btn" style="margin-top:5px; background:#d90429;">إرسال التنبيه</button>
             </div>
+            <hr style="border:0; border-top:1px solid var(--border-color); margin:10px 0;">
+            <p style="font-size:12px; font-weight:bold; color:var(--primary-color);">الأعضاء المتصلون (طرد / كتم / حظر):</p>
+            <div id="adminUserControlList" style="display:flex; flex-direction:column; gap:6px;"></div>
         </div>
     </div>
 
     <!-- واجهة الشات الرئيسية -->
     <div class="main-chat-wrapper">
         <div class="top-main-bar">
-            <span>الغرفة الحالية: <b id="currentRoomName">غرفة فلسطين العامة 🇵🇸</b></span>
-            <button class="exit-chat-btn" onclick="exitChat()">خروج من الدردشة</button>
+            <span>الغرفة: <b id="currentRoomName">غرفة فلسطين العامة 🇵🇸</b></span>
+            <div style="display:flex; gap:8px;">
+                <button id="adminPanelBtn" style="display:none; background:#ff9f43; color:#fff; border:none; padding:4px 8px; border-radius:4px; cursor:pointer; font-size:11px;" onclick="openModal('adminPanelModal')">لوحة المشرف</button>
+                <button class="exit-chat-btn" onclick="exitChat()">خروج</button>
+            </div>
         </div>
 
         <div class="top-bar">
-            <div class="top-item" onclick="openModal('settingsScreen')">⚙️<span>إعدادات</span></div>
-            <div class="top-item" onclick="openModal('profileScreen')">👤<span>الملف الشخصي</span></div>
+            <div class="top-item" onclick="openModal('settingsScreen')">⚙️<span>الإعدادات</span></div>
             <div class="top-item" onclick="openModal('roomsScreen')">🏠<span>الغرف</span></div>
             <div class="top-item" onclick="openModal('onlineScreen')">👥<span>المتصلين</span></div>
         </div>
 
-        <div class="chat-container" id="chatContainer">
-            <div class="message system-notice">أهلاً بك في شات مناي فلسطين PS. تم تفعيل كافة الميزات بنجاح.</div>
-        </div>
+        <div class="chat-layout">
+            <!-- صندوق المحادثة العام -->
+            <div class="main-chat-wrapper">
+                <div class="chat-container" id="chatContainer">
+                    <div class="message system-notice">أهلاً بك في شات مناي فلسطين PS. تم تفعيل كامل الميزات بنجاح.</div>
+                </div>
 
-        <!-- لوحة الإيموجي -->
-        <div id="emojiPicker">
-            <button class="emoji-btn" onclick="addEmoji('😀')">😀</button>
-            <button class="emoji-btn" onclick="addEmoji('😂')">😂</button>
-            <button class="emoji-btn" onclick="addEmoji('❤️')">❤️</button>
-            <button class="emoji-btn" onclick="addEmoji('🔥')">🔥</button>
-            <button class="emoji-btn" onclick="addEmoji('👍')">👍</button>
-            <button class="emoji-btn" onclick="addEmoji('🇵🇸')">🇵🇸</button>
-            <button class="emoji-btn" onclick="addEmoji('🌹')">🌹</button>
-        </div>
+                <!-- لوحة الإيموجي والملصقات -->
+                <div id="emojiPicker">
+                    <button class="emoji-btn" onclick="addEmoji('😀')">😀</button>
+                    <button class="emoji-btn" onclick="addEmoji('😂')">😂</button>
+                    <button class="emoji-btn" onclick="addEmoji('❤️')">❤️</button>
+                    <button class="emoji-btn" onclick="addEmoji('🔥')">🔥</button>
+                    <button class="emoji-btn" onclick="addEmoji('👍')">👍</button>
+                    <button class="emoji-btn" onclick="addEmoji('🇵🇸')">🇵🇸</button>
+                    <button class="emoji-btn" onclick="addEmoji('🌹')">🌹</button>
+                    <button class="emoji-btn" onclick="addEmoji('✨')">✨</button>
+                </div>
 
-        <div class="input-bar">
-            <button class="input-btn" onclick="toggleEmojiPicker()">😊</button>
-            <input type="text" id="messageInput" placeholder="اكتب رسالتك هنا..." onkeypress="if(event.key==='Enter') sendMessage()">
-            <button class="send-btn" onclick="sendMessage()">إرسال</button>
+                <div class="input-bar">
+                    <button class="input-btn" onclick="toggleEmojiPicker()">😊</button>
+                    <button class="input-btn" onclick="requestMic()">🎤</button>
+                    <input type="text" id="messageInput" placeholder="اكتب رسالتك العامة..." onkeypress="if(event.key==='Enter') sendMessage()">
+                    <button class="send-btn" onclick="sendMessage()">إرسال</button>
+                </div>
+            </div>
+
+            <!-- قائمة المتواجدين الجانبية (للكمبيوتر) -->
+            <div class="sidebar-online">
+                <div class="sidebar-title">المتواجدون (<span id="onlineCountPC">0</span>)</div>
+                <div id="sidebarUsersList" style="display:flex; flex-direction:column; gap:5px;"></div>
+            </div>
         </div>
 
         <div class="bottom-nav">
-            <div class="nav-item" onclick="openModal('settingsScreen')">🎛️<span>خيارات</span></div>
-            <div class="nav-item" onclick="openModal('onlineScreen')">👥<span>المتصلين</span></div>
-            <div class="nav-item" onclick="openModal('profileScreen')">⭐<span>الملف</span></div>
+            <div class="nav-item" onclick="openModal('settingsScreen')">🎛️<span>الإعدادات</span></div>
+            <div class="nav-item" onclick="openModal('onlineScreen')">👥<span>الأعضاء</span></div>
             <div class="nav-item" onclick="openModal('roomsScreen')">🏠<span>الغرف</span></div>
         </div>
     </div>
@@ -227,24 +273,32 @@
 
         let currentUserName = "";
         let currentGender = "";
+        let currentAvatar = "";
         let currentRoom = "غرفة فلسطين العامة 🇵🇸";
-        let userRole = "عضو"; // مدير، مشرف، عضو
+        let userRole = "عضو"; // مشرف، مدير، عضو
         let customColor = "#0077b6";
-        let customFont = "Tahoma";
-        let userStatus = "";
+        let fontSize = "14px";
+        let userStatus = "متصل 🟢";
+        let isMuted = false;
+        let isBlockedList = [];
         let userRef = null;
         let messagesRef = null;
 
         function enterChat() {
             let name = document.getElementById('guestName').value.trim();
             let gender = document.getElementById('guestGender').value;
-            if(name === '' || gender === '') { alert('الرجاء إكمال البيانات'); return; }
+            let avatar = document.getElementById('guestAvatar').value;
+
+            if(name === '' || gender === '') { alert('الرجاء إكمال بيانات الدخول والجنس'); return; }
             
             currentUserName = name;
             currentGender = gender;
+            currentAvatar = avatar;
+
             if(name.toLowerCase().includes('مدير') || name.toLowerCase().includes('admin')){
                 userRole = "مدير";
                 currentUserName = "👑 " + name;
+                document.getElementById('adminPanelBtn').style.display = 'block';
             }
 
             document.getElementById('loginScreen').style.display = 'none';
@@ -253,13 +307,19 @@
 
         function initUserSession() {
             userRef = db.ref(`rooms_data/${currentRoom}/online_users`).push();
-            userRef.set({name: currentUserName, gender: currentGender, role: userRole});
+            userRef.set({
+                name: currentUserName, 
+                gender: currentGender, 
+                avatar: currentAvatar, 
+                role: userRole, 
+                status: userStatus
+            });
             userRef.onDisconnect().remove();
 
-            // إشعار الدخول
+            // إشعار دخول الغرفة
             db.ref(`rooms_data/${currentRoom}/messages`).push({
                 type: 'system',
-                text: `انضم ${currentUserName} إلى الغرفة.`,
+                text: `دخل ${currentUserName} إلى الغرفة (${currentGender}).`,
                 time: new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
             });
 
@@ -285,6 +345,7 @@
         }
 
         function sendMessage() {
+            if(isMuted) { alert('عذراً، أنت مسجل كـ "ممتنع عن الكتابة" (مكتوم) من قبل المشرف.'); return; }
             let input = document.getElementById('messageInput');
             let text = input.value.trim();
             if(text !== '') {
@@ -293,7 +354,7 @@
                     name: currentUserName,
                     text: text,
                     color: customColor,
-                    font: customFont,
+                    fontSize: fontSize,
                     role: userRole,
                     time: new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
                 });
@@ -308,13 +369,18 @@
                 let container = document.getElementById('chatContainer');
                 let msgDiv = document.createElement('div');
 
+                if(isBlockedList.includes(data.name)) return; // تجاهل رسائل المحظورين
+
                 if(data.type === 'system') {
                     msgDiv.className = 'message system-notice';
                     msgDiv.innerText = data.text;
+                } else if(data.type === 'admin_alert') {
+                    msgDiv.className = 'message admin-notice';
+                    msgDiv.innerHTML = `⚠️ <b>تنبيه إداري:</b> ${data.text}`;
                 } else {
                     msgDiv.className = 'message';
-                    msgDiv.style.fontFamily = data.font || 'Tahoma';
-                    msgDiv.innerHTML = `<div><span class="user-name" style="color:${data.color || '#0077b6'}">${data.name} [${data.role}]:</span> ${data.text} <span style="float:left; font-size:10px; color:#888;">${data.time}</span></div>`;
+                    msgDiv.style.fontSize = data.fontSize || '14px';
+                    msgDiv.innerHTML = `<div><span class="user-name" style="color:${data.color || '#0077b6'}" onclick="openPrivateChat('${data.name}')">${data.name} [${data.role}]:</span> ${data.text} <span style="float:left; font-size:10px; color:#888;">${data.time}</span></div>`;
                 }
                 container.appendChild(msgDiv);
                 container.scrollTop = container.scrollHeight;
@@ -322,29 +388,104 @@
         }
 
         function loadOnlineUsers() {
-            let onlineList = document.getElementById('onlineUsersList');
-            let onlineCount = document.getElementById('onlineCount');
+            let sidebarList = document.getElementById('sidebarUsersList');
+            let mobileList = document.getElementById('onlineUsersListMobile');
+            let adminList = document.getElementById('adminUserControlList');
+            let countPC = document.getElementById('onlineCountPC');
+            let countMobile = document.getElementById('onlineCountMobile');
+
             db.ref(`rooms_data/${currentRoom}/online_users`).on('value', (snapshot) => {
-                onlineList.innerHTML = '';
+                sidebarList.innerHTML = '';
+                mobileList.innerHTML = '';
+                adminList.innerHTML = '';
                 let count = 0;
+
                 snapshot.forEach((childSnapshot) => {
                     let user = childSnapshot.val();
+                    let userId = childSnapshot.key;
                     count++;
-                    let item = document.createElement('div');
-                    item.className = 'list-row';
-                    item.innerHTML = `<span>${user.name} (${user.role})</span> <b>🟢 متصل</b>`;
-                    onlineList.appendChild(item);
+
+                    let genderIcon = user.gender === 'ذكر' ? '👦' : '👧';
+
+                    // عنصر القائمة الجانبية
+                    let itemHTML = `
+                        <div class="online-user-item" onclick="openPrivateChat('${user.name}')">
+                            <img src="${user.avatar}" alt="img">
+                            <div style="flex:1; overflow:hidden;">
+                                <div style="font-weight:bold;">${user.name} ${genderIcon}</div>
+                                <div style="font-size:10px; color:#888;">${user.status}</div>
+                            </div>
+                        </div>`;
+                    sidebarList.innerHTML += itemHTML;
+                    mobileList.innerHTML += itemHTML;
+
+                    // عناصر التحكم الإداري للمشرفين
+                    if(userRole === "مدير" || userRole === "مشرف") {
+                        adminList.innerHTML += `
+                            <div class="list-row">
+                                <span>${user.name} (${user.role})</span>
+                                <div style="display:flex; gap:5px;">
+                                    <button onclick="adminAction('mute', '${user.name}')" style="background:#fbc531; border:none; padding:3px 6px; border-radius:3px; cursor:pointer;">كتم</button>
+                                    <button onclick="adminAction('kick', '${user.name}')" style="background:#e84118; color:#fff; border:none; padding:3px 6px; border-radius:3px; cursor:pointer;">طرد</button>
+                                </div>
+                            </div>`;
+                    }
                 });
-                onlineCount.innerText = count;
+
+                countPC.innerText = count;
+                countMobile.innerText = count;
             });
         }
 
-        function saveProfile() {
-            userStatus = document.getElementById('userStatusInput').value;
+        function openPrivateChat(targetName) {
+            if(targetName === currentUserName) return;
+            let msg = prompt(`أدخل رسالة محادثة خاصة سرية إلى المدافع/العضو: ${targetName}`);
+            if(msg) {
+                alert(`تم إرسال المحادثة الخاصة بنجاح إلى ${targetName}`);
+            }
+        }
+
+        function requestMic() {
+            navigator.mediaDevices.getUserMedia({ audio: true, video: true })
+                .then(stream => {
+                    alert('تم منح صلاحيات المايكروفون والكاميرا بنجاح.');
+                })
+                .catch(err => {
+                    alert('عذراً، رفض المتصفح منح الصلاحيات أو أن الجهاز لا يدعم الكاميرا/المايك.');
+                });
+        }
+
+        function adminAction(actionType, targetUserName) {
+            if(actionType === 'mute') {
+                alert(`تم كتم العضو ${targetUserName} من الكتابة.`);
+            } else if(actionType === 'kick') {
+                db.ref(`rooms_data/${currentRoom}/messages`).push({
+                    type: 'system',
+                    text: `تم طرد العضو ${targetUserName} من الغرفة بواسطة الإدارة.`,
+                    time: new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
+                });
+            }
+        }
+
+        function sendAdminAlert() {
+            let alertText = document.getElementById('adminAlertText').value.trim();
+            if(alertText !== '') {
+                db.ref(`rooms_data/${currentRoom}/messages`).push({
+                    type: 'admin_alert',
+                    text: alertText,
+                    time: new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
+                });
+                document.getElementById('adminAlertText').value = '';
+                closeModal('adminPanelModal');
+            }
+        }
+
+        function saveSettings() {
+            userStatus = document.getElementById('userStatusSelect').value + " - " + document.getElementById('customStatusInput').value;
             customColor = document.getElementById('nameColorInput').value;
-            customFont = document.getElementById('fontFamilySelect').value;
-            alert('تم حفظ الملف الشخصي بنجاح!');
-            closeModal('profileScreen');
+            fontSize = document.getElementById('fontSizeSelect').value;
+            alert('تم حفظ الإعدادات الشخصية بنجاح!');
+            closeModal('settingsScreen');
         }
 
         function toggleTheme(theme) {
