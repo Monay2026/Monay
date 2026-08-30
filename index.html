@@ -32,19 +32,34 @@
             75% { color: #7b2cbf; text-shadow: 0 0 5px #7b2cbf, 0 0 10px #c77dff; }
             100% { color: #ff0055; text-shadow: 0 0 5px #ff0055, 0 0 10px #ff77a9; }
         }
-        .shining-text {
-            animation: shiningAnimation 3s infinite;
-            font-weight: bold;
-            display: inline-block;
+        .shining-text { animation: shiningAnimation 3s infinite; font-weight: bold; display: inline-block; }
+
+        @keyframes welcomeFlash1 {
+            0% { color: #ff4757; transform: scale(1); text-shadow: 0 0 5px #ff4757; }
+            50% { color: #2ed573; transform: scale(1.02); text-shadow: 0 0 15px #2ed573; }
+            100% { color: #ff4757; transform: scale(1); text-shadow: 0 0 5px #ff4757; }
+        }
+        @keyframes welcomeFlash2 {
+            0% { color: #1e90ff; text-shadow: 0 0 5px #1e90ff; }
+            50% { color: #ffa502; text-shadow: 0 0 15px #ffa502; }
+            100% { color: #1e90ff; text-shadow: 0 0 5px #1e90ff; }
+        }
+        @keyframes welcomeFlash3 {
+            0% { color: #9b59b6; text-shadow: 0 0 5px #9b59b6; }
+            50% { color: #e67e22; text-shadow: 0 0 15px #e67e22; }
+            100% { color: #9b59b6; text-shadow: 0 0 5px #9b59b6; }
         }
 
-        #loginScreen { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--bg-color); display: flex; justify-content: center; align-items: center; z-index: 500; }
-        .login-box { background: var(--panel-bg); padding: 25px; border-radius: 12px; width: 340px; display: flex; flex-direction: column; gap: 12px; border: 1px solid var(--border-color); text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .welcome-msg-1 { animation: welcomeFlash1 2s infinite; font-weight: bold; }
+        .welcome-msg-2 { animation: welcomeFlash2 2s infinite; font-weight: bold; }
+        .welcome-msg-3 { animation: welcomeFlash3 2s infinite; font-weight: bold; }
+
+        #loginScreen { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--bg-color); display: flex; justify-content: center; align-items: center; z-index: 400; }
+        .login-box { background: var(--panel-bg); padding: 25px; border-radius: 12px; width: 330px; display: flex; flex-direction: column; gap: 12px; border: 1px solid var(--border-color); text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
         .login-box input, .login-box select { width: 100%; padding: 10px; border-radius: 6px; border: 1px solid var(--border-color); outline: none; background: var(--bg-color); color: var(--text-color); font-size: 14px; }
         .login-box button { background: #d90429; color: #fff; border: none; padding: 10px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 15px; }
-        
-        .google-btn { background: #ffffff !important; color: #444 !important; border: 1px solid var(--border-color) !important; display: flex; align-items: center; justify-content: center; gap: 10px; font-weight: bold; }
-        .google-btn img { width: 18px; height: 18px; }
+        .login-buttons-group { display: flex; gap: 8px; }
+        .login-buttons-group button { flex: 1; }
 
         .top-main-bar { background-color: var(--header-bg); color: #fff; display: flex; justify-content: space-between; align-items: center; padding: 10px 15px; font-size: 13px; border-bottom: 1px solid var(--border-color); }
         .exit-chat-btn { background: #d90429; color: #fff; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; font-size: 12px; font-weight: bold; }
@@ -58,7 +73,7 @@
         .online-user-item img { width: 30px; height: 30px; border-radius: 50%; object-fit: cover; }
 
         .chat-container { flex: 1; overflow-y: auto; padding: 12px; display: flex; flex-direction: column; gap: 10px; }
-        .message { background: var(--panel-bg); padding: 10px 14px; border-radius: 8px; font-size: 13px; border: 1px solid var(--border-color); position: relative; }
+        .message { background: var(--panel-bg); padding: 10px 14px; border-radius: 8px; font-size: 13px; border: 1px solid var(--border-color); position: relative; word-break: break-word; }
         .user-name { font-weight: bold; margin-left: 5px; cursor: pointer; }
         .system-notice { text-align: center; font-size: 12px; color: #2b8a3e; background: rgba(47, 158, 68, 0.1); padding: 8px; border-radius: 6px; margin: 5px 0; font-weight: bold; border: 1px solid #b2f2bb; }
         .admin-notice { background: #ffe3e3; color: #c92a2a; border: 1px solid #ff8787; font-weight: bold; }
@@ -68,13 +83,6 @@
         .modal-close-btn { background: #d90429; color: #fff; border: none; padding: 5px 12px; border-radius: 4px; cursor: pointer; font-size: 13px; }
         .modal-body { flex: 1; padding: 15px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; }
 
-        #userProfileModal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 400; justify-content: center; align-items: center; }
-        .profile-card { background: var(--panel-bg); border: 1px solid var(--border-color); border-radius: 12px; width: 300px; padding: 20px; text-align: center; display: flex; flex-direction: column; gap: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
-        .profile-card img { width: 70px; height: 70px; border-radius: 50%; margin: 0 auto; object-fit: cover; border: 2px solid var(--primary-color); }
-        .profile-info-row { display: flex; justify-content: space-between; font-size: 13px; padding: 5px 0; border-bottom: 1px solid var(--border-color); }
-
-        #privateChatRoomModal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--bg-color); z-index: 450; flex-direction: column; }
-
         #emojiPicker { display: none; background: var(--panel-bg); border: 1px solid var(--border-color); padding: 10px; border-radius: 8px; gap: 8px; flex-wrap: wrap; max-height: 180px; overflow-y: auto; position: absolute; bottom: 70px; right: 15px; z-index: 150; width: 280px; justify-content: center; }
         .emoji-btn { background: none; border: none; font-size: 22px; cursor: pointer; padding: 3px; }
 
@@ -83,7 +91,7 @@
         .input-btn { background: none; border: none; font-size: 18px; cursor: pointer; color: var(--text-color); position: relative; }
         .send-btn { background: var(--primary-color); border: none; color: #fff; padding: 8px 16px; border-radius: 20px; cursor: pointer; font-size: 14px; }
 
-        .bottom-nav { background-color: var(--header-bg); display: flex; justify-content: space-around; padding: 10px 0; border-top: 1px solid var(--border-color); font-size: 11px; color: #fff; z-index: 200; }
+        .bottom-nav { background-color: var(--header-bg); display: flex; justify-content: space-around; padding: 10px 0; border-top: 1px solid var(--border-color); font-size: 11px; color: #fff; }
         .nav-item { display: flex; flex-direction: column; align-items: center; cursor: pointer; color: #a5b4fc; position: relative; }
         .badge-dot { position: absolute; top: 0; right: 8px; background: #d90429; color: #fff; border-radius: 50%; width: 14px; height: 14px; font-size: 9px; display: flex; justify-content: center; align-items: center; display: none; }
 
@@ -103,61 +111,25 @@
     <div id="loginScreen">
         <div class="login-box">
             <h3 class="shining-text">شات مناي فلسطين PS</h3>
-            <button type="button" class="google-btn" onclick="loginWithGoogle()">
-                <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google">
-                متابعة باستخدام حساب جوجل
-            </button>
-            <div style="font-size: 12px; color: #888; margin: 2px 0;">أو الدخول كضيف يدوي:</div>
             <input type="text" id="guestName" placeholder="أدخل إسمك المستعار...">
             <select id="guestGender">
                 <option value="">تحديد الجنس</option>
                 <option value="ذكر">ذكر (👦)</option>
                 <option value="أنثى">أنثى (👧)</option>
             </select>
-            <select id="guestCountry">
-                <option value="فلسطين 🇵🇸">فلسطين 🇵🇸</option>
-                <option value="الأردن 🇯🇴">الأردن 🇯🇴</option>
-                <option value="مصر 🇪🇬">مصر 🇪🇬</option>
-                <option value="السعودية 🇸🇦">السعودية 🇸🇦</option>
-                <option value="المغرب 🇲🇦">المغرب 🇲🇦</option>
-            </select>
-            <input type="number" id="guestAge" placeholder="العمر..." min="10" max="90" value="24">
             <select id="guestAvatar">
                 <option value="https://i.imgur.com/8Km9tLL.png">رمز افتراضي 1</option>
                 <option value="https://i.imgur.com/GZ4w2Cm.png">رمز افتراضي 2</option>
                 <option value="https://i.imgur.com/9R56m6a.png">رمز مميز 3</option>
             </select>
-            <button onclick="enterChatAsGuest()" style="background: #0077b6;">دخول كضيف</button>
+            <div class="login-buttons-group">
+                <button onclick="enterChat('ضيف')">دخول كضيف</button>
+                <button onclick="enterChat('عضو')" style="background: #0077b6;">دخول كعضو</button>
+            </div>
         </div>
     </div>
 
-    <!-- نافذة تفاصيل العضو عند النقر عليه -->
-    <div id="userProfileModal">
-        <div class="profile-card">
-            <img id="profileAvatar" src="" alt="Avatar">
-            <h4 id="profileName" style="color: var(--primary-color);"></h4>
-            <div class="profile-info-row"><span>الجنس:</span><b id="profileGender"></b></div>
-            <div class="profile-info-row"><span>العمر:</span><b id="profileAge"></b></div>
-            <div class="profile-info-row"><span>الدولة:</span><b id="profileCountry"></b></div>
-            <button onclick="openPrivateChatRoom()" class="send-btn" style="margin-top: 10px;">💬 دردشة خاصة</button>
-            <button onclick="closeModal('userProfileModal')" style="background:none; border:none; color:#d90429; cursor:pointer; font-size:12px; margin-top:5px;">إغلاق</button>
-        </div>
-    </div>
-
-    <!-- نافذة الدردشة الخاصة الثنائية -->
-    <div id="privateChatRoomModal" class="modal-screen">
-        <div class="modal-header">
-            <span>دردشة خاصة مع: <b id="privateTargetTitle"></b></span>
-            <button class="modal-close-btn" onclick="closePrivateChatRoomModal()">إغلاق الخاص</button>
-        </div>
-        <div class="chat-container" id="privateChatContainer"></div>
-        <div class="input-bar">
-            <input type="text" id="privateMessageInput" placeholder="اكتب رسالة خاصة..." onkeypress="if(event.key==='Enter') sendPrivateMessage()">
-            <button class="send-btn" onclick="sendPrivateMessage()">إرسال</button>
-        </div>
-    </div>
-
-    <!-- نافذة المتصلين (للهاتف) -->
+    <!-- نافذة المتصلين -->
     <div id="onlineScreen" class="modal-screen">
         <div class="modal-header">
             <span>المتصلون الآن (<span id="onlineCountMobile">0</span>)</span>
@@ -173,10 +145,44 @@
             <button class="modal-close-btn" onclick="closeModal('roomsScreen')">رجوع</button>
         </div>
         <div class="modal-body" id="roomsListContainer">
-            <div class="list-row" onclick="switchRoom('غرفة فلسطين العامة', '🇵🇸')"><span>🇵🇸 غرفة فلسطين العامة</span> <b id="count-room-1" style="font-size:11px; background:#0077b6; color:#fff; padding:2px 6px; border-radius:4px;">متصلون: 0</b></div>
-            <div class="list-row" onclick="switchRoom('غرفة الأردن النشامى', '🇯🇴')"><span>🇯🇴 غرفة الأردن النشامى</span> <b id="count-room-2" style="font-size:11px; background:#0077b6; color:#fff; padding:2px 6px; border-radius:4px;">متصلون: 0</b></div>
-            <div class="list-row" onclick="switchRoom('غرفة مصر المحروسة', '🇪🇬')"><span>🇪🇬 غرفة مصر المحروسة</span> <b id="count-room-3" style="font-size:11px; background:#0077b6; color:#fff; padding:2px 6px; border-radius:4px;">متصلون: 0</b></div>
-            <div class="list-row" onclick="switchRoom('غرفة السعودية', '🇸🇦')"><span>🇸🇦 غرفة السعودية</span> <b id="count-room-4" style="font-size:11px; background:#0077b6; color:#fff; padding:2px 6px; border-radius:4px;">متصلون: 0</b></div>
+            <!-- غرفة مناي في أول القائمة مع علم فلسطين -->
+            <div class="list-row" onclick="switchRoom('غرفة مناي', '🇵🇸')" style="border: 1px solid #ff0055;">
+                <span class="shining-text">⭐ غرفة مناي 🇵🇸</span> 
+                <b id="count-room-0" style="font-size:11px; background:#ff0055; color:#fff; padding:2px 6px; border-radius:4px;">متصلون: 0</b>
+            </div>
+            <div class="list-row" onclick="switchRoom('غرفة فلسطين العامة', '🇵🇸')">
+                <span>🇵🇸 غرفة فلسطين العامة</span> 
+                <b id="count-room-1" style="font-size:11px; background:#0077b6; color:#fff; padding:2px 6px; border-radius:4px;">متصلون: 0</b>
+            </div>
+            <div class="list-row" onclick="switchRoom('غرفة الأردن النشامى', '🇯🇴')">
+                <span>🇯🇴 غرفة الأردن النشامى</span> 
+                <b id="count-room-2" style="font-size:11px; background:#0077b6; color:#fff; padding:2px 6px; border-radius:4px;">متصلون: 0</b>
+            </div>
+            <div class="list-row" onclick="switchRoom('غرفة مصر المحروسة', '🇪🇬')">
+                <span>🇪🇬 غرفة مصر المحروسة</span> 
+                <b id="count-room-3" style="font-size:11px; background:#0077b6; color:#fff; padding:2px 6px; border-radius:4px;">متصلون: 0</b>
+            </div>
+            <div class="list-row" onclick="switchRoom('غرفة السعودية', '🇸🇦')">
+                <span>🇸🇦 غرفة السعودية</span> 
+                <b id="count-room-4" style="font-size:11px; background:#0077b6; color:#fff; padding:2px 6px; border-radius:4px;">متصلون: 0</b>
+            </div>
+        </div>
+    </div>
+
+    <!-- نافذة الشات الخاص (تفتح كصفحة كاملة مستقلة بين الشخصين) -->
+    <div id="privateChatScreen" class="modal-screen">
+        <div class="modal-header">
+            <span>محادثة خاصة مع: <b id="privateChatTargetName">---</b></span>
+            <button class="modal-close-btn" onclick="closePrivateChatScreen()">إغلاق الخاص</button>
+        </div>
+        <div class="modal-body" id="privateChatContainer" style="background: var(--bg-color);">
+            <!-- رسائل الخاص -->
+        </div>
+        <div class="input-bar">
+            <input type="file" id="privateImageInput" accept="image/*" style="display:none" onchange="sendPrivateImage(event)">
+            <button class="input-btn" onclick="document.getElementById('privateImageInput').click()" title="إرسال صورة">📷</button>
+            <input type="text" id="privateMessageInput" placeholder="اكتب رسالة خاصة..." onkeypress="if(event.key==='Enter') sendPrivateMessage()">
+            <button class="send-btn" onclick="sendPrivateMessage()">إرسال</button>
         </div>
     </div>
 
@@ -187,9 +193,37 @@
             <button class="modal-close-btn" onclick="closeModal('settingsScreen')">إغلاق</button>
         </div>
         <div class="modal-body">
-            <div class="setting-group"><label>الحالة الشخصية</label><select id="userStatusSelect"><option value="متصل">متصل 🟢</option><option value="بالخارج">بالخارج 🟡</option><option value="مشغول">مشغول 🔴</option></select></div>
-            <div class="setting-group"><label>لون الخط واسم المستخدم</label><input type="color" id="nameColorInput" value="#0077b6"></div>
-            <div class="setting-group"><label>وضع العرض</label><select id="themeSelector" onchange="toggleTheme(this.value)"><option value="light">الوضع الفاتح</option><option value="dark">الوضع الداكن</option></select></div>
+            <div class="setting-group">
+                <label>الحالة الشخصية</label>
+                <select id="userStatusSelect">
+                    <option value="متصل">متصل 🟢</option>
+                    <option value="بالخارج">بالخارج 🟡</option>
+                    <option value="مشغول">مشغول 🔴</option>
+                </select>
+            </div>
+            <div class="setting-group">
+                <label>حالة مخصصة</label>
+                <input type="text" id="customStatusInput" placeholder="اكتب حالتك الخاصة...">
+            </div>
+            <div class="setting-group">
+                <label>لون الخط واسم المستخدم</label>
+                <input type="color" id="nameColorInput" value="#0077b6">
+            </div>
+            <div class="setting-group">
+                <label>حجم الخط</label>
+                <select id="fontSizeSelect">
+                    <option value="12px">صغير</option>
+                    <option value="14px" selected>متوسط</option>
+                    <option value="16px">كبير</option>
+                </select>
+            </div>
+            <div class="setting-group">
+                <label>وضع العرض</label>
+                <select id="themeSelector" onchange="toggleTheme(this.value)">
+                    <option value="light">الوضع الفاتح</option>
+                    <option value="dark">الوضع الداكن</option>
+                </select>
+            </div>
             <button onclick="saveSettings()" class="send-btn">حفظ الإعدادات</button>
         </div>
     </div>
@@ -201,8 +235,13 @@
             <button class="modal-close-btn" onclick="closeModal('adminPanelModal')">إغلاق</button>
         </div>
         <div class="modal-body">
-            <div class="setting-group"><label>إرسال تنبيه إداري عام</label><input type="text" id="adminAlertText" placeholder="النص..."><button onclick="sendAdminAlert()" class="send-btn" style="background:#d90429;">إرسال</button></div>
+            <div class="setting-group">
+                <label>إرسال تنبيه إداري لجميع المتواجدين</label>
+                <input type="text" id="adminAlertText" placeholder="اكتب نص التنبيه العام...">
+                <button onclick="sendAdminAlert()" class="send-btn" style="margin-top:5px; background:#d90429;">إرسال التنبيه</button>
+            </div>
             <hr style="border:0; border-top:1px solid var(--border-color); margin:10px 0;">
+            <p style="font-size:12px; font-weight:bold; color:var(--primary-color);">الأعضاء المتصلون (طرد / كتم):</p>
             <div id="adminUserControlList" style="display:flex; flex-direction:column; gap:6px;"></div>
         </div>
     </div>
@@ -210,7 +249,7 @@
     <!-- واجهة الشات الرئيسية -->
     <div class="main-chat-wrapper">
         <div class="top-main-bar">
-            <span>الغرفة: <b id="currentRoomName">غرفة فلسطين العامة 🇵🇸</b></span>
+            <span>الغرفة: <b id="currentRoomName">غرفة مناي 🇵🇸</b></span>
             <div style="display:flex; gap:8px;">
                 <button id="adminPanelBtn" style="display:none; background:#ff9f43; color:#fff; border:none; padding:4px 8px; border-radius:4px; cursor:pointer; font-size:11px;" onclick="openModal('adminPanelModal')">لوحة المشرف</button>
                 <button class="exit-chat-btn" onclick="exitChat()">خروج</button>
@@ -220,40 +259,52 @@
         <div class="chat-layout">
             <div class="main-chat-wrapper">
                 <div class="chat-container" id="chatContainer">
-                    <div class="message system-notice">أهلاً بك في <span class="shining-text">شات مناي فلسطين</span>. اضغط على أي اسم في قائمة المتصلين لعرض تفاصيله أو بدء دردشة خاصة.</div>
+                    <div class="message system-notice">أهلاً بك في شات مناي فلسطين PS. تم التحديث بنجاح.</div>
                 </div>
 
+                <!-- قائمة السمايلات الـ 50 -->
                 <div id="emojiPicker">
-                    <button class="emoji-btn" onclick="addEmoji('😀')">😀</button><button class="emoji-btn" onclick="addEmoji('😂')">😂</button><button class="emoji-btn" onclick="addEmoji('❤️')">❤️</button><button class="emoji-btn" onclick="addEmoji('🔥')">🔥</button><button class="emoji-btn" onclick="addEmoji('🇵🇸')">🇵🇸</button><button class="emoji-btn" onclick="addEmoji('🇯🇴')">🇯🇴</button>
+                    <button class="emoji-btn" onclick="addEmoji('😀')">😀</button><button class="emoji-btn" onclick="addEmoji('😃')">😃</button><button class="emoji-btn" onclick="addEmoji('😄')">😄</button><button class="emoji-btn" onclick="addEmoji('😁')">😁</button><button class="emoji-btn" onclick="addEmoji('😆')">😆</button>
+                    <button class="emoji-btn" onclick="addEmoji('😅')">😅</button><button class="emoji-btn" onclick="addEmoji('🤣')">🤣</button><button class="emoji-btn" onclick="addEmoji('😂')">😂</button><button class="emoji-btn" onclick="addEmoji('🙂')">🙂</button><button class="emoji-btn" onclick="addEmoji('🙃')">🙃</button>
+                    <button class="emoji-btn" onclick="addEmoji('😉')">😉</button><button class="emoji-btn" onclick="addEmoji('😊')">😊</button><button class="emoji-btn" onclick="addEmoji('😇')">😇</button><button class="emoji-btn" onclick="addEmoji('🥰')">🥰</button><button class="emoji-btn" onclick="addEmoji('😍')">😍</button>
+                    <button class="emoji-btn" onclick="addEmoji('🤩')">🤩</button><button class="emoji-btn" onclick="addEmoji('😘')">😘</button><button class="emoji-btn" onclick="addEmoji('😗')">😗</button><button class="emoji-btn" onclick="addEmoji('😚')">😚</button><button class="emoji-btn" onclick="addEmoji('😙')">😙</button>
+                    <button class="emoji-btn" onclick="addEmoji('😋')">😋</button><button class="emoji-btn" onclick="addEmoji('😛')">😛</button><button class="emoji-btn" onclick="addEmoji('😜')">😜</button><button class="emoji-btn" onclick="addEmoji('🤪')">🤪</button><button class="emoji-btn" onclick="addEmoji('😝')">😝</button>
+                    <button class="emoji-btn" onclick="addEmoji('🤑')">🤑</button><button class="emoji-btn" onclick="addEmoji('🤗')">🤗</button><button class="emoji-btn" onclick="addEmoji('🤭')">🤭</button><button class="emoji-btn" onclick="addEmoji('🤫')">🤫</button><button class="emoji-btn" onclick="addEmoji('🤔')">🤔</button>
+                    <button class="emoji-btn" onclick="addEmoji('😎')">😎</button><button class="emoji-btn" onclick="addEmoji('🥳')">🥳</button><button class="emoji-btn" onclick="addEmoji('😏')">😏</button><button class="emoji-btn" onclick="addEmoji('😒')">😒</button><button class="emoji-btn" onclick="addEmoji('😞')">😞</button>
+                    <button class="emoji-btn" onclick="addEmoji('😔')">😔</button><button class="emoji-btn" onclick="addEmoji('❤️')">❤️</button><button class="emoji-btn" onclick="addEmoji('🧡')">🧡</button><button class="emoji-btn" onclick="addEmoji('💛')">💛</button><button class="emoji-btn" onclick="addEmoji('💚')">💚</button>
+                    <button class="emoji-btn" onclick="addEmoji('💙')">💙</button><button class="emoji-btn" onclick="addEmoji('💜')">💜</button><button class="emoji-btn" onclick="addEmoji('🖤')">🖤</button><button class="emoji-btn" onclick="addEmoji('🔥')">🔥</button><button class="emoji-btn" onclick="addEmoji('⭐')">⭐</button>
+                    <button class="emoji-btn" onclick="addEmoji('🇵🇸')">🇵🇸</button><button class="emoji-btn" onclick="addEmoji('🇯🇴')">🇯🇴</button><button class="emoji-btn" onclick="addEmoji('🇪🇬')">🇪🇬</button><button class="emoji-btn" onclick="addEmoji('🇸🇦')">🇸🇦</button><button class="emoji-btn" onclick="addEmoji('🌹')">🌹</button>
                 </div>
 
                 <div class="input-bar">
+                    <input type="file" id="chatImageInput" accept="image/*" style="display:none" onchange="sendGeneralImage(event)">
                     <button class="input-btn" onclick="toggleEmojiPicker()">😊</button>
+                    <button class="input-btn" onclick="document.getElementById('chatImageInput').click()" title="إرسال صورة">📷</button>
+                    <button class="input-btn" id="micBtn" onclick="toggleRecordAudio()" title="التحدث وإرسال صوت">🎤</button>
                     <input type="text" id="messageInput" placeholder="اكتب رسالتك العامة..." onkeypress="if(event.key==='Enter') sendMessage()">
                     <button class="send-btn" onclick="sendMessage()">إرسال</button>
                 </div>
             </div>
 
-            <!-- قائمة المتواجدين الجانبية -->
+            <!-- قائمة المتواجدين الجانبية (كمبيوتر) -->
             <div class="sidebar-online">
                 <div class="sidebar-title">المتواجدون (<span id="onlineCountPC">0</span>)</div>
                 <div id="sidebarUsersList" style="display:flex; flex-direction:column; gap:5px;"></div>
             </div>
         </div>
 
-        <!-- شريط التنقل السفلي الثابت -->
+        <!-- شريط التنقل السفلي -->
         <div class="bottom-nav">
             <div class="nav-item" onclick="openModal('settingsScreen')">⚙️<span>الإعدادات</span></div>
             <div class="nav-item" onclick="openModal('onlineScreen')">👥<span>المتصلين</span><span id="onlineBadge" class="badge-dot"></span></div>
             <div class="nav-item" onclick="openModal('roomsScreen')">🏠<span>الغرف</span></div>
-            <div class="nav-item" onclick="openModal('settingsScreen')">💬<span>الحساب</span></div>
+            <div class="nav-item" onclick="openPrivateListTab()">💬<span>الخاص</span><span id="privateBadge" class="badge-dot"></span></div>
         </div>
     </div>
 
-    <!-- مكتبات Firebase (شاملة مصادقة جوجل) -->
+    <!-- مكتبات Firebase -->
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
     
     <script>
         const firebaseConfig = {
@@ -267,70 +318,60 @@
         };
         firebase.initializeApp(firebaseConfig);
         const db = firebase.database();
-        const auth = firebase.auth();
 
         let currentUserName = "";
-        let currentGender = "ذكر";
+        let currentGender = "";
         let currentAvatar = "";
-        let currentCountry = "فلسطين 🇵🇸";
-        let currentAge = "24";
-        let currentRoom = "غرفة فلسطين العامة 🇵🇸";
+        let currentRoom = "غرفة مناي 🇵🇸";
         let userRole = "عضو";
         let customColor = localStorage.getItem('chat_user_color') || ('#' + Math.floor(Math.random()*16777215).toString(16));
+        let fontSize = "14px";
         let userStatus = "متصل 🟢";
         let userRef = null;
         let messagesRef = null;
-        let selectedTargetUser = null;
-        let activePrivateChatKey = null;
+        let mediaRecorder = null;
+        let audioChunks = [];
+        let autoWelcomeInterval = null;
+        let activePrivateTarget = "";
+        let privateMessagesRef = null;
 
         document.getElementById('nameColorInput').value = customColor;
 
-        // تسجيل الدخول بواسطة حساب جوجل
-        function loginWithGoogle() {
-            const provider = new firebase.auth.GoogleAuthProvider();
-            auth.signInWithPopup(provider).then((result) => {
-                const user = result.user;
-                currentUserName = user.displayName || "مستخدم جوجل";
-                currentAvatar = user.photoURL || "https://i.imgur.com/8Km9tLL.png";
-                currentGender = "ذكر"; // افتراضي لحين التعديل
-                currentCountry = "فلسطين 🇵🇸";
-                currentAge = "25";
-                userRole = "عضو موثق (جوجل)";
+        function enterChat(loginType) {
+            let name = document.getElementById('guestName').value.trim();
+            let gender = document.getElementById('guestGender').value;
+            let avatar = document.getElementById('guestAvatar').value;
+
+            if(name === '' || gender === '') { alert('الرجاء إكمال بيانات الدخول والجنس'); return; }
+            
+            currentUserName = name + " 🇵🇸";
+            currentGender = gender;
+            currentAvatar = avatar;
+
+            if(loginType === 'عضو') {
+                userRole = "عضو مسجل";
+            } else {
+                userRole = "ضيف";
+            }
+
+            if(name.toLowerCase().includes('مدير') || name.toLowerCase().includes('admin')){
+                userRole = "مدير";
+                currentUserName = "👑 " + name + " 🇵🇸";
+                document.getElementById('adminPanelBtn').style.display = 'block';
+            }
+
+            db.ref(`rooms_data/${currentRoom}/kicked/${currentUserName}`).once('value', snapshot => {
+                if(snapshot.val() === true) {
+                    alert('عذراً، أنت مطرود من هذه الغرفة من قبل الإدارة.');
+                    return;
+                }
 
                 document.getElementById('loginScreen').style.display = 'none';
                 initUserSession();
                 updateAllRoomsCounts();
-            }).catch((error) => {
-                alert("فشل تسجيل الدخول بواسطة جوجل: " + error.message);
+                startAutoWelcome();
+                checkIfKickedLive();
             });
-        }
-
-        // الدخول كضيف يدوي
-        function enterChatAsGuest() {
-            let name = document.getElementById('guestName').value.trim();
-            let gender = document.getElementById('guestGender').value;
-            let country = document.getElementById('guestCountry').value;
-            let age = document.getElementById('guestAge').value;
-            let avatar = document.getElementById('guestAvatar').value;
-
-            if(name === '' || gender === '' || age === '') { alert('الرجاء إكمال كافة بيانات الدخول'); return; }
-            
-            currentUserName = name;
-            currentGender = gender;
-            currentCountry = country;
-            currentAge = age;
-            currentAvatar = avatar;
-            userRole = "ضيف";
-
-            if(name.toLowerCase().includes('مدير') || name.toLowerCase().includes('admin')){
-                userRole = "مدير";
-                currentUserName = "👑 " + name;
-                document.getElementById('adminPanelBtn').style.display = 'block';
-            }
-
-            document.getElementById('loginScreen').style.display = 'none';
-            initUserSession();
-            updateAllRoomsCounts();
         }
 
         function initUserSession() {
@@ -338,8 +379,6 @@
             userRef.set({
                 name: currentUserName, 
                 gender: currentGender, 
-                country: currentCountry, 
-                age: currentAge, 
                 avatar: currentAvatar, 
                 role: userRole, 
                 status: userStatus,
@@ -347,8 +386,49 @@
             });
             userRef.onDisconnect().remove();
 
+            // رسالة ترحيبية خاصة عند دخول المستخدم للغرفة باسمه
+            db.ref(`rooms_data/${currentRoom}/messages`).push({
+                type: 'system',
+                text: `✨ أهلاً ومرحباً بك يا (${currentUserName}) نورت غرفة مناي فلسطين بوجودك العطر! 🌸`,
+                time: new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
+            });
+
             loadMessages();
             loadOnlineUsers();
+        }
+
+        function checkIfKickedLive() {
+            db.ref(`rooms_data/${currentRoom}/kicked/${currentUserName}`).on('value', snapshot => {
+                if(snapshot.val() === true) {
+                    alert('تم طردك من الغرفة بواسطة الإدارة!');
+                    exitChat();
+                }
+            });
+        }
+
+        // نظام الترحيب التلقائي باسم "مناي" كل 30 ثانية في العام مع وميض كامل لكل الجملة
+        function startAutoWelcome() {
+            if(autoWelcomeInterval) clearInterval(autoWelcomeInterval);
+            
+            const welcomeTemplates = [
+                { text: "✨ تدلل يا غالي، شات مناي يرحب بالجميع، أهلاً بكل الحضور الراقي أنرتم الغرفة بوجودكم العطر! 🌸", cls: "welcome-msg-1" },
+                { text: "🌟 مناي ترحب بكم جميعاً في عائلة الشات، نسعد بتواجدكم الجميل معنا طوال الوقت! 💙", cls: "welcome-msg-2" },
+                { text: "🔥 تحيات مناي لكل الأصدقاء الأحباء، نتمنى لكم أوقاتاً ممتعة ومميزة بصحبتنا! 🌹", cls: "welcome-msg-3" },
+                { text: "💎 مناي تبعث أحر التحيات للجميع في واحة الشات، حضوركم يملأ المكان بهجة وسرور! ✨", cls: "welcome-msg-1" },
+                { text: "🚀 شات مناي يحيي كل المتواجدين الآن، نتمنى لكم محادثات طيبة وأوقات رائعة معنا! 🌺", cls: "welcome-msg-2" }
+            ];
+
+            autoWelcomeInterval = setInterval(() => {
+                let randomIndex = Math.floor(Math.random() * welcomeTemplates.length);
+                let selectedNotice = welcomeTemplates[randomIndex];
+
+                db.ref(`rooms_data/${currentRoom}/messages`).push({
+                    type: 'auto_welcome',
+                    text: selectedNotice.text,
+                    className: selectedNotice.cls,
+                    time: new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
+                });
+            }, 30000); // كل 30 ثانية
         }
 
         function switchRoom(roomName, flag) {
@@ -359,7 +439,6 @@
             document.getElementById('currentRoomName').innerText = currentRoom;
             document.getElementById('chatContainer').innerHTML = '';
             closeModal('roomsScreen');
-            closeModal('onlineScreen');
 
             initUserSession();
             updateAllRoomsCounts();
@@ -367,24 +446,90 @@
 
         function exitChat() {
             if(userRef) userRef.remove();
-            auth.signOut();
+            if(autoWelcomeInterval) clearInterval(autoWelcomeInterval);
             location.reload();
         }
 
         function sendMessage() {
-            let input = document.getElementById('messageInput');
-            let text = input.value.trim();
-            if(text !== '') {
-                db.ref(`rooms_data/${currentRoom}/messages`).push({
-                    type: 'chat',
-                    name: currentUserName,
-                    text: text,
-                    color: customColor,
-                    role: userRole,
-                    time: new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
-                });
-                input.value = '';
+            db.ref(`rooms_data/${currentRoom}/muted/${currentUserName}`).once('value', s => {
+                if(s.val() === true) {
+                    alert('عذراً، أنت مكتوم من الإدارة ولا يمكنك الإرسال.');
+                    return;
+                }
+
+                let input = document.getElementById('messageInput');
+                let text = input.value.trim();
+                if(text !== '') {
+                    db.ref(`rooms_data/${currentRoom}/messages`).push({
+                        type: 'chat',
+                        name: currentUserName,
+                        text: text,
+                        color: customColor,
+                        fontSize: fontSize,
+                        role: userRole,
+                        time: new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
+                    });
+                    input.value = '';
+                }
+            });
+        }
+
+        function sendGeneralImage(event) {
+            let file = event.target.files[0];
+            if(file) {
+                let reader = new FileReader();
+                reader.onload = function(e) {
+                    db.ref(`rooms_data/${currentRoom}/messages`).push({
+                        type: 'image',
+                        name: currentUserName,
+                        imageUrl: e.target.result,
+                        color: customColor,
+                        role: userRole,
+                        time: new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
+                    });
+                }
+                reader.readAsDataURL(file);
             }
+        }
+
+        function toggleRecordAudio() {
+            db.ref(`rooms_data/${currentRoom}/muted/${currentUserName}`).once('value', s => {
+                if(s.val() === true) {
+                    alert('عذراً، أنت مكتوم من الإدارة.');
+                    return;
+                }
+
+                if (!mediaRecorder || mediaRecorder.state === "inactive") {
+                    navigator.mediaDevices.getUserMedia({ audio: true }).then(stream => {
+                        mediaRecorder = new MediaRecorder(stream);
+                        audioChunks = [];
+                        mediaRecorder.ondataavailable = event => audioChunks.push(event.data);
+                        mediaRecorder.onstop = () => {
+                            let audioBlob = new Blob(audioChunks, { type: 'audio/mp3' });
+                            let reader = new FileReader();
+                            reader.readAsDataURL(audioBlob);
+                            reader.onloadend = function() {
+                                db.ref(`rooms_data/${currentRoom}/messages`).push({
+                                    type: 'audio',
+                                    name: currentUserName,
+                                    audioUrl: reader.result,
+                                    color: customColor,
+                                    role: userRole,
+                                    time: new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
+                                });
+                            }
+                        };
+                        mediaRecorder.start();
+                        document.getElementById('micBtn').style.color = 'red';
+                        alert('جاري تسجيل الصوت... اضغط مرة أخرى للإيقاف والإرسال.');
+                    }).catch(err => {
+                        alert('تعذر الوصول إلى المايكروفون.');
+                    });
+                } else {
+                    mediaRecorder.stop();
+                    document.getElementById('micBtn').style.color = 'var(--text-color)';
+                }
+            });
         }
 
         function loadMessages() {
@@ -397,27 +542,107 @@
                 if(data.type === 'system') {
                     msgDiv.className = 'message system-notice';
                     msgDiv.innerText = data.text;
+                } else if(data.type === 'auto_welcome') {
+                    msgDiv.className = `message system-notice ${data.className || ''}`;
+                    msgDiv.innerHTML = data.text;
                 } else if(data.type === 'admin_alert') {
                     msgDiv.className = 'message admin-notice';
                     msgDiv.innerHTML = `⚠️ <b>تنبيه إداري:</b> ${data.text}`;
+                } else if(data.type === 'audio') {
+                    msgDiv.className = 'message';
+                    msgDiv.innerHTML = `<div><span class="user-name" style="color:${data.color || '#0077b6'}">${data.name} [${data.role}]:</span><br><audio controls src="${data.audioUrl}" style="height:35px; margin-top:5px;"></audio> <span style="float:left; font-size:10px; color:#888;">${data.time}</span></div>`;
+                } else if(data.type === 'image') {
+                    msgDiv.className = 'message';
+                    msgDiv.innerHTML = `<div><span class="user-name" style="color:${data.color || '#0077b6'}">${data.name} [${data.role}]:</span><br><img src="${data.imageUrl}" style="max-width:200px; border-radius:6px; margin-top:5px;"> <span style="float:left; font-size:10px; color:#888;">${data.time}</span></div>`;
                 } else {
                     msgDiv.className = 'message';
-                    msgDiv.innerHTML = `<div><span class="user-name" style="color:${data.color || '#0077b6'}">${data.name}:</span> ${data.text} <span style="float:left; font-size:10px; color:#888;">${data.time}</span></div>`;
+                    msgDiv.style.fontSize = data.fontSize || '14px';
+                    msgDiv.innerHTML = `<div><span class="user-name" style="color:${data.color || '#0077b6'}" onclick="openPrivateChat('${data.name}')">${data.name} [${data.role}]:</span> ${data.text} <span style="float:left; font-size:10px; color:#888;">${data.time}</span></div>`;
                 }
                 container.appendChild(msgDiv);
                 container.scrollTop = container.scrollHeight;
             });
         }
 
+        // فتح الدردشة الخاصة كصفحة كاملة مستقلة بين الشخصين
+        function openPrivateChat(targetName) {
+            if(targetName === currentUserName) return;
+            activePrivateTarget = targetName;
+            document.getElementById('privateChatTargetName').innerText = targetName;
+            document.getElementById('privateChatContainer').innerHTML = '';
+            document.getElementById('privateChatScreen').style.display = 'flex';
+
+            let chatId = [currentUserName, targetName].sort().join('_').replace(/[.#$\[\]]/g, '');
+            if(privateMessagesRef) privateMessagesRef.off();
+            
+            privateMessagesRef = db.ref(`private_chats/${chatId}/messages`);
+            privateMessagesRef.limitToLast(50).on('child_added', snapshot => {
+                let data = snapshot.val();
+                let container = document.getElementById('privateChatContainer');
+                let msgDiv = document.createElement('div');
+                msgDiv.className = 'message';
+
+                if(data.type === 'image') {
+                    msgDiv.innerHTML = `<div><b>${data.name}:</b><br><img src="${data.imageUrl}" style="max-width:200px; border-radius:6px; margin-top:5px;"> <span style="float:left; font-size:10px; color:#888;">${data.time}</span></div>`;
+                } else {
+                    msgDiv.innerHTML = `<div><b>${data.name}:</b> ${data.text} <span style="float:left; font-size:10px; color:#888;">${data.time}</span></div>`;
+                }
+                container.appendChild(msgDiv);
+                container.scrollTop = container.scrollHeight;
+            });
+        }
+
+        function closePrivateChatScreen() {
+            document.getElementById('privateChatScreen').style.display = 'none';
+            if(privateMessagesRef) privateMessagesRef.off();
+        }
+
+        function sendPrivateMessage() {
+            let input = document.getElementById('privateMessageInput');
+            let text = input.value.trim();
+            if(text !== '' && activePrivateTarget) {
+                let chatId = [currentUserName, activePrivateTarget].sort().join('_').replace(/[.#$\[\]]/g, '');
+                db.ref(`private_chats/${chatId}/messages`).push({
+                    name: currentUserName,
+                    text: text,
+                    time: new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
+                });
+                input.value = '';
+            }
+        }
+
+        function sendPrivateImage(event) {
+            let file = event.target.files[0];
+            if(file && activePrivateTarget) {
+                let reader = new FileReader();
+                reader.onload = function(e) {
+                    let chatId = [currentUserName, activePrivateTarget].sort().join('_').replace(/[.#$\[\]]/g, '');
+                    db.ref(`private_chats/${chatId}/messages`).push({
+                        type: 'image',
+                        name: currentUserName,
+                        imageUrl: e.target.result,
+                        time: new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
+                    });
+                }
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function openPrivateListTab() {
+            alert('اضغط على اسم أي مستخدم من قائمة المتواجدين لفتح صفحة الدردشة الخاصة الكاملة معه.');
+        }
+
         function loadOnlineUsers() {
             let sidebarList = document.getElementById('sidebarUsersList');
             let mobileList = document.getElementById('onlineUsersListMobile');
+            let adminList = document.getElementById('adminUserControlList');
             let countPC = document.getElementById('onlineCountPC');
             let countMobile = document.getElementById('onlineCountMobile');
 
             db.ref(`rooms_data/${currentRoom}/online_users`).on('value', (snapshot) => {
                 sidebarList.innerHTML = '';
                 mobileList.innerHTML = '';
+                adminList.innerHTML = '';
                 let count = 0;
 
                 snapshot.forEach((childSnapshot) => {
@@ -426,15 +651,26 @@
 
                     let genderIcon = user.gender === 'ذكر' ? '👦' : '👧';
                     let itemHTML = `
-                        <div class="online-user-item" onclick='openUserProfile(${JSON.stringify(user)})'>
+                        <div class="online-user-item" onclick="openPrivateChat('${user.name}')">
                             <img src="${user.avatar}" alt="img">
                             <div style="flex:1; overflow:hidden;">
                                 <div style="font-weight:bold; color:${user.color}">${user.name} ${genderIcon}</div>
-                                <div style="font-size:10px; color:#888;">${user.country}</div>
+                                <div style="font-size:10px; color:#888;">${user.status}</div>
                             </div>
                         </div>`;
                     sidebarList.innerHTML += itemHTML;
                     mobileList.innerHTML += itemHTML;
+
+                    if(userRole === "مدير" || userRole === "مشرف") {
+                        adminList.innerHTML += `
+                            <div class="list-row">
+                                <span style="color:${user.color}">${user.name} (${user.role})</span>
+                                <div style="display:flex; gap:5px;">
+                                    <button onclick="adminAction('mute', '${user.name}')" style="background:#fbc531; border:none; padding:3px 6px; border-radius:3px; cursor:pointer;">كتم</button>
+                                    <button onclick="adminAction('kick', '${user.name}')" style="background:#e84118; color:#fff; border:none; padding:3px 6px; border-radius:3px; cursor:pointer;">طرد</button>
+                                </div>
+                            </div>`;
+                    }
                 });
 
                 countPC.innerText = count;
@@ -442,83 +678,42 @@
             });
         }
 
-        function openUserProfile(user) {
-            if(user.name === currentUserName) {
-                alert('هذا هو حسابك الشخصي.');
-                return;
-            }
-            selectedTargetUser = user;
-            
-            document.getElementById('profileAvatar').src = user.avatar;
-            document.getElementById('profileName').innerText = user.name;
-            document.getElementById('profileGender').innerText = user.gender;
-            document.getElementById('profileAge').innerText = user.age + " سنة";
-            document.getElementById('profileCountry').innerText = user.country;
-
-            document.getElementById('userProfileModal').style.display = 'flex';
-        }
-
-        function openPrivateChatRoom() {
-            if(!selectedTargetUser) return;
-            closeModal('userProfileModal');
-            closeModal('onlineScreen');
-
-            let sortedNames = [currentUserName, selectedTargetUser.name].sort();
-            activePrivateChatKey = "private_" + sortedNames[0].replace(/[^a-zA-Z0-9]/g, "_") + "_" + sortedNames[1].replace(/[^a-zA-Z0-9]/g, "_");
-
-            document.getElementById('privateTargetTitle').innerText = selectedTargetUser.name;
-            document.getElementById('privateChatContainer').innerHTML = '';
-            document.getElementById('privateChatRoomModal').style.display = 'flex';
-
-            loadPrivateMessages();
-        }
-
-        function closePrivateChatRoomModal() {
-            document.getElementById('privateChatRoomModal').style.display = 'none';
-            if(activePrivateChatKey) {
-                db.ref(`private_chats/${activePrivateChatKey}/messages`).off();
-            }
-        }
-
-        function sendPrivateMessage() {
-            let input = document.getElementById('privateMessageInput');
-            let text = input.value.trim();
-            if(text !== '' && activePrivateChatKey) {
-                db.ref(`private_chats/${activePrivateChatKey}/messages`).push({
-                    sender: currentUserName,
-                    text: text,
-                    color: customColor,
-                    time: new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
-                });
-                input.value = '';
-            }
-        }
-
-        function loadPrivateMessages() {
-            db.ref(`private_chats/${activePrivateChatKey}/messages`).on('child_added', snapshot => {
-                let data = snapshot.val();
-                let container = document.getElementById('privateChatContainer');
-                let msgDiv = document.createElement('div');
-                msgDiv.className = 'message';
-                msgDiv.innerHTML = `<div><span class="user-name" style="color:${data.color}">${data.sender}:</span> ${data.text} <span style="float:left; font-size:10px; color:#888;">${data.time}</span></div>`;
-                container.appendChild(msgDiv);
-                container.scrollTop = container.scrollHeight;
-            });
-        }
-
         function updateAllRoomsCounts() {
             const rooms = [
+                { name: 'غرفة مناي 🇵🇸', id: 'count-room-0' },
                 { name: 'غرفة فلسطين العامة 🇵🇸', id: 'count-room-1' },
                 { name: 'غرفة الأردن النشامى 🇯🇴', id: 'count-room-2' },
                 { name: 'غرفة مصر المحروسة 🇪🇬', id: 'count-room-3' },
                 { name: 'غرفة السعودية 🇸🇦', id: 'count-room-4' }
             ];
+
             rooms.forEach(room => {
                 db.ref(`rooms_data/${room.name}/online_users`).on('value', snap => {
+                    let c = snap.numChildren();
                     let el = document.getElementById(room.id);
-                    if(el) el.innerText = `متصلون: ${snap.numChildren()}`;
+                    if(el) el.innerText = `متصلون: ${c}`;
                 });
             });
+        }
+
+        function adminAction(actionType, targetUserName) {
+            if(actionType === 'mute') {
+                db.ref(`rooms_data/${currentRoom}/muted/${targetUserName}`).set(true).then(() => alert(`تم كتم العضو ${targetUserName}.`));
+            } else if(actionType === 'kick') {
+                db.ref(`rooms_data/${currentRoom}/kicked/${targetUserName}`).set(true);
+                db.ref(`rooms_data/${currentRoom}/messages`).push({
+                    type: 'system',
+                    text: `⚠️ تم طرد العضو ${targetUserName} بواسطة الإدارة.`,
+                    time: new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
+                });
+                db.ref(`rooms_data/${currentRoom}/online_users`).once('value', snapshot => {
+                    snapshot.forEach(child => {
+                        if(child.val().name === targetUserName) {
+                            db.ref(`rooms_data/${currentRoom}/online_users/${child.key}`).remove();
+                        }
+                    });
+                });
+            }
         }
 
         function sendAdminAlert() {
@@ -535,7 +730,9 @@
         }
 
         function saveSettings() {
+            userStatus = document.getElementById('userStatusSelect').value + " - " + document.getElementById('customStatusInput').value;
             customColor = document.getElementById('nameColorInput').value;
+            fontSize = document.getElementById('fontSizeSelect').value;
             localStorage.setItem('chat_user_color', customColor);
             alert('تم حفظ الإعدادات بنجاح!');
             closeModal('settingsScreen');
@@ -544,6 +741,7 @@
         function toggleTheme(theme) { document.body.setAttribute('data-theme', theme); }
         function openModal(id) { document.getElementById(id).style.display = 'flex'; }
         function closeModal(id) { document.getElementById(id).style.display = 'none'; }
+
         function toggleEmojiPicker() {
             let picker = document.getElementById('emojiPicker');
             picker.style.display = picker.style.display === 'flex' ? 'none' : 'flex';
