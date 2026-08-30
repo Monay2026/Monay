@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>شات <span class="shining-text">مناي</span> فلسطين PS</title>
+    <title><span class="shining-text">شات مناي فلسطين PS</span></title>
     <style>
         :root {
             --bg-color: #ffffff;
@@ -25,25 +25,48 @@
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: Tahoma, sans-serif; }
         body { background-color: var(--bg-color); color: var(--text-color); height: 100vh; display: flex; flex-direction: column; overflow: hidden; transition: background 0.3s, color 0.3s; }
         
-        /* تأثير الوميض المتحرك لاسم مناي */
+        /* تأثير الوميض المتحرك لجميع الألوان */
         @keyframes shiningAnimation {
             0% { color: #ff0055; text-shadow: 0 0 5px #ff0055, 0 0 10px #ff77a9; }
-            33% { color: #00ffcc; text-shadow: 0 0 5px #00ffcc, 0 0 10px #77ffec; }
-            66% { color: #ffcc00; text-shadow: 0 0 5px #ffcc00, 0 0 10px #ffee77; }
+            25% { color: #00ffcc; text-shadow: 0 0 5px #00ffcc, 0 0 10px #77ffec; }
+            50% { color: #ffcc00; text-shadow: 0 0 5px #ffcc00, 0 0 10px #ffee77; }
+            75% { color: #7b2cbf; text-shadow: 0 0 5px #7b2cbf, 0 0 10px #c77dff; }
             100% { color: #ff0055; text-shadow: 0 0 5px #ff0055, 0 0 10px #ff77a9; }
         }
         .shining-text {
-            animation: shiningAnimation 2s infinite;
+            animation: shiningAnimation 3s infinite;
             font-weight: bold;
             display: inline-block;
         }
 
+        /* أنماط وميض مختلفة للترحيب التلقائي */
+        @keyframes welcomeFlash1 {
+            0% { color: #ff4757; transform: scale(1); }
+            50% { color: #2ed573; transform: scale(1.02); text-shadow: 0 0 8px #2ed573; }
+            100% { color: #ff4757; transform: scale(1); }
+        }
+        @keyframes welcomeFlash2 {
+            0% { color: #1e90ff; text-shadow: 0 0 5px #1e90ff; }
+            50% { color: #ffa502; text-shadow: 0 0 10px #ffa502; }
+            100% { color: #1e90ff; text-shadow: 0 0 5px #1e90ff; }
+        }
+        @keyframes welcomeFlash3 {
+            0% { color: #9b59b6; }
+            50% { color: #e67e22; text-shadow: 0 0 12px #e67e22; }
+            100% { color: #9b59b6; }
+        }
+
+        .welcome-msg-1 { animation: welcomeFlash1 2s infinite; font-weight: bold; }
+        .welcome-msg-2 { animation: welcomeFlash2 2s infinite; font-weight: bold; }
+        .welcome-msg-3 { animation: welcomeFlash3 2s infinite; font-weight: bold; }
+
         /* شاشة تسجيل الدخول */
         #loginScreen { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--bg-color); display: flex; justify-content: center; align-items: center; z-index: 400; }
         .login-box { background: var(--panel-bg); padding: 25px; border-radius: 12px; width: 330px; display: flex; flex-direction: column; gap: 12px; border: 1px solid var(--border-color); text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-        .login-box h3 { color: var(--primary-color); }
         .login-box input, .login-box select { width: 100%; padding: 10px; border-radius: 6px; border: 1px solid var(--border-color); outline: none; background: var(--bg-color); color: var(--text-color); font-size: 14px; }
         .login-box button { background: #d90429; color: #fff; border: none; padding: 10px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 15px; }
+        .login-buttons-group { display: flex; gap: 8px; }
+        .login-buttons-group button { flex: 1; }
 
         /* الشريط العلوي العام */
         .top-main-bar { background-color: var(--header-bg); color: #fff; display: flex; justify-content: space-between; align-items: center; padding: 10px 15px; font-size: 13px; border-bottom: 1px solid var(--border-color); }
@@ -71,7 +94,7 @@
         .modal-close-btn { background: #d90429; color: #fff; border: none; padding: 5px 12px; border-radius: 4px; cursor: pointer; font-size: 13px; }
         .modal-body { flex: 1; padding: 15px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; }
 
-        /* قائمة السمايلات الـ 50 */
+        /* قائمة السمايلات */
         #emojiPicker { display: none; background: var(--panel-bg); border: 1px solid var(--border-color); padding: 10px; border-radius: 8px; gap: 8px; flex-wrap: wrap; max-height: 180px; overflow-y: auto; position: absolute; bottom: 70px; right: 15px; z-index: 150; width: 280px; justify-content: center; }
         .emoji-btn { background: none; border: none; font-size: 22px; cursor: pointer; padding: 3px; }
 
@@ -81,7 +104,7 @@
         .input-btn { background: none; border: none; font-size: 18px; cursor: pointer; color: var(--text-color); position: relative; }
         .send-btn { background: var(--primary-color); border: none; color: #fff; padding: 8px 16px; border-radius: 20px; cursor: pointer; font-size: 14px; }
 
-        /* التنقل السفلي */
+        /* التنقل السفلي يظهر للجميع (موبايل وكمبيوتر) */
         .bottom-nav { background-color: var(--header-bg); display: flex; justify-content: space-around; padding: 10px 0; border-top: 1px solid var(--border-color); font-size: 11px; color: #fff; }
         .nav-item { display: flex; flex-direction: column; align-items: center; cursor: pointer; color: #a5b4fc; position: relative; }
         .badge-dot { position: absolute; top: 0; right: 8px; background: #d90429; color: #fff; border-radius: 50%; width: 14px; height: 14px; font-size: 9px; display: flex; justify-content: center; align-items: center; display: none; }
@@ -101,7 +124,7 @@
     <!-- شاشة تسجيل الدخول -->
     <div id="loginScreen">
         <div class="login-box">
-            <h3>شات <span class="shining-text">مناي</span> فلسطين PS</h3>
+            <h3 class="shining-text">شات مناي فلسطين PS</h3>
             <input type="text" id="guestName" placeholder="أدخل إسمك المستعار...">
             <select id="guestGender">
                 <option value="">تحديد الجنس</option>
@@ -113,11 +136,14 @@
                 <option value="https://i.imgur.com/GZ4w2Cm.png">رمز افتراضي 2</option>
                 <option value="https://i.imgur.com/9R56m6a.png">رمز مميز 3</option>
             </select>
-            <button onclick="enterChat()">دخول إلى الشات</button>
+            <div class="login-buttons-group">
+                <button onclick="enterChat('ضيف')">دخول كضيف</button>
+                <button onclick="enterChat('عضو')" style="background: #0077b6;">دخول كعضو</button>
+            </div>
         </div>
     </div>
 
-    <!-- نافذة المتصلين (أسفل الشاشة) -->
+    <!-- نافذة المتصلين -->
     <div id="onlineScreen" class="modal-screen">
         <div class="modal-header">
             <span>المتصلون الآن (<span id="onlineCountMobile">0</span>)</span>
@@ -172,7 +198,7 @@
                 <input type="text" id="customStatusInput" placeholder="اكتب حالتك الخاصة...">
             </div>
             <div class="setting-group">
-                <label>لون الخط واسم المستخدم (يتم حفظه تلقائياً)</label>
+                <label>لون الخط واسم المستخدم</label>
                 <input type="color" id="nameColorInput" value="#0077b6">
             </div>
             <div class="setting-group">
@@ -204,7 +230,7 @@
     <!-- لوحة المشرفين -->
     <div id="adminPanelModal" class="modal-screen">
         <div class="modal-header">
-            <span>لوحة تحكم المشرفين (إدارة الغرفة)</span>
+            <span>لوحة تحكم المشرفين</span>
             <button class="modal-close-btn" onclick="closeModal('adminPanelModal')">إغلاق</button>
         </div>
         <div class="modal-body">
@@ -230,13 +256,12 @@
         </div>
 
         <div class="chat-layout">
-            <!-- صندوق المحادثة العام -->
             <div class="main-chat-wrapper">
                 <div class="chat-container" id="chatContainer">
-                    <div class="message system-notice">أهلاً بك في شات <span class="shining-text">مناي</span> فلسطين. تم تحديث الميزات بنجاح.</div>
+                    <div class="message system-notice">أهلاً بك في <span class="shining-text">شات مناي فلسطين</span>. تم التحديث بنجاح.</div>
                 </div>
 
-                <!-- قائمة الـ 50 سمايل -->
+                <!-- قائمة السمايلات الـ 50 -->
                 <div id="emojiPicker">
                     <button class="emoji-btn" onclick="addEmoji('😀')">😀</button><button class="emoji-btn" onclick="addEmoji('😃')">😃</button><button class="emoji-btn" onclick="addEmoji('😄')">😄</button><button class="emoji-btn" onclick="addEmoji('😁')">😁</button><button class="emoji-btn" onclick="addEmoji('😆')">😆</button>
                     <button class="emoji-btn" onclick="addEmoji('😅')">😅</button><button class="emoji-btn" onclick="addEmoji('🤣')">🤣</button><button class="emoji-btn" onclick="addEmoji('😂')">😂</button><button class="emoji-btn" onclick="addEmoji('🙂')">🙂</button><button class="emoji-btn" onclick="addEmoji('🙃')">🙃</button>
@@ -258,14 +283,14 @@
                 </div>
             </div>
 
-            <!-- قائمة المتواجدين الجانبية (للكمبيوتر) -->
+            <!-- قائمة المتواجدين الجانبية (كمبيوتر) -->
             <div class="sidebar-online">
                 <div class="sidebar-title">المتواجدون (<span id="onlineCountPC">0</span>)</div>
                 <div id="sidebarUsersList" style="display:flex; flex-direction:column; gap:5px;"></div>
             </div>
         </div>
 
-        <!-- التنقل والأزرار أسفل الشاشة فقط -->
+        <!-- شريط التنقل السفلي يظهر للجميع (موبايل وكمبيوتر) -->
         <div class="bottom-nav">
             <div class="nav-item" onclick="openModal('settingsScreen')">⚙️<span>الإعدادات</span></div>
             <div class="nav-item" onclick="openModal('onlineScreen')">👥<span>المتصلين</span><span id="onlineBadge" class="badge-dot"></span></div>
@@ -306,20 +331,27 @@
         let mediaRecorder = null;
         let audioChunks = [];
         let unreadPrivateCount = 0;
+        let autoWelcomeInterval = null;
 
         document.getElementById('nameColorInput').value = customColor;
 
-        function enterChat() {
+        function enterChat(loginType) {
             let name = document.getElementById('guestName').value.trim();
             let gender = document.getElementById('guestGender').value;
             let avatar = document.getElementById('guestAvatar').value;
 
             if(name === '' || gender === '') { alert('الرجاء إكمال بيانات الدخول والجنس'); return; }
             
-            // دمج علم فلسطين 🇵🇸 مع اسم المستخدم تلقائياً قبل الدخول
+            // إضافة علم فلسطين 🇵🇸 تلقائياً لاسم المستخدم
             currentUserName = name + " 🇵🇸";
             currentGender = gender;
             currentAvatar = avatar;
+
+            if(loginType === 'عضو') {
+                userRole = "عضو مسجل";
+            } else {
+                userRole = "ضيف";
+            }
 
             if(name.toLowerCase().includes('مدير') || name.toLowerCase().includes('admin')){
                 userRole = "مدير";
@@ -330,6 +362,7 @@
             document.getElementById('loginScreen').style.display = 'none';
             initUserSession();
             updateAllRoomsCounts();
+            startAutoWelcome(); // بدء إرسال الترحيب التلقائي كل 30 ثانية
         }
 
         function initUserSession() {
@@ -344,7 +377,7 @@
             });
             userRef.onDisconnect().remove();
 
-            // رسالة الترحيب المطلوبة عند دخول الزائر
+            // رسالة الترحيب الخاصة بدخول المستخدم
             db.ref(`rooms_data/${currentRoom}/messages`).push({
                 type: 'system',
                 text: `أهلاً وسهلاً بك بشات مناي فلسطين نورتنا بحضورك الرائع (${currentUserName}) ✨`,
@@ -353,6 +386,32 @@
 
             loadMessages();
             loadOnlineUsers();
+        }
+
+        // نظام الترحيب التلقائي كل 30 ثانية برسائل وألوان وميض جديدة ومتنوعة
+        function startAutoWelcome() {
+            if(autoWelcomeInterval) clearInterval(autoWelcomeInterval);
+            
+            const welcomeTemplates = [
+                { text: "✨ شات مناي يرحب بالجميع، أهلاً بكل الحضور الراقي أنرتم الغرفة بوجودكم العطر! 🌸", cls: "welcome-msg-1" },
+                { text: "🌟 عائلة شات مناي فلسطين ترحب بكم جميعاً، نسعد بتواجدكم الجميل معنا طوال الوقت! 💙", cls: "welcome-msg-2" },
+                { text: "🔥 مرحباً بكل الأصدقاء الأحباء في شات مناي، نتمنى لكم أوقاتاً ممتعة ومميزة معنا! 🌹", cls: "welcome-msg-3" },
+                { text: "💎 أهلاً بالجميع في واحة شات مناي فلسطين، حضوركم يزيل النور ويملأ المكان بهجة وسرور! ✨", cls: "welcome-msg-1" },
+                { text: "🚀 شات مناي يحيي كل المتواجدين الآن، نتمنى لكم محادثات طيبة وأوقات رائعة بصحبتنا! 🌺", cls: "welcome-msg-2" }
+            ];
+
+            autoWelcomeInterval = setInterval(() => {
+                // يتم إرسال الترحيب تلقائياً من أول مستخدم متصل لعدم تكرار الرسائل من نفس العميل بشكل مفرط
+                let randomIndex = Math.floor(Math.random() * welcomeTemplates.length);
+                let selectedNotice = welcomeTemplates[randomIndex];
+
+                db.ref(`rooms_data/${currentRoom}/messages`).push({
+                    type: 'auto_welcome',
+                    text: selectedNotice.text,
+                    className: selectedNotice.cls,
+                    time: new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
+                });
+            }, 30000); // كل 30 ثانية
         }
 
         function switchRoom(roomName, flag) {
@@ -370,6 +429,7 @@
 
         function exitChat() {
             if(userRef) userRef.remove();
+            if(autoWelcomeInterval) clearInterval(autoWelcomeInterval);
             location.reload();
         }
 
@@ -437,6 +497,9 @@
                 if(data.type === 'system') {
                     msgDiv.className = 'message system-notice';
                     msgDiv.innerText = data.text;
+                } else if(data.type === 'auto_welcome') {
+                    msgDiv.className = `message system-notice ${data.className || ''}`;
+                    msgDiv.innerHTML = data.text;
                 } else if(data.type === 'admin_alert') {
                     msgDiv.className = 'message admin-notice';
                     msgDiv.innerHTML = `⚠️ <b>تنبيه إداري:</b> ${data.text}`;
