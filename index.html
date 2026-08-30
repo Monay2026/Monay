@@ -1,4 +1,4 @@
-function loadOnlineUsers() {
+Function loadOnlineUsers() {
             let sidebarList = document.getElementById('sidebarUsersList');
             let mobileList = document.getElementById('onlineUsersListMobile');
             let privateListUser = document.getElementById('privateChatsUserList');
@@ -8,16 +8,16 @@ function loadOnlineUsers() {
 
             let usersRef = db.ref(`rooms_data/${currentRoom}/online_users`);
 
-            // تتبع دخول مستخدم جديد للغرفة
-            usersRef.off('child_added'); // تفادي تكرار الربط
+            // تتبع دخول مستخدم جديد (عضو، زائر، أو اسم وهمي)
+            usersRef.off('child_added');
             usersRef.on('child_added', (childSnapshot) => {
                 let user = childSnapshot.val();
-                // منع تكرار رسالة الدخول لنفس الجلسة الحالية الفورية إن أردت، أو تركها للجميع
-                // إرسال رسالة نظام بدخول الزائر (تجنب تكرارها لنفس الزائر عند إعادة التحميل إذا شئت، أو عرضها فوراً للكل)
-                if(user.name !== currentUserName) {
+                
+                // إرسال رسالة ترحيب تظهر للجميع في الشات
+                if(user && user.name) {
                     db.ref(`rooms_data/${currentRoom}/messages`).push({
                         type: 'system',
-                        text: `🟢 انضم الزائر (${user.name}) إلى الغرفة.`,
+                        text: `✨ أهلاً وسهلاً! شات مناي يرحب بكم بالزائر/العضو (${user.name}).`,
                         time: new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
                     });
                 }
@@ -27,10 +27,12 @@ function loadOnlineUsers() {
             usersRef.off('child_removed');
             usersRef.on('child_removed', (childSnapshot) => {
                 let user = childSnapshot.val();
+                
+                // إرسال رسالة وداع تظهر للجميع في الشات
                 if(user && user.name) {
                     db.ref(`rooms_data/${currentRoom}/messages`).push({
                         type: 'system',
-                        text: `🔴 مغادرة: غادر الزائر (${user.name}) الغرفة.`,
+                        text: `👋 رافقتك السلامة (${user.name})، نتمنى أن تعود إلى شات مناي قريباً.`,
                         time: new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
                     });
                 }
