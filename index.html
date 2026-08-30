@@ -324,7 +324,6 @@
         let customColor = localStorage.getItem('chat_user_color') || ('#' + Math.floor(Math.random()*16777215).toString(16));
         let fontSize = "14px";
         let userStatus = "متصل 🟢";
-        let isMuted = false;
         let isBlockedList = [];
         let userRef = null;
         let messagesRef = null;
@@ -359,10 +358,19 @@
                 document.getElementById('adminPanelBtn').style.display = 'block';
             }
 
-            document.getElementById('loginScreen').style.display = 'none';
-            initUserSession();
-            updateAllRoomsCounts();
-            startAutoWelcome(); // بدء إرسال الترحيب التلقائي كل 30 ثانية
+            // التحقق مما إذا كان المستخدم مطروداً مسبقاً
+            db.ref(`rooms_data/${currentRoom}/kicked/${currentUserName}`).once('value', snapshot => {
+                if(snapshot.val() === true) {
+                    alert('عذراً، أنت مطرود من هذه الغرفة من قبل الإدارة.');
+                    return;
+                }
+
+                document.getElementById('loginScreen').style.display = 'none';
+                initUserSession();
+                updateAllRoomsCounts();
+                startAutoWelcome(); // بدء إرسال الترحيب التلقائي كل 30 ثانية
+                checkIfKickedLive(); // مراقبة الطرد اللحظي
+            });
         }
 
         function initUserSession() {
@@ -388,6 +396,16 @@
             loadOnlineUsers();
         }
 
+        // مراقبة إذا تم طرد المستخدم الحالي لتتم إرجاعه لشاشة الدخول أو إنهاء جلسته
+        function checkIfKickedLive() {
+            db.ref(`rooms_data/${currentRoom}/kicked/${currentUserName}`).on('value', snapshot => {
+                if(snapshot.val() === true) {
+                    alert('تم طردك من الغرفة بواسطة الإدارة!');
+                    exitChat();
+                }
+            });
+        }
+
         // نظام الترحيب التلقائي كل 30 ثانية برسائل وألوان وميض جديدة ومتنوعة
         function startAutoWelcome() {
             if(autoWelcomeInterval) clearInterval(autoWelcomeInterval);
@@ -401,7 +419,6 @@
             ];
 
             autoWelcomeInterval = setInterval(() => {
-                // يتم إرسال الترحيب تلقائياً من أول مستخدم متصل لعدم تكرار الرسائل من نفس العميل بشكل مفرط
                 let randomIndex = Math.floor(Math.random() * welcomeTemplates.length);
                 let selectedNotice = welcomeTemplates[randomIndex];
 
@@ -434,55 +451,69 @@
         }
 
         function sendMessage() {
-            if(isMuted) { alert('عذراً، أنت مسجل كـ "مكتوم" من قبل الإدارة.'); return; }
-            let input = document.getElementById('messageInput');
-            let text = input.value.trim();
-            if(text !== '') {
-                db.ref(`rooms_data/${currentRoom}/messages`).push({
-                    type: 'chat',
-                    name: currentUserName,
-                    text: text,
-                    color: customColor,
-                    fontSize: fontSize,
-                    role: userRole,
-                    time: new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
-                });
-                input.value = '';
-            }
+            // التحقق الفوري من حالة الكتم من قاعدة البيانات قبل إرسال الرسالة
+            db.ref(`rooms_data/${currentRoom}/muted/${currentUserName}`).once('value', s => {
+                if(s.val() === true) {
+                    alert('عذراً، أنت مكتوم من الإدارة ولا يمكنك الإرسال.');
+                    return;
+                }
+
+                let input = document.getElementById('messageInput');
+                let text = input.value.trim();
+                if(text !== '') {
+                    db.ref(`rooms_data/${currentRoom}/messages`).push({
+                        type: 'chat',
+                        name: currentUserName,
+                        text: text,
+                        color: customColor,
+                        fontSize: fontSize,
+                        role: userRole,
+                        time: new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
+                    });
+                    input.value = '';
+                }
+            });
         }
 
         function toggleRecordAudio() {
-            if (!mediaRecorder || mediaRecorder.state === "inactive") {
-                navigator.mediaDevices.getUserMedia({ audio: true }).then(stream => {
-                    mediaRecorder = new MediaRecorder(stream);
-                    audioChunks = [];
-                    mediaRecorder.ondataavailable = event => audioChunks.push(event.data);
-                    mediaRecorder.onstop = () => {
-                        let audioBlob = new Blob(audioChunks, { type: 'audio/mp3' });
-                        let reader = new FileReader();
-                        reader.readAsDataURL(audioBlob);
-                        reader.onloadend = function() {
-                            let base64Audio = reader.result;
-                            db.ref(`rooms_data/${currentRoom}/messages`).push({
-                                type: 'audio',
-                                name: currentUserName,
-                                audioUrl: base64Audio,
-                                color: customColor,
-                                role: userRole,
-                                time: new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
-                            });
-                        }
-                    };
-                    mediaRecorder.start();
-                    document.getElementById('micBtn').style.color = 'red';
-                    alert('جاري تسجيل الصوت... اضغط مرة أخرى للإيقاف والإرسال.');
-                }).catch(err => {
-                    alert('تعذر الوصول إلى المايكروفون.');
-                });
-            } else {
-                mediaRecorder.stop();
-                document.getElementById('micBtn').style.color = 'var(--text-color)';
-            }
+            db.ref(`rooms_data/${currentRoom}/muted/${currentUserName}`).once('value', s => {
+                if(s.val() === true) {
+                    alert('عذراً، أنت مكتوم من الإدارة ولا يمكنك إرسال رسائل صوتية.');
+                    return;
+                }
+
+                if (!mediaRecorder || mediaRecorder.state === "inactive") {
+                    navigator.mediaDevices.getUserMedia({ audio: true }).then(stream => {
+                        mediaRecorder = new MediaRecorder(stream);
+                        audioChunks = [];
+                        mediaRecorder.ondataavailable = event => audioChunks.push(event.data);
+                        mediaRecorder.onstop = () => {
+                            let audioBlob = new Blob(audioChunks, { type: 'audio/mp3' });
+                            let reader = new FileReader();
+                            reader.readAsDataURL(audioBlob);
+                            reader.onloadend = function() {
+                                let base64Audio = reader.result;
+                                db.ref(`rooms_data/${currentRoom}/messages`).push({
+                                    type: 'audio',
+                                    name: currentUserName,
+                                    audioUrl: base64Audio,
+                                    color: customColor,
+                                    role: userRole,
+                                    time: new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
+                                });
+                            }
+                        };
+                        mediaRecorder.start();
+                        document.getElementById('micBtn').style.color = 'red';
+                        alert('جاري تسجيل الصوت... اضغط مرة أخرى للإيقاف والإرسال.');
+                    }).catch(err => {
+                        alert('تعذر الوصول إلى المايكروفون.');
+                    });
+                } else {
+                    mediaRecorder.stop();
+                    document.getElementById('micBtn').style.color = 'var(--text-color)';
+                }
+            });
         }
 
         function loadMessages() {
@@ -600,14 +631,28 @@
             alert('تم فتح صندوق المحادثات الخاصة الواردة.');
         }
 
+        // دالة التحكم الإداري المحدثة بالكامل مع Firebase
         function adminAction(actionType, targetUserName) {
             if(actionType === 'mute') {
-                alert(`تم كتم العضو ${targetUserName}.`);
+                db.ref(`rooms_data/${currentRoom}/muted/${targetUserName}`).set(true)
+                .then(() => {
+                    alert(`تم كتم العضو ${targetUserName} بنجاح.`);
+                });
             } else if(actionType === 'kick') {
+                db.ref(`rooms_data/${currentRoom}/kicked/${targetUserName}`).set(true);
+                
                 db.ref(`rooms_data/${currentRoom}/messages`).push({
                     type: 'system',
-                    text: `تم طرد العضو ${targetUserName} بواسطة الإدارة.`,
+                    text: `⚠️ تم طرد العضو ${targetUserName} بواسطة الإدارة.`,
                     time: new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
+                });
+
+                db.ref(`rooms_data/${currentRoom}/online_users`).once('value', snapshot => {
+                    snapshot.forEach(child => {
+                        if(child.val().name === targetUserName) {
+                            db.ref(`rooms_data/${currentRoom}/online_users/${child.key}`).remove();
+                        }
+                    });
                 });
             }
         }
