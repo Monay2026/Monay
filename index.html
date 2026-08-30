@@ -8,29 +8,27 @@ function loadOnlineUsers() {
 
             let usersRef = db.ref(`rooms_data/${currentRoom}/online_users`);
 
-            // تتبع دخول مستخدم جديد للغرفة
+            // تتبع دخول مستخدم جديد للغرفة (لكافة الزوار، الأعضاء، البوتات والروبوتات)
             usersRef.off('child_added'); // تفادي تكرار الربط
             usersRef.on('child_added', (childSnapshot) => {
                 let user = childSnapshot.val();
-                // منع تكرار رسالة الدخول لنفس الجلسة الحالية الفورية إن أردت، أو تركها للجميع
-                // إرسال رسالة نظام بدخول الزائر (تجنب تكرارها لنفس الزائر عند إعادة التحميل إذا شئت، أو عرضها فوراً للكل)
-                if(user.name !== currentUserName) {
+                if(user && user.name) {
                     db.ref(`rooms_data/${currentRoom}/messages`).push({
                         type: 'system',
-                        text: `🟢 انضم الزائر (${user.name}) إلى الغرفة.`,
+                        text: `✨ أهلاً وسهلاً بك في شات مناي (${user.name})، نورت الغرفة!`,
                         time: new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
                     });
                 }
             });
 
-            // تتبع خروج مستخدم من الغرفة
+            // تتبع خروج مستخدم من الغرفة (لكافة الزوار، الأعضاء، البوتات والروبوتات)
             usersRef.off('child_removed');
             usersRef.on('child_removed', (childSnapshot) => {
                 let user = childSnapshot.val();
                 if(user && user.name) {
                     db.ref(`rooms_data/${currentRoom}/messages`).push({
                         type: 'system',
-                        text: `🔴 مغادرة: غادر الزائر (${user.name}) الغرفة.`,
+                        text: `👋 رافقتك السلامة (${user.name})، نتمنى أن تعود إلى شات مناي قريباً!`,
                         time: new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
                     });
                 }
