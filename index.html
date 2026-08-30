@@ -78,10 +78,11 @@
         .system-notice { text-align: center; font-size: 12px; color: #2b8a3e; background: rgba(47, 158, 68, 0.1); padding: 8px; border-radius: 6px; margin: 5px 0; font-weight: bold; border: 1px solid #b2f2bb; }
         .admin-notice { background: #ffe3e3; color: #c92a2a; border: 1px solid #ff8787; font-weight: bold; }
 
-        .modal-screen { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--bg-color); z-index: 300; flex-direction: column; }
-        .modal-header { background: var(--panel-bg); padding: 12px 15px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); font-weight: bold; color: var(--primary-color); }
+        /* تعديل النوافذ المنبثقة لتظهر بتصميم أنيق ومنبثق بالكامل على الموبايل والشاشات */
+        .modal-screen { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 90%; max-width: 420px; height: 80vh; background: var(--panel-bg); z-index: 300; flex-direction: column; border-radius: 12px; border: 1px solid var(--border-color); box-shadow: 0 10px 30px rgba(0,0,0,0.3); overflow: hidden; }
+        .modal-header { background: var(--header-bg); padding: 12px 15px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); font-weight: bold; color: var(--primary-color); }
         .modal-close-btn { background: #d90429; color: #fff; border: none; padding: 5px 12px; border-radius: 4px; cursor: pointer; font-size: 13px; }
-        .modal-body { flex: 1; padding: 15px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; }
+        .modal-body { flex: 1; padding: 15px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; background: var(--bg-color); }
 
         #emojiPicker { display: none; background: var(--panel-bg); border: 1px solid var(--border-color); padding: 10px; border-radius: 8px; gap: 8px; flex-wrap: wrap; max-height: 180px; overflow-y: auto; position: absolute; bottom: 70px; right: 15px; z-index: 150; width: 280px; justify-content: center; }
         .emoji-btn { background: none; border: none; font-size: 22px; cursor: pointer; padding: 3px; }
@@ -129,23 +130,22 @@
         </div>
     </div>
 
-    <!-- نافذة المتصلين -->
+    <!-- نافذة المتصلين (منبثقة) -->
     <div id="onlineScreen" class="modal-screen">
         <div class="modal-header">
             <span>المتصلون الآن (<span id="onlineCountMobile">0</span>)</span>
-            <button class="modal-close-btn" onclick="closeModal('onlineScreen')">رجوع</button>
+            <button class="modal-close-btn" onclick="closeModal('onlineScreen')">إغلاق</button>
         </div>
         <div class="modal-body" id="onlineUsersListMobile"></div>
     </div>
 
-    <!-- نافذة الغرف -->
+    <!-- نافذة الغرف (منبثقة) -->
     <div id="roomsScreen" class="modal-screen">
         <div class="modal-header">
             <span>غرف الشات العامة</span>
-            <button class="modal-close-btn" onclick="closeModal('roomsScreen')">رجوع</button>
+            <button class="modal-close-btn" onclick="closeModal('roomsScreen')">إغلاق</button>
         </div>
         <div class="modal-body" id="roomsListContainer">
-            <!-- غرفة مناي في أول القائمة مع علم فلسطين -->
             <div class="list-row" onclick="switchRoom('غرفة مناي', '🇵🇸')" style="border: 1px solid #ff0055;">
                 <span class="shining-text">⭐ غرفة مناي 🇵🇸</span> 
                 <b id="count-room-0" style="font-size:11px; background:#ff0055; color:#fff; padding:2px 6px; border-radius:4px;">متصلون: 0</b>
@@ -169,11 +169,11 @@
         </div>
     </div>
 
-    <!-- نافذة الشات الخاص (تفتح كصفحة كاملة مستقلة بين الشخصين) -->
+    <!-- نافذة الشات الخاص (منبثقة) -->
     <div id="privateChatScreen" class="modal-screen">
         <div class="modal-header">
             <span>محادثة خاصة مع: <b id="privateChatTargetName">---</b></span>
-            <button class="modal-close-btn" onclick="closePrivateChatScreen()">إغلاق الخاص</button>
+            <button class="modal-close-btn" onclick="closePrivateChatScreen()">إغلاق</button>
         </div>
         <div class="modal-body" id="privateChatContainer" style="background: var(--bg-color);">
             <!-- رسائل الخاص -->
@@ -186,7 +186,19 @@
         </div>
     </div>
 
-    <!-- الإعدادات الشخصية -->
+    <!-- نافذة قائمة المحادثات الخاصة النشطة (منبثقة عند الضغط على زر الخاص في الشريط السفلي للموبايل) -->
+    <div id="privateListScreen" class="modal-screen">
+        <div class="modal-header">
+            <span>قائمة المحادثات الخاصة</span>
+            <button class="modal-close-btn" onclick="closeModal('privateListScreen')">إغلاق</button>
+        </div>
+        <div class="modal-body">
+            <p style="font-size:12px; color:var(--primary-color); font-weight:bold; margin-bottom:5px;">اختر عضواً من قائمة المتصلين لبدء محادثة خاص منبثقة:</p>
+            <div id="privateChatsUserList" style="display:flex; flex-direction:column; gap:5px;"></div>
+        </div>
+    </div>
+
+    <!-- الإعدادات الشخصية (منبثقة) -->
     <div id="settingsScreen" class="modal-screen">
         <div class="modal-header">
             <span>الإعدادات والملف الشخصي</span>
@@ -386,7 +398,6 @@
             });
             userRef.onDisconnect().remove();
 
-            // رسالة ترحيبية خاصة عند دخول المستخدم للغرفة باسمه
             db.ref(`rooms_data/${currentRoom}/messages`).push({
                 type: 'system',
                 text: `✨ أهلاً ومرحباً بك يا (${currentUserName}) نورت غرفة مناي فلسطين بوجودك العطر! 🌸`,
@@ -406,7 +417,6 @@
             });
         }
 
-        // نظام الترحيب التلقائي باسم "مناي" كل 30 ثانية في العام مع وميض كامل لكل الجملة
         function startAutoWelcome() {
             if(autoWelcomeInterval) clearInterval(autoWelcomeInterval);
             
@@ -428,7 +438,7 @@
                     className: selectedNotice.cls,
                     time: new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
                 });
-            }, 30000); // كل 30 ثانية
+            }, 30000);
         }
 
         function switchRoom(roomName, flag) {
@@ -564,13 +574,13 @@
             });
         }
 
-        // فتح الدردشة الخاصة كصفحة كاملة مستقلة بين الشخصين
         function openPrivateChat(targetName) {
             if(targetName === currentUserName) return;
             activePrivateTarget = targetName;
             document.getElementById('privateChatTargetName').innerText = targetName;
             document.getElementById('privateChatContainer').innerHTML = '';
-            document.getElementById('privateChatScreen').style.display = 'flex';
+            closeModal('privateListScreen');
+            openModal('privateChatScreen');
 
             let chatId = [currentUserName, targetName].sort().join('_').replace(/[.#$\[\]]/g, '');
             if(privateMessagesRef) privateMessagesRef.off();
@@ -593,7 +603,7 @@
         }
 
         function closePrivateChatScreen() {
-            document.getElementById('privateChatScreen').style.display = 'none';
+            closeModal('privateChatScreen');
             if(privateMessagesRef) privateMessagesRef.off();
         }
 
@@ -629,12 +639,13 @@
         }
 
         function openPrivateListTab() {
-            alert('اضغط على اسم أي مستخدم من قائمة المتواجدين لفتح صفحة الدردشة الخاصة الكاملة معه.');
+            openModal('privateListScreen');
         }
 
         function loadOnlineUsers() {
             let sidebarList = document.getElementById('sidebarUsersList');
             let mobileList = document.getElementById('onlineUsersListMobile');
+            let privateListUser = document.getElementById('privateChatsUserList');
             let adminList = document.getElementById('adminUserControlList');
             let countPC = document.getElementById('onlineCountPC');
             let countMobile = document.getElementById('onlineCountMobile');
@@ -642,6 +653,7 @@
             db.ref(`rooms_data/${currentRoom}/online_users`).on('value', (snapshot) => {
                 sidebarList.innerHTML = '';
                 mobileList.innerHTML = '';
+                privateListUser.innerHTML = '';
                 adminList.innerHTML = '';
                 let count = 0;
 
@@ -660,6 +672,7 @@
                         </div>`;
                     sidebarList.innerHTML += itemHTML;
                     mobileList.innerHTML += itemHTML;
+                    privateListUser.innerHTML += itemHTML;
 
                     if(userRole === "مدير" || userRole === "مشرف") {
                         adminList.innerHTML += `
