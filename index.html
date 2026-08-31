@@ -1,33 +1,905 @@
-<!-- هذا الكود لغرض تعليمي لبناء واجهة دردشة -->
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-100 h-screen flex">
+<!-- saved from url=(0031)https://www.arabic.chat/mobile/ -->
+<html lang="en" class=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style class="vjs-styles-defaults">
+      .video-js {
+        width: 300px;
+        height: 150px;
+      }
 
-    <!-- الشريط الجانبي -->
-    <div class="w-64 bg-gray-900 text-white p-4">
-        <h2 class="text-xl font-bold mb-6">محادثاتي</h2>
+      .vjs-fluid {
+        padding-top: 56.25%
+      }
+    </style>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script type="text/javascript" async="" src="./غرفة║الأردن_files/analytics.js.تنزيل"></script><script type="text/javascript" async="" src="./غرفة║الأردن_files/js"></script><script async="" src="./غرفة║الأردن_files/js(1)"></script>
+<script async="" src="./غرفة║الأردن_files/f.txt"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-175968680-1');
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script async="" src="./غرفة║الأردن_files/js(2)"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WD57JRYBB9');
+</script>
+<!--<base href="https://www.arabic.chat">--><base href=".">
+<link rel="canonical" href="https://www.arabic.chat/">
+<title>غرفة║الأردن</title>
+
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="google-site-verification" content="ga0Hr5mjYQj8aNfc0GKychEXrit5YcFIMu3CAqaUYBU">
+<meta name="clckd" content="609fc88f733ddb3747fc795ca4183b33">
+<meta name="msvalidate.01" content="DD168F18A954BF74CA9EC9F5E4996FE4">
+<meta name="yandex-verification" content="cbced8c2f6ac5217">
+<meta property="fb:app_id" content="287118788775376">
+<meta name="pushsdk" content="77730ffee871914c4efb404e0f5cefe7">
+<meta name="description" content="دردشة عربية إلتقي بأصدقاء عرب جدد من مختلف أنحاء العالم واستمتع بالدردشة الجماعية أو بدء محادثة خاصّة في موقع شات عربي تعارف بدون تسجيل أو اشتراك مجانًا">
+<meta name="keywords" content="شات, دردشة, تعارف, تواصل, تسلية, غرف دردشة, شات عربي, دردشة عربية, عرب شات, شات العرب, شات بنات, شات كتابي, chat, arabchat, arabicchat">
+<meta property="og:title" content="شات عربي | دردشة وتعارف من جميع أنحاء العالم بدون تسجيل مجانًا">
+<meta property="og:description" content="دردشة عربية إلتقي بأصدقاء عرب جدد من مختلف أنحاء العالم واستمتع بالدردشة الجماعية أو بدء محادثة خاصّة في موقع شات عربي تعارف بدون تسجيل أو اشتراك مجانًا">
+<meta property="og:site_name" content="شات عربي | دردشة وتعارف من جميع أنحاء العالم بدون تسجيل مجانًا">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.arabic.chat/">
+<meta property="og:image" content="/default_images/www.arabic.chat/og.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="200">
+<meta property="og:image:height" content="200">
+<meta property="og:image:alt" content="شات عربي | دردشة وتعارف من جميع أنحاء العالم بدون تسجيل مجانًا">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<link rel="shortcut icon" type="image/png" href="https://www.arabic.chat/default_images/www.arabic.chat/icon.png">
+<link rel="apple-touch-icon" href="https://www.arabic.chat/default_images/www.arabic.chat/icon.png">
+
+<link rel="stylesheet" type="text/css" href="./غرفة║الأردن_files/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="./غرفة║الأردن_files/main.css">
+
+<link rel="stylesheet" type="text/css" href="./غرفة║الأردن_files/fonts.css">
+<link id="actual_theme" rel="stylesheet" type="text/css" href="./غرفة║الأردن_files/Lite.css">
+<link rel="stylesheet" type="text/css" href="./غرفة║الأردن_files/responsive.css">
+<script src="./غرفة║الأردن_files/jquery-1.11.2.min.js.تنزيل"></script><meta http-equiv="origin-trial" content="AlK2UR5SkAlj8jjdEc9p3F3xuFYlF6LYjAML3EOqw1g26eCwWPjdmecULvBH5MVPoqKYrOfPhYVL71xAXI1IBQoAAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="Amm8/NmvvQfhwCib6I7ZsmUxiSCfOxWxHayJwyU1r3gRIItzr7bNQid6O8ZYaE1GSQTa69WwhPC9flq/oYkRBwsAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="A9nrunKdU5m96PSN1XsSGr3qOP0lvPFUB2AiAylCDlN5DTl17uDFkpQuHj1AFtgWLxpLaiBZuhrtb2WOu7ofHwEAAACKeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElNdWx0aW1vZGFsSW5wdXQiLCJleHBpcnkiOjE3NzQzMTA0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A93bovR+QVXNx2/38qDbmeYYf1wdte9EO37K9eMq3r+541qo0byhYU899BhPB7Cv9QqD7wIbR1B6OAc9kEfYCA4AAACQeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElNdWx0aW1vZGFsSW5wdXQiLCJleHBpcnkiOjE3NzQzMTA0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A1S5fojrAunSDrFbD8OfGmFHdRFZymSM/1ss3G+NEttCLfHkXvlcF6LGLH8Mo5PakLO1sCASXU1/gQf6XGuTBgwAAACQeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElNdWx0aW1vZGFsSW5wdXQiLCJleHBpcnkiOjE3NzQzMTA0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><script src="./غرفة║الأردن_files/f(1).txt" async="" fetchpriority="high"></script><link href="https://securepubads.g.doubleclick.net/pagead/managed/dict/m202608270101/gpt" rel="compression-dictionary">
+<script src="./غرفة║الأردن_files/language.js.تنزيل"></script>
+<script src="./غرفة║الأردن_files/jquery-ui.min.js.تنزيل"></script>
+<script src="./غرفة║الأردن_files/lc_switch.min.js.تنزيل"></script>
+<script src="./غرفة║الأردن_files/split.js.تنزيل"></script><script esp-signal="true" src="./غرفة║الأردن_files/provider.js.تنزيل"></script><script esp-signal="true" src="./غرفة║الأردن_files/novatiq_gam_integration.min.js.تنزيل"></script><script esp-signal="true" src="./غرفة║الأردن_files/myGaruStandalone.js.تنزيل"></script><script esp-signal="true" src="./غرفة║الأردن_files/esp.js.تنزيل"></script><script esp-signal="true" src="./غرفة║الأردن_files/connectId-gpt.js.تنزيل"></script><script esp-signal="true" src="./غرفة║الأردن_files/publishertag.ids.js.تنزيل"></script><script esp-signal="true" src="./غرفة║الأردن_files/sync.min.js.تنزيل"></script>
+<script async="" src="./غرفة║الأردن_files/3443"></script>
+<!-- <script async src="https://stpd.cloud/saas/8686"></script> -->
+<script src="./غرفة║الأردن_files/cmp-stub.js.تنزيل" data-prop-id="1329"></script>
+<script src="./غرفة║الأردن_files/cmp-v1.js.تنزيل" data-prop-stpd-cmp-id="1329" async=""></script>
+
+<script defer="" src="./غرفة║الأردن_files/jquery.fancybox.js.تنزيل"></script>
+<script defer="" src="./غرفة║الأردن_files/global.min.js.تنزيل"></script>
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="./غرفة║الأردن_files/fontawesome.min.css">
+<link rel="stylesheet" type="text/css" href="./غرفة║الأردن_files/selectboxit.css">
+
+<script src="./غرفة║الأردن_files/api.js.تنزيل" async="" defer=""></script>
+
+
+<script defer="" src="./غرفة║الأردن_files/hyperlist.js.تنزيل"></script>
+
+<link rel="stylesheet" href="./غرفة║الأردن_files/gradients.css" as="style" onload="this.onload=null;this.rel=&#39;stylesheet&#39;">
+<link rel="stylesheet" href="./غرفة║الأردن_files/jquery.fancybox.css" as="style" onload="this.onload=null;this.rel=&#39;stylesheet&#39;">
+<link rel="stylesheet" href="./غرفة║الأردن_files/video-js.css" as="style" onload="this.onload=null;this.rel=&#39;stylesheet&#39;">
+<link rel="stylesheet" href="./غرفة║الأردن_files/spectrum.min.css" as="style" onload="this.onload=null;this.rel=&#39;stylesheet&#39;">
+
+<script src="./غرفة║الأردن_files/split_logged.js.تنزيل"></script>
+<script defer="" src="./غرفة║الأردن_files/setting.js.تنزيل"></script>
+<script async="" src="./غرفة║الأردن_files/video.min.js.تنزيل"></script>
+<script async="" src="./غرفة║الأردن_files/spectrum.min.js.تنزيل"></script>
+
+    <link rel="stylesheet" type="text/css" href="./غرفة║الأردن_files/rtl.css">
+<link rel="stylesheet" type="text/css" href="./غرفة║الأردن_files/custom.css">
+<link rel="stylesheet" type="text/css" href="./غرفة║الأردن_files/cgrads.css" id="cgradstl">
+<script>
+    var pageEmbed = 0;
+    var pageRoom = 1;
+    var curPage = 'chat';
+    var loadPage = '';
+    var bbfv = '2.03';
+    var rtlMode = '1';
+    var use_turnstile = 1;
+    var turnstile_key = '0x4AAAAAADU34IvTupuTz8V2';
+    var recapt = 0;
+    var recaptKey = 'a5ccb459-8f53-41f9-a018-22bd953597d5';
+
+
+    
+
+    window.addEventListener('error', function(event) {
+        $.post('/collect/e.php', {e: event.error.message + "\n" + event.error.stack}, function(response) {
+            if(response == 1) {
+                location.reload(true);
+            }
+        });
+    });
+
+    var user_rank = '0';
+    var user_id = '132469631';
+    var user_theme = 'Lite';
+    var utk = '7aee11e23dc0619b529b9e74e2462ed7';
+    var avw = 6;
+    var fmw = 30;
+    var geoStatus = 0;
+    var fake_name = '';
+    var logged = 1;
+    var logged_time = 1788166207;
+    var user_verified = 0;
+    var user_room = '1036';
+    var sesid = '1';
+    var my_id = '132469631';
+    var userAction = '0';
+    var tAction = '0';
+    var pCount = "0";
+
+    var source = "https://9090streaming.mobtada.com/9090FMEGYPT";
+    var speed = 1500;
+    var balStart = 1;
+    var inOut = 0;
+    var snum = "1324696314463211";
+    var uSound = 2;
+    var rightHide = 900;
+    var rightHide2 = 901;
+    var leftHide = 9999;
+    var leftHide2 = 9999;
+
+    // var defRightWidth = window.innerWidth > 480 ? 300 : 320;
+
+    var defRightWidth = boomAllow(89) ? (window.innerWidth > 480 ? 255 : 245) : (window.innerWidth > 480 ? 255 : 320);
+
+    // var defRightWidth = (1 || boomAllow(89)) ? (window.innerWidth > 480 ? 255 : 245) : 300;
+
+    var defLeftWidth = 180;
+    var regMute = 0;
+    var wsEnabled = 0;
+    var wsActive = false;
+</script>
+
+
+<link rel="preconnect" href="https://challenges.cloudflare.com/">
+<link rel="stylesheet" href="./غرفة║الأردن_files/adnoyer.css" type="text/css"><meta name="theme-color" content="rgb(1, 40, 50)"><link rel="stylesheet" href="./غرفة║الأردن_files/voice.css" type="text/css"><style type="text/css">.fancybox-margin{margin-right:0px;}</style><style id="stpd-cmp-style-css">.stpd_cmp hr{all:revert;box-sizing:content-box;height:0;overflow:visible}.stpd_cmp pre{all:revert;font-family:monospace,monospace;font-size:1em}.stpd_cmp a{all:revert;background-color:transparent}.stpd_cmp abbr[title]{all:revert;border-bottom:none;text-decoration:underline;text-decoration:underline dotted}.stpd_cmp b,.stpd_cmp strong{all:revert;font-weight:bolder}.stpd_cmp small{all:revert;font-size:80%}.stpd_cmp img{border-style:none}.stpd_cmp button,.stpd_cmp input{font-family:inherit;font-size:100%;line-height:1.15;margin:0;overflow:visible}.stpd_cmp button,.stpd_cmp select{text-transform:none}.stpd_cmp [type=button],.stpd_cmp [type=reset],.stpd_cmp [type=submit],.stpd_cmp button{-webkit-appearance:button}.stpd_cmp [type=button]::-moz-focus-inner,.stpd_cmp [type=reset]::-moz-focus-inner,.stpd_cmp [type=submit]::-moz-focus-inner,.stpd_cmp button::-moz-focus-inner{border-style:none;padding:0}.stpd_cmp [type=button]:-moz-focusring,.stpd_cmp [type=reset]:-moz-focusring,.stpd_cmp [type=submit]:-moz-focusring,.stpd_cmp button:-moz-focusring{outline:1px dotted ButtonText}.stpd_cmp [type=checkbox],.stpd_cmp [type=radio]{all:revert;box-sizing:border-box;padding:0}.stpd_cmp [type=number]::-webkit-inner-spin-button,.stpd_cmp [type=number]::-webkit-outer-spin-button{all:revert;height:auto}.stpd_cmp [type=search]{all:revert;-webkit-appearance:textfield;outline-offset:-2px}.stpd_cmp [type=search]::-webkit-search-decoration{all:revert;-webkit-appearance:none}.stpd_cmp [hidden]{all:revert;display:none}.stpd_cmp a,.stpd_cmp b,.stpd_cmp button,.stpd_cmp center,.stpd_cmp dd,.stpd_cmp div,.stpd_cmp dl,.stpd_cmp dt,.stpd_cmp form,.stpd_cmp i,.stpd_cmp img,.stpd_cmp li,.stpd_cmp ol,.stpd_cmp p,.stpd_cmp q,.stpd_cmp s,.stpd_cmp samp,.stpd_cmp section,.stpd_cmp small,.stpd_cmp span,.stpd_cmp strike,.stpd_cmp strong,.stpd_cmp table,.stpd_cmp td,.stpd_cmp th,.stpd_cmp tr,.stpd_cmp u,.stpd_cmp ul{all:revert;border:0;color:#383838;font-family:Arial,Helvetica,sans-serif;font-size:100%;margin:0;padding:0;vertical-align:baseline}.stpd_cmp *{color:inherit}.stpd ul li:before{color:transparent;content:""}button,input{-webkit-tap-highlight-color:rgba(0,0,0,0)}.stpd_cmp ol,.stpd_cmp ul{all:revert;list-style:none}.stpd_cmp img{all:revert;border:none;height:20px;margin:0;padding:0;width:auto}.stpd_cmp table{all:revert;border-collapse:collapse;border-spacing:0}.stpd_cmp{width:100%!important;z-index:2147483647!important}.stpd_cmp p{font-size:14px!important;line-height:1.25em!important;margin-bottom:10px!important;text-align:justify!important}.stpd_cmp a{color:#104e66!important}.stpd_dark.stpd_cmp a{color:#1ab6c5!important}.stpd_cmp button{font-size:12px!important;text-transform:uppercase!important}.stpd_cmp_wrapper{background-color:rgba(94,94,94,.5)!important;height:100%!important;left:0!important;position:fixed!important;top:0!important;width:100%!important;z-index:2147483647!important}.stpd_cmp .stpd_front_title,.stpd_cmp .stpd_title{background-color:transparent!important;font-size:15px!important;font-weight:700!important;left:50%!important;margin:0!important;position:absolute!important;text-align:center!important;top:23px!important;transform:translate(-50%,-50%)!important}.stpd_front_title_wrapper{background-color:transparent!important;padding-bottom:1px!important;padding-top:0!important}.stpd_cmp .stpd_front_title{font-size:20px!important;font-weight:700!important;margin:0!important;text-align:center!important}.stpd_cmp .stpd_value_title{font-size:18px!important;font-weight:700!important;margin-bottom:15px!important}.stpd_cmp .stpd_medium_title{font-size:18px!important;font-weight:700!important;margin:20px 0 10px!important}.stpd_cmp .stpd_small_title{font-weight:700!important;margin:15px 0 10px!important;text-align:left!important}.stpd_cmp h1{font-size:1.5em!important}.stpd_cmp h2{font-size:1.25em!important}.stpd_button_wrapper button{height:40px!important;width:100%!important}.stpd_cmp span{width:100%!important}.stpd_cmp ul{list-style-type:none!important;padding:0!important}.stpd_cmp li{border:1px solid #c7c7c7!important;border-radius:.5em!important;list-style:none!important;margin-bottom:10px!important;padding:0 15px!important}.stpd_cmp ::-webkit-scrollbar-thumb{background-clip:padding-box!important;background-color:transparent!important;border:solid transparent!important;border-radius:2em!important;cursor:pointer!important}.stpd_cmp ::-webkit-scrollbar-track{background:transparent!important}.stpd_cmp_form>div:first-child{display:none!important}.stpd_inner_wrapper{height:100%!important;margin-right:-40px!important;overflow-x:hidden!important;overflow-y:scroll!important;width:100%!important}@-moz-document url-prefix(){.stpd_inner_wrapper{padding-right:40px!important}}.stpd_landing_vendors{cursor:pointer!important;padding:0 4px!important}.stpd_landing_vendors,.stpd_privacy_policy{color:#1ab6c5!important;text-decoration:none!important}.stpd_privacy_policy{margin-left:.2em!important}.stpd_privacy_policy:visited{color:#1ab6c5!important}.stpd_consent_slider_wrapper{margin:20px 0 10px!important}.stpd_consent_box{align-items:center!important;display:flex!important;margin-bottom:15px!important;text-align:left!important;width:100%!important}.stpd_cmp .stpd_vendor_distribution{margin-bottom:0!important;text-align:left!important}.stpd_vendor_distribution_info{display:block!important;margin-bottom:15px!important;text-align:left!important}.stpd_inner>div.stpd_tcf_vendor_desc{width:100%!important}.stpd_vendor_name{font-size:16px!important;margin-bottom:0!important;margin-top:15px!important}.stpd_vendor_privacy_policy{display:block!important;font-size:12px!important;margin-top:5px!important;text-decoration:none!important;width:fit-content!important}.stpd_vendor_privacy_policy:visited{color:#104e66 important}.stpd_dark .stpd_vendor_privacy_policy:visited{color:#1ab6c5!important}.stpd_cmp button{cursor:pointer!important}.stpd_vendor_list_btn{border:none!important;height:20px!important;margin-top:10px!important;width:130px!important;width:100%!important}.stpd_vendor_list_btn,.stpd_vendor_list_btn:hover{background-color:transparent!important;color:#104e66!important}.stpd_vendor_list_btn:hover{text-decoration:underline!important}.stpd_dark .stpd_vendor_list_btn,.stpd_dark .stpd_vendor_list_btn:hover{color:#1ab6c5!important}.stpd_dropdown_wrapper{background-color:#f5f3f3!important;border-top-left-radius:2em!important;border-top-right-radius:2em!important;cursor:pointer!important;padding:0 10px 1px!important}.stpd_dropdown_btn,.stpd_dropdown_btn:hover{background-color:transparent!important;border:none!important;border-top-left-radius:2em!important;border-top-right-radius:2em!important;cursor:pointer!important;height:30px!important;width:100%!important}.stpd_dropdown_titles{font-size:13px!important;font-weight:600!important;margin:15px 0 10px!important;text-align:left!important}.stpd_dropdown_wrapper .stpd_dropdown_ul{list-style-type:disc!important;padding-left:15px!important}.stpd_dropdown_wrapper .stpd_dropdown_li{border:none!important;border-radius:0!important;font-size:13px!important;list-style-type:disc!important;margin:0!important;padding:0 0 10px!important;text-align:left!important}.stpd_switch{display:inline-block!important;height:25px!important;position:relative!important;width:45px!important}.stpd_switch input{height:0!important;opacity:0!important;width:0!important}.stpd_slider{background-color:#888!important;bottom:0!important;cursor:pointer!important;left:0!important;min-width:39px!important;right:0!important;top:0!important}.stpd_slider,.stpd_slider:before{border-radius:2em!important;position:absolute!important;-webkit-transition:.4s!important;transition:.4s!important}.stpd_slider:before{background-color:#fff!important;bottom:2px!important;content:""!important;height:21px!important;left:2px!important;width:21px!important}.stpd_cmp input:checked+.stpd_slider{background-color:#1ab6c5!important}.stpd_cmp input:focus+.stpd_slider{box-shadow:0 0 1px #1ab6c5!important}.stpd_cmp input:checked+.stpd_slider:before{-webkit-transform:translateX(15px)!important;-ms-transform:translateX(15px)!important;transform:translateX(15px)!important}.stpd_toggle_option{font-size:14px!important;font-weight:600!important}.stpd_manual_resurface{height:40px!important;position:fixed!important;width:40px!important;z-index:2147483647!important}.stpd_manual_resurface_tl{left:3px!important;top:4px!important}.stpd_manual_resurface_tr{right:3px!important;top:4px!important}.stpd_manual_resurface_ml{left:3px!important;top:50%!important;transform:translate(-50%)}.stpd_manual_resurface_mr{right:3px!important;top:50%!important;transform:translate(-50%)}.stpd_manual_resurface_bl{bottom:4px!important;left:3px!important}.stpd_manual_resurface_br{bottom:4px!important;right:3px!important}.stpd_manual_resurface .stpd_tooltiptext_l{left:110%!important}.stpd_manual_resurface .stpd_tooltiptext_l:after{left:-6px!important;transform:rotate(180deg)!important}.stpd_manual_resurface .stpd_tooltiptext_r{right:110%!important}.stpd_manual_resurface .stpd_tooltiptext_r:after{left:100%!important}.stpd_manual_resurface button{align-items:center!important;background-color:#ddd!important;border:0 solid!important;border-radius:50%!important;color:#fff!important;display:flex!important;height:100%!important;justify-content:center!important;position:relative;transition:background-color .9s ease!important;width:100%!important}.stpd_manual_resurface button svg{display:block!important}.stpd_manual_resurface button:focus,.stpd_manual_resurface button:hover{background-color:#1ab6c5!important;color:#fff!important}.stpd_manual_resurface .stpd_tooltiptext{background-color:#000!important;border-radius:6px!important;color:#fff!important;font-size:13px!important;padding:7px 0!important;position:absolute!important;text-align:center!important;top:50%;transform:translateY(-50%);visibility:hidden!important;width:180px!important;z-index:1!important}.stpd_manual_resurface .stpd_tooltiptext:after{border:3px solid transparent!important;border-left-color:#000!important;content:""!important;margin-top:-3px!important;position:absolute!important;top:50%!important}.stpd_manual_resurface:hover .stpd_tooltiptext{visibility:visible!important}.stpd_loading{background:transparent!important;border:7px solid transparent!important;border-radius:50%!important;height:80px!important;left:50%!important;position:absolute!important;top:50%!important;transform:translate(-50%,-50%)!important;width:80px!important}.stpd_loading:before{animation:stpd_animateC 2s linear infinite!important;border-right:7px solid transparent!important;border-top:7px solid transparent!important;border-color:#cecece #cecece transparent transparent!important;border-radius:50%!important;border-style:solid!important;border-width:7px!important;content:""!important;height:100%!important;left:-7px!important;position:absolute!important;top:-7px!important;width:100%!important}@media screen and (max-width:500px){.stpd_inner_wrapper{padding-right:10px!important}.stpd_inner_wrapper,.stpd_inner_wrapper.stpd_vendor_wrapper{margin-right:-20px!important}@-moz-document url-prefix(){.stpd_inner_wrapper{padding-right:20px!important}}.stpd_manual_resurface{width:40px!important}.stpd_vendor_list_btn{text-decoration:underline!important}.stpd_return_btn:hover{background-color:transparent!important;color:#e4e4e4!important}}.stpd_button_wrapper{box-shadow:0 -6px 5px -5px rgba(0,0,0,.2)!important;padding-bottom:7px!important;padding-top:10px!important}.stpd_submit_btn{background-color:transparent!important;border:1px solid #104e66!important;border-radius:2rem!important;color:#104e66!important;font-weight:700!important}.stpd_dark .stpd_submit_btn{border:1px solid #1ab6c5!important;color:#1ab6c5!important}.stpd_flexed_btns{display:flex!important;gap:10px!important;padding-bottom:10px!important}.stpd_cmp_close_btn{background-color:transparent!important;border:none!important;cursor:pointer!important;height:19px!important;opacity:.3!important;position:absolute!important;right:15px!important;top:15px!important;width:20px!important}.stpd_cmp_close_btn:hover{background-color:transparent!important;opacity:1!important}.stpd_cmp_close_btn:after,.stpd_cmp_close_btn:before{background-color:#333!important;content:" "!important;height:25px!important;left:9px!important;position:absolute!important;top:-3px!important;width:2px!important}.stpd_cmp_close_btn:before{transform:rotate(45deg)!important}.stpd_cmp_close_btn:after{transform:rotate(-45deg)!important}.stpd_return_btn{background-color:transparent!important;border:none!important;color:#e4e4e4!important;left:15px!important;position:absolute!important;top:11px!important;width:auto!important}.stpd_return_btn span{font-size:16px!important;padding-right:2px!important}.stpd_cmp p.stpd_small_title.stpd_vendor_name{margin-bottom:0!important}.stpd_return_btn:hover{background-color:transparent!important;color:#104e66!important}.stpd_cta_btn{background-color:#104e66!important;color:#fff!important}.stpd_dark .stpd_cta_btn{background-color:#1ab6c5!important;color:#fff!important}.stpd_cta_btn:hover{filter:brightness(93%)!important}.stpd_privacy_link_all_text{font-size:14px!important;padding-bottom:5px!important}.stpd_poweredby_setupad{align-items:center!important;display:flex!important;font-size:11px!important;justify-content:center!important;margin:auto 0 0!important;max-height:16.5px!important;text-align:center!important}.stpd_poweredby_lnk{display:flex!important}.stpd_poweredby_setupad a{height:15px!important}.stpd_poweredby_setupad img{height:15px!important;padding-left:4px!important;width:70px!important}.stpd_flexed_btns .stpd_submit_btn:active,.stpd_flexed_btns .stpd_submit_btn:focus,.stpd_flexed_btns .stpd_submit_btn:hover{filter:brightness(80%)!important}.stpd_cmp .bi-arrow-left-circle-fill{display:block}.stpd_cmp.stpd_dark div,.stpd_cmp.stpd_dark p,.stpd_cmp.stpd_dark span{color:#fff!important}.stpd_cmp.stpd_dark .stpd_cmp_form{background-color:#111!important}.stpd_cmp.stpd_dark .stpd_slider{background-color:transparent!important;border:1px solid #1ab6c5!important}.stpd_cmp.stpd_dark .stpd_slider:before{background-color:#1ab6c5!important;height:19px!important;left:3px!important;width:19px!important}.stpd_cmp.stpd_dark input:checked+.stpd_slider:before{background-color:#111!important;-webkit-transform:translateX(16px)!important;-ms-transform:translateX(16px)!important;transform:translateX(16px)!important}.stpd_cmp.stpd_dark .stpd_return_btn{background-color:#1ab6c5!important;border:1px solid #1ab6c5!important;border-radius:50%!important;color:#111!important}.stpd_cmp.stpd_dark .stpd_return_btn:hover{background-color:transparent!important;color:#1ab6c5!important}.stpd_cmp.stpd_dark .stpd_dropdown_wrapper{background-color:#212121!important;border:1px solid hsla(0,0%,100%,.15)!important;border-bottom:none!important}.stpd_cmp.stpd_dark .stpd_dropdown_wrapper .stpd_dropdown_li{border:none!important;color:#fff!important}.stpd_cmp.stpd_dark .stpd_cmp_close_btn:after,.stpd_cmp.stpd_dark .stpd_cmp_close_btn:before{background-color:#1ab6c5!important;height:20px!important;left:12px!important;top:3px!important}.stpd_cmp.stpd_dark .stpd_cmp_close_btn{border:1px solid #1ab6c5!important;border-radius:50%!important;height:28px!important;opacity:1!important;top:11px!important;width:28px!important}.stpd_cmp.stpd_dark .stpd_cmp_close_btn:hover{background-color:#1ab6c5!important}.stpd_cmp.stpd_dark .stpd_cmp_close_btn:hover:after,.stpd_cmp.stpd_dark .stpd_cmp_close_btn:hover:before{background-color:#111!important}.stpd_cmp.stpd_dark .stpd_manual_resurface button{background-color:#111!important;border:1px solid #1ab6c5!important;color:#1ab6c5!important}.stpd_cmp.stpd_dark .stpd_manual_resurface button:hover{background-color:#1ab6c5!important;border:1px solid #1ab6c5!important;color:#111!important}.stpd_cmp.stpd_dark li{border:1px solid hsla(0,0%,100%,.15)!important}@media screen and (max-width:900px){.stpd_cmp .stpd_cmp_form{background-color:#fff!important;border-radius:32px!important;bottom:auto!important;-webkit-box-sizing:border-box!important;-moz-box-sizing:border-box!important;box-sizing:border-box!important;display:inline-block!important;height:620px!important;left:0!important;margin:auto!important;padding:45px 40px 127px!important;position:absolute!important;right:0!important;top:50%!important;transform:translateY(-50%)!important;vertical-align:middle!important;width:450px!important;z-index:10001!important}.stpd_cmp .stpd_consent_wrapper{margin-left:0!important;min-width:0!important}.stpd_cmp .stpd_button_wrapper{box-shadow:0 -6px 5px -5px rgba(0,0,0,.2)!important}.stpd_cmp .stpd_front_title{position:static!important;transform:translate(0)!important}.stpd_cmp .stpd_value_title{text-align:center!important}.stpd_cmp .stpd_purposes_list{display:block!important}.stpd_cmp .stpd_purposes_list>div{width:100%!important}.stpd_cmp .stpd_purposes_list>div>li{min-height:0!important}.stpd_cmp .stpd_inner{display:block!important}.stpd_cmp .stpd_inner>div{width:100%!important}.stpd_cmp .stpd_inner>div>li{min-height:0!important}}@media screen and (max-width:500px){.stpd_cmp .stpd_cmp_form{padding:45px 20px 127px!important;width:90%!important}.stpd_cmp .stpd_inner_wrapper{margin-right:-20px!important;padding-right:10px!important}.stpd_cmp .stpd_button_wrapper{display:block!important;width:100%!important}.stpd_cmp .stpd_button_wrapper button{overflow:hidden!important;text-overflow:ellipsis!important;width:100%!important}.stpd_cmp .stpd_submit_btn{width:100%!important}.stpd_cmp .stpd_button_wrapper .stpd_submit_btn{flex:1 1!important}.stpd_cmp .stpd_manual_resurface:hover .stpd_tooltiptext{visibility:hidden!important}}@media screen and (max-width:360px){.stpd_cmp .stpd_title{font-size:15px!important}}.stpd_cmp_form{background-color:#fff!important;border-top-left-radius:32px!important;border-top-right-radius:32px!important;bottom:0!important;-webkit-box-sizing:border-box!important;-moz-box-sizing:border-box!important;box-sizing:border-box!important;display:flex!important;gap:20px!important;height:250px!important;margin:auto!important;padding:50px 20px 20px!important;position:fixed!important;vertical-align:middle!important;width:100%!important;z-index:10001!important}.stpd_value_title{font-size:18px!important;font-weight:700!important;margin-bottom:15px!important;text-align:left!important}.stpd_consent_wrapper{display:flex!important;flex-direction:column!important;margin-left:40px!important;min-width:300px!important}.stpd_button_wrapper{box-shadow:none!important}.stpd_purposes_list{display:flex!important;flex-wrap:wrap!important;justify-content:space-between!important}.stpd_purposes_list>div{width:49%!important}.stpd_purposes_list>div>li{display:flex!important;flex-direction:column!important;min-height:297px!important}.stpd_purposes_list>p{width:100%!important}.stpd_purposes_list>div>li.stpd_sm_list_items{min-height:172px!important}.stpd_inner{display:flex!important;flex-wrap:wrap!important;justify-content:space-between!important}.stpd_inner>div{width:49%!important}.stpd_inner>div>li{display:flex;flex-direction:column;min-height:195px!important}@media screen and (max-height:630px) and (max-width:900px){.stpd_cmp .stpd_cmp_form{height:90%!important}}"</style></head><iframe id="goog_plcm_frame" src="./غرفة║الأردن_files/partnerpixels.html" style="display: none;"></iframe>
+<body style="overflow: hidden;">
+
+
+
+<div id="chat_head" class="chat_head">
+    <div onclick="toggleLeft();" class="head_option">
+        <i class="i_btm fa fa-bars"></i>
+        <div id="bottom_news_notify" class="notification bnotify" style="display: block;">347</div>
+    </div>
+                <div class="chat_head_logo" onclick="location.href=&#39;/&#39;" style="cursor: pointer;">
+            <img id="main_logo" alt="logo" src="./غرفة║الأردن_files/logo.png">
+        </div>
+        <div id="empty_top_mob" class="bcell_mid hpad10"></div>
+    <a title="صندوق الرسائل" value="0" onclick="getPrivate();" id="get_private" class="head_option nocolor">
+        <i class="i_btm fa fa-envelope"></i>
+
+                <p style="font-size:12px">رسالة</p>
+        
+        <div id="notify_private" class="notification bnotify" style="display: none;"></div>
+    </a>
+        <div onclick="getNotification();" class="head_option">
+        <i class="fa fa-bell"></i>
+
+                <p style="font-size:12px">إشعار</p>
+        
+        <div id="notify_notify" class="notification bnotify" style="display: block;">2</div>
+    </div>
+    <div onclick="showMenu(&#39;mobile_main_menu&#39;);" id="main_mob_menu" class="head_option">
+		<i class="fa fa-user-circle"></i>
+        		    <p style="font-size:12px">اعدادات</p>
+        		<div id="mobile_main_menu" class="sysmenu hideall sub_menu" style="display: none;">
+			<div class="sub_menu_item" onclick="editProfile();">
+				<div class="sub_menu_icon">
+					<i class="fa fa-user-circle"></i>
+				</div>
+				<div class="sub_menu_text">
+					ملفي الشخصي				</div>
+            </div>
+                            <div id="back_home" class="sub_menu_item">
+                    <div class="sub_menu_icon">
+                        <i class="fa fa-home"></i>
+                    </div>
+                    <div class="sub_menu_text">
+                        قائمة الغرف                    </div>
+                </div>
+                        <div id="room_setting_menu" class="room_granted nogranted sub_menu_item" onclick="getRoomSetting();">
+                <div class="sub_menu_icon">
+                    <i class="fa fa-cog"></i>
+                </div>
+                <div class="sub_menu_text">
+                    إعدادات الغرفة                </div>
+            </div>
+                                    			            <div id="open_logout" class="sub_menu_item" onclick="openLogout();">
+                <div class="sub_menu_icon">
+                    <i class="fa fa-sign-out-alt"></i>
+                </div>
+                <div class="sub_menu_text">
+                    خروج                </div>
+            </div>
+			        </div>
+    </div>
+</div>
+
+<div id="global_chat" class="chatheight" style="height: 308px;">
+
+
+    <div id="chat_left" class="chat_panel pheight cleft2" style="height: 354px; width: 180px; display: none;">
+
+        <div id="chat_left_menu" class="pheight" style="height: 354px;">
+                        <div class="chat_left_menu_wrap">
+                <div class="left_bar_ctn hidden" style="display: block;">
+                    <div id="left_panel_bar" class="panel_bar">
+                        <div onclick="toggleLeft();" class="panel_bar_item">
+                            <i class="fa fa-times"></i>
+                        </div>
+                        <div class="bcell_mid">
+                        </div>
+                    </div>
+                </div>
+
+                                <div id="status_menu" class="list_element">
+                    <div id="current_status" class="left_item cur_status">
+                        <div class="status_icon"><i class="fa online fa-circle"></i></div><div class="status_text">متصل</div>                    </div>
+                    <div id="status_list" class="hidden">
+                        <div class="status_option" data="1"><div class="status_icon"><i class="fa online fa-circle"></i></div><div class="status_text">متصل</div></div><div class="status_option" data="2"><div class="status_icon"><i class="fa absent fa-circle"></i></div><div class="status_text">بعيد</div></div><div class="status_option" data="3"><div class="status_icon"><i class="fa gone fa-circle"></i></div><div class="status_text">مشغول</div></div>                    </div>
+                </div>
+                                                <div id="news_menu" class="list_element left_item" onclick="getNews();">
+                    <div class="left_item_icon">
+                        <i class="fa fa-newspaper menui"></i>
+                    </div>
+                    <div class="left_item_text">
+                        الأخبار                    </div>
+                    <div class="left_item_notify">
+                        <span id="news_notify" class="notif_left bnotify" style="display: inline;">347</span>
+                    </div>
+                </div>
+                <div id="end_left_menu">
+                </div><div id="quiz_score_menu" class="list_element left_item" onclick="openContactUs();"><div class="left_item_icon"><i class="fa fa-envelope menui"></i></div><div class="left_item_text">إتصل بنا</div></div><div id="quiz_score_menu" class="list_element left_item" onclick="getSearchUser();"><div class="left_item_icon"><i class="fa fa-search menui"></i></div><div class="left_item_text">بحث</div></div><div id="quiz_score_menu" class="list_element left_item" onclick="getPointsTop();"><div class="left_item_icon"><i class="fa fa-gem menui"></i></div><div class="left_item_text">كبار الشخصيات</div></div><div id="quiz_score_menu" class="list_element left_item" onclick="getRankGiftsTop();"><div class="left_item_icon"><i class="fa fa-crown menui"></i></div><div class="left_item_text">الأثرياء</div></div>
+                <div id="more_menu" class="list_element">
+                    <div id="open_more_menu" class="left_item" onclick="openMoreMenu();">
+                        <div class="left_item_icon">
+                            <i class="fa fa-plus-circle menui"></i>
+                        </div>
+                        <div class="left_item_text">
+                            المزيد                        </div>
+                    </div>
+                    <div id="more_menu_list" class="hidden">
+                        <div id="chat_help_menu" class="left_drop_item more_left" onclick="showHelp();">
+                            <div class="left_item_icon">
+                                <i class="fa fa-life-ring"></i>
+                            </div>
+                            <div class="left_drop_text">
+                                مساعدة							</div>
+						</div>
+					</div>
+				</div>
+				<div id="news_menu" class="list_element left_item" onclick="window.open(&#39;https://fb.com/www.arabic.chat/&#39;, &#39;_blank&#39;);">
+					<div class="left_item_icon">
+						<i class="fab fa-facebook-f menui"></i>
+					</div>
+					<div class="left_item_text">
+						تابعنا على فيسبوك					</div>
+				</div>
+				<div id="news_menu" class="list_element left_item" onclick="window.open(&#39;https://www.youtube.com/channel/UCAqVwIZ7YNLBuTNpsModPDQ&#39;, &#39;_blank&#39;);">
+					<div class="left_item_icon">
+						<i class="fab fa-youtube input_icon bblock menui"></i>
+					</div>
+					<div class="left_item_text">
+						قناتنا على يوتيوب					</div>
+				</div>
+				<div id="news_menu" class="list_element left_item" onclick="window.open(&#39;https://play.google.com/store/apps/details?id=chat.arabic.arabicapk&amp;hl=ar&amp;gl=US&#39;, &#39;_blank&#39;);">
+					<div class="left_item_icon">
+						<i class="fab fa-android menui"></i>
+					</div>
+					<div class="left_item_text">
+						تطبيق الأندرويد					</div>
+				</div>
+				<div id="news_menu" class="list_element left_item" onclick="window.location.reload(true)">
+					<div class="left_item_icon">
+						<i class="i_btm fas fa-redo menui"></i>
+					</div>
+					<div class="left_item_text">
+						تحديث الصفحة					</div>
+				</div>
+			</div>
+			<div class="container_extra">
+				<!-- extra content for left panel do not exceed 250px width -->
+			</div>
+		</div>
+	</div>
+
+            <div id="chat_tall_left" class="background_chat ad-box" style="display: flex; align-items: center; justify-content: center; height:100%; width: 180px; padding-right: 10px; padding-left: 10px;">
+        <div id="arabic_chat_160x600_in_chat_left_desktop">
+    <script>
+      googletag.cmd.push(function() { googletag.display('arabic_chat_160x600_in_chat_left_desktop'); });
+    </script>
+</div>        </div>
+    
+    <div id="chat_center" class="background_chat chatheight" style="position: relative; height: 308px;">
+        <div id="container_chat">
+            <div id="wrap_chat">
+                <div id="warp_show_chat" style="height: 261px;">
+                    <div id="container_show_chat">
+                        <div id="inside_wrap_chat">
+                            <ul class="background_box" id="show_chat" value="1">
+                                <ul id="chat_logs_container">
+                                <li id="log1859643556" data="1859643556" class="ch_logs public join_log log2"><div class="chat_avatar" onclick="openAvMenu(this, &#39;ليز حلوة&#39;,132466975,0);"><img loading="lazy" class="avsex girl " src="./غرفة║الأردن_files/132466975.svg"></div><div class="my_text"><span class="btable"><span class="cname"><span class="rtl_fright "> <span class="chat_rank"><i style="color: " title="زائر" class="fa fa-"></i></span></span> <span class="chat_message inline "><!-- login1st --> <span class="logmsg"><span data-uid="132466975" class="username bcolor23">ليز حلوة</span> :انضم للغرفة (# زائر #)</span></span><span class=" "> <div onclick="openReport(1859643556, 1);" class="cclear"><i class="fa fa-flag"></i></div></span></span></span></div></li><li id="log1859643566" data="1859643566" class="ch_logs public"><div class="chat_avatar" onclick="openAvMenu(this, &#39;⥄¡!°•ᶰᵒ 𝐍𝐚𝐦𝐞•°!¡⥄&#39;,12625646,31);"><img loading="lazy" class="avsex boy " src="./غرفة║الأردن_files/avatar_user12625646_3819717620880146.jpg"></div><div class="my_text"><span class="btable"><span class="cname"><span class="rtl_fright "> <span class="chat_rank"><i style="color: #ff6600" title="عضو متألق رتبة 31" class="fa fa-fas fa-medal"></i></span><span data-uid="12625646" class="username text_med inline bgrad4">⥄¡!°•ᶰᵒ 𝐍𝐚𝐦𝐞•°!¡⥄</span> : </span> <span class="chat_message inline bcolor17 bolded">ها <img class="emo_chat" src="./غرفة║الأردن_files/يمكن.gif"> </span><span class=" "> <div onclick="openReport(1859643566, 1);" class="cclear"><i class="fa fa-flag"></i></div></span></span></span></div></li><li id="log1859643579" data="1859643579" class="ch_logs public log2"><div class="chat_avatar" onclick="openAvMenu(this, &#39;✨✨🎀سہكُہررة🎀✨✨&#39;,112761170,97);"><div class="grad_small_border pgrad55"><img loading="lazy" class="small_av" src="./غرفة║الأردن_files/avatar_user112761170_3947104045423666.jpg"></div></div><div class="my_text"><span class="btable"><span class="cname"><span class="rtl_fright "> <span class="chat_rank"><i style="color: gray" title="Admin" class="fa fa-star"></i></span><span class="pgrad55 round5"><span data-uid="112761170" class="username text_med inline Arabic21">✨✨🎀سہكُہررة🎀✨✨</span></span> : </span> <span class="chat_message inline bcolor18 bolded">اميره النجف منوورة</span><span class=" "> <div onclick="openReport(1859643579, 1);" class="cclear"><i class="fa fa-flag"></i></div></span></span></span></div></li><li id="log1859643585" data="1859643585" class="ch_logs public join_log"><div class="chat_avatar" onclick="openAvMenu(this, &#39;بدي ديو9&#39;,132469348,0);"><img loading="lazy" class="avsex boy " src="./غرفة║الأردن_files/132469348.svg"></div><div class="my_text"><span class="btable"><span class="cname"><span class="rtl_fright "> <span class="chat_rank"><i style="color: " title="زائر" class="fa fa-"></i></span></span> <span class="chat_message inline "><!-- login1st --> <span class="logmsg"><span data-uid="132469348" class="username bcolor15">بدي ديو9</span> :انضم للغرفة (# زائر #)</span></span><span class=" "> <div onclick="openReport(1859643585, 1);" class="cclear"><i class="fa fa-flag"></i></div></span></span></span></div></li><li id="log1859643589" data="1859643589" class="ch_logs public join_log log2"><div class="chat_avatar" onclick="openAvMenu(this, &#39;شب لمن اقل٠&#39;,132469777,0);"><img loading="lazy" class="avsex boy " src="./غرفة║الأردن_files/132469777.svg"></div><div class="my_text"><span class="btable"><span class="cname"><span class="rtl_fright "> <span class="chat_rank"><i style="color: " title="زائر" class="fa fa-"></i></span></span> <span class="chat_message inline "><!-- login1st --> <span class="logmsg"><span data-uid="132469777" class="username bcolor15">شب لمن اقل٠</span> :انضم للغرفة (# زائر #)</span></span><span class=" "> <div onclick="openReport(1859643589, 1);" class="cclear"><i class="fa fa-flag"></i></div></span></span></span></div></li><li id="log1859643596" data="1859643596" class="ch_logs public"><div class="chat_avatar" onclick="openAvMenu(this, &#39;『عـنـاد⤹ 𝑨𝑵𝑨𝑫 〆 ⤸』&#39;,118347526,17);"><img loading="lazy" class="avsex nosex " src="./غرفة║الأردن_files/avatar_user118347526_9287339386887494.jpg"></div><div class="my_text"><span class="btable"><span class="cname"><span class="rtl_fright "> <span class="chat_rank"><i style="color: " title="عضو مجتهد رتبة 17" class="fa fa-"></i></span><span data-uid="118347526" class="username text_med inline user">『عـنـاد⤹ 𝑨𝑵𝑨𝑫 〆 ⤸』</span> : </span> <span class="chat_message inline ">❀ ملاك ❀ وقلبكي اسعد ملاك <span class="emoji">🌷</span></span><span class=" "> <div onclick="openReport(1859643596, 1);" class="cclear"><i class="fa fa-flag"></i></div></span></span></span></div></li><li id="log1859643611" data="1859643611" class="ch_logs public log2"><div class="chat_avatar" onclick="openAvMenu(this, &#39;𝕭𝖆𝖗𝖍𝖔𝖔𝖒&#39;,93941840,20);"><img loading="lazy" class="avsex boy " src="./غرفة║الأردن_files/avatar_user93941840_4653301565525490.jpg"></div><div class="my_text"><span class="btable"><span class="cname"><span class="rtl_fright "> <span class="chat_rank"><i style="color: #ccc" title="عضو مميز رتبة 20" class="fa fa-fal fa-gem"></i></span><span data-uid="93941840" class="username text_med inline ">𝕭𝖆𝖗𝖍𝖔𝖔𝖒</span> : </span> <span class="chat_message inline "><span class="emoji">✨</span><span class="emoji">✨</span><span class="emoji">🎀</span>سہكُہررة<span class="emoji">🎀</span><span class="emoji">✨</span><span class="emoji">✨</span> اوكيشن</span><span class=" "> <div onclick="openReport(1859643611, 1);" class="cclear"><i class="fa fa-flag"></i></div></span></span></span></div></li><li id="log1859643612" data="1859643612" class="ch_logs public"><div class="chat_avatar" onclick="openAvMenu(this, &#39;❤️سفيرة المحبه ❤️&#39;,123982976,89);"><div class="grad_small_border pgrad4"><img loading="lazy" class="small_av" src="./غرفة║الأردن_files/avatar_user123982976_8066826325465389.jpg"></div></div><div class="my_text"><span class="btable"><span class="cname"><span class="rtl_fright "> <span class="chat_rank"><i style="color: gold" title="Premium" class="fa fa-fa fa-award"></i></span><span class="pgrad4 round5"><span data-uid="123982976" class="username text_med inline bgrad60">❤️سفيرة المحبه ❤️</span></span> : </span> <span class="chat_message inline bcolor19">قلب قلب3 هههههههه معقول</span><span class=" "> <div onclick="openReport(1859643612, 1);" class="cclear"><i class="fa fa-flag"></i></div></span></span></span></div></li><li id="log1859643643" data="1859643643" class="ch_logs public log2"><div class="chat_avatar" onclick="openAvMenu(this, &#39;⥄¡!°•ᶰᵒ 𝐍𝐚𝐦𝐞•°!¡⥄&#39;,12625646,31);"><img loading="lazy" class="avsex boy " src="./غرفة║الأردن_files/avatar_user12625646_3819717620880146.jpg"></div><div class="my_text"><span class="btable"><span class="cname"><span class="rtl_fright "> <span class="chat_rank"><i style="color: #ff6600" title="عضو متألق رتبة 31" class="fa fa-fas fa-medal"></i></span><span data-uid="12625646" class="username text_med inline bgrad4">⥄¡!°•ᶰᵒ 𝐍𝐚𝐦𝐞•°!¡⥄</span> : </span> <span class="chat_message inline bcolor17 bolded">اووو ماي كاااد <img class="emo_chat" src="./غرفة║الأردن_files/يمكن.gif"> <img class="emo_chat" src="./غرفة║الأردن_files/يمكن.gif"> </span><span class=" "> <div onclick="openReport(1859643643, 1);" class="cclear"><i class="fa fa-flag"></i></div></span></span></span></div></li><li id="log1859643653" data="1859643653" class="ch_logs public"><div class="chat_avatar" onclick="openAvMenu(this, &#39;❀ ملاك ❀&#39;,122992074,20);"><img loading="lazy" class="avsex girl " src="./غرفة║الأردن_files/avatar_user122992074_107856105306777.jpg"></div><div class="my_text"><span class="btable"><span class="cname"><span class="rtl_fright "> <span class="chat_rank"><i style="color: #ccc" title="عضو مميز رتبة 20" class="fa fa-fal fa-gem"></i></span><span data-uid="122992074" class="username text_med inline bcolor21">❀ ملاك ❀</span> : </span> <span class="chat_message inline ">اميره النجف كيفك يا حلوة منورة</span><span class=" "> <div onclick="openReport(1859643653, 1);" class="cclear"><i class="fa fa-flag"></i></div></span></span></span></div></li><li id="log1859643659" data="1859643659" class="ch_logs public log2"><div class="chat_avatar" onclick="openAvMenu(this, &#39;✨✨🎀سہكُہررة🎀✨✨&#39;,112761170,97);"><div class="grad_small_border pgrad55"><img loading="lazy" class="small_av" src="./غرفة║الأردن_files/avatar_user112761170_3947104045423666.jpg"></div></div><div class="my_text"><span class="btable"><span class="cname"><span class="rtl_fright "> <span class="chat_rank"><i style="color: gray" title="Admin" class="fa fa-star"></i></span><span class="pgrad55 round5"><span data-uid="112761170" class="username text_med inline Arabic21">✨✨🎀سہكُہررة🎀✨✨</span></span> : </span> <span class="chat_message inline bcolor18 bolded"><span class="emoji">❤️</span>سفيرة المحبه <span class="emoji">❤️</span> عسلللللللل</span><span class=" "> <div onclick="openReport(1859643659, 1);" class="cclear"><i class="fa fa-flag"></i></div></span></span></span></div></li><li id="log1859643677" data="1859643677" class="ch_logs public join_log"><div class="chat_avatar" onclick="openAvMenu(this, &#39;ذلليني&#39;,132469657,0);"><img loading="lazy" class="avsex boy " src="./غرفة║الأردن_files/132469657.svg"></div><div class="my_text"><span class="btable"><span class="cname"><span class="rtl_fright "> <span class="chat_rank"><i style="color: " title="زائر" class="fa fa-"></i></span></span> <span class="chat_message inline "><!-- login1st --> <span class="logmsg"><span data-uid="132469657" class="username bcolor15">ذلليني</span> :انضم للغرفة (# زائر #)</span></span><span class=" "> <div onclick="openReport(1859643677, 1);" class="cclear"><i class="fa fa-flag"></i></div></span></span></span></div></li><li id="log1859643736" data="1859643736" class="ch_logs public log2"><div class="chat_avatar" onclick="openAvMenu(this, &#39;✨✨🎀سہكُہررة🎀✨✨&#39;,112761170,97);"><div class="grad_small_border pgrad55"><img loading="lazy" class="small_av" src="./غرفة║الأردن_files/avatar_user112761170_3947104045423666.jpg"></div></div><div class="my_text"><span class="btable"><span class="cname"><span class="rtl_fright "> <span class="chat_rank"><i style="color: gray" title="Admin" class="fa fa-star"></i></span><span class="pgrad55 round5"><span data-uid="112761170" class="username text_med inline Arabic21">✨✨🎀سہكُہررة🎀✨✨</span></span> : </span> <span class="chat_message inline bcolor18 bolded">⥄¡!°•ᶰᵒ 𝐍𝐚𝐦𝐞•°!¡⥄ <img class="emo_chat" src="./غرفة║الأردن_files/ه3.gif"> </span><span class=" "> <div onclick="openReport(1859643736, 1);" class="cclear"><i class="fa fa-flag"></i></div></span></span></span></div></li><li id="log1859643738" data="1859643738" class="ch_logs public"><div class="chat_avatar" onclick="openAvMenu(this, &#39;وردي وشوكي&#39;,129606011,15);"><img loading="lazy" class="avsex girl " src="./غرفة║الأردن_files/avatar_user129606011_1732292331557610.jpg"></div><div class="my_text"><span class="btable"><span class="cname"><span class="rtl_fright "> <span class="chat_rank"><i style="color: " title="عضو مجتهد رتبة 15" class="fa fa-"></i></span><span data-uid="129606011" class="username text_med inline bcolor1">وردي وشوكي</span> : </span> <span class="chat_message inline ">𝙻𝙰𝚁𝙰 𐙚 هههههههه</span><span class=" "> <div onclick="openReport(1859643738, 1);" class="cclear"><i class="fa fa-flag"></i></div></span></span></span></div></li><li id="log1859643750" data="1859643750" class="ch_logs public log2"><div class="chat_avatar" onclick="openAvMenu(this, &#39;قلب قلب3&#39;,103054561,17);"><img loading="lazy" class="avsex boy " src="./غرفة║الأردن_files/avatar_user103054561_7878158714591985.jpg"></div><div class="my_text"><span class="btable"><span class="cname"><span class="rtl_fright "> <span class="chat_rank"><i style="color: " title="عضو مجتهد رتبة 17" class="fa fa-"></i></span><span data-uid="103054561" class="username text_med inline ">قلب قلب3</span> : </span> <span class="chat_message inline bolded">اميره النجف تعالي نتريك كاهي هههه</span><span class=" "> <div onclick="openReport(1859643750, 1);" class="cclear"><i class="fa fa-flag"></i></div></span></span></span></div></li><li id="log1859643774" data="1859643774" class="ch_logs public join_log"><div class="chat_avatar" onclick="openAvMenu(this, &#39;شب35&#39;,127359992,0);"><img loading="lazy" class="avsex boy " src="./غرفة║الأردن_files/127359992.svg"></div><div class="my_text"><span class="btable"><span class="cname"><span class="rtl_fright "> <span class="chat_rank"><i style="color: " title="زائر" class="fa fa-"></i></span></span> <span class="chat_message inline "><!-- login1st --> <span class="logmsg"><span data-uid="127359992" class="username bcolor15">شب35</span> :انضم للغرفة (# زائر #)</span></span><span class=" "> <div onclick="openReport(1859643774, 1);" class="cclear"><i class="fa fa-flag"></i></div></span></span></span></div></li><li id="log1859643790" data="1859643790" class="ch_logs public log2"><div class="chat_avatar" onclick="openAvMenu(this, &#39;أنثى محتاجة مسيطره&#39;,132383102,1);"><img loading="lazy" class="avsex girl " src="./غرفة║الأردن_files/Google_7c3f0eb2365012d06f4d9ee9c0392ac4.jpg"></div><div class="my_text"><span class="btable"><span class="cname"><span class="rtl_fright "> <span class="chat_rank"><i style="color: " title="عضو رتبة 1" class="fa fa-"></i></span><span data-uid="132383102" class="username text_med inline bcolor23">أنثى محتاجة مسيطره</span> : </span> <span class="chat_message inline "><img class="emo_chat" src="./غرفة║الأردن_files/يلا.gif"> </span><span class=" "> <div onclick="openReport(1859643790, 1);" class="cclear"><i class="fa fa-flag"></i></div></span></span></span></div></li><li id="log1859643827" data="1859643827" class="ch_logs public"><div class="chat_avatar" onclick="openAvMenu(this, &#39;اميره النجف&#39;,132392515,5);"><img loading="lazy" class="avsex girl " src="./غرفة║الأردن_files/avatar_user132392515_1335448795359951.jpg"></div><div class="my_text"><span class="btable"><span class="cname"><span class="rtl_fright "> <span class="chat_rank"><i style="color: " title="عضو مشارك رتبة 5" class="fa fa-"></i></span><span data-uid="132392515" class="username text_med inline ">اميره النجف</span> : </span> <span class="chat_message inline bcolor21"><span class="emoji">✨</span><span class="emoji">✨</span><span class="emoji">🎀</span>سہكُہررة<span class="emoji">🎀</span><span class="emoji">✨</span><span class="emoji">✨</span> ❀ ملاك ❀ بنورك ومنيحه الحمدلله</span><span class=" "> <div onclick="openReport(1859643827, 1);" class="cclear"><i class="fa fa-flag"></i></div></span></span></span></div></li><li id="log1859643835" data="1859643835" class="ch_logs public log2"><div class="chat_avatar" onclick="openAvMenu(this, &#39;『عـنـاد⤹ 𝑨𝑵𝑨𝑫 〆 ⤸』&#39;,118347526,17);"><img loading="lazy" class="avsex nosex " src="./غرفة║الأردن_files/avatar_user118347526_9287339386887494.jpg"></div><div class="my_text"><span class="btable"><span class="cname"><span class="rtl_fright "> <span class="chat_rank"><i style="color: " title="عضو مجتهد رتبة 17" class="fa fa-"></i></span><span data-uid="118347526" class="username text_med inline user">『عـنـاد⤹ 𝑨𝑵𝑨𝑫 〆 ⤸』</span> : </span> <span class="chat_message inline ">⥄¡!°•ᶰᵒ 𝐍𝐚𝐦𝐞•°!¡⥄ ها</span><span class=" "> <div onclick="openReport(1859643835, 1);" class="cclear"><i class="fa fa-flag"></i></div></span></span></span></div></li><li id="log1859643842" data="1859643842" class="ch_logs public join_log"><div class="chat_avatar" onclick="openAvMenu(this, &#39;Karam2200&#39;,132218211,1);"><img loading="lazy" class="avsex boy " src="./غرفة║الأردن_files/default_avatar.svg"></div><div class="my_text"><span class="btable"><span class="cname"><span class="rtl_fright "> <span class="chat_rank"><i style="color: " title="عضو رتبة 1" class="fa fa-"></i></span></span> <span class="chat_message inline "><!-- login1st --> <span class="logmsg"><span data-uid="132218211" class="username bcolor6">Karam2200</span> :انضم للغرفة (# عضو رتبة 1 #)</span></span><span class=" "> <div onclick="openReport(1859643842, 1);" class="cclear"><i class="fa fa-flag"></i></div></span></span></span></div></li><li id="log1859643845" data="1859643845" class="ch_logs public log2"><div class="chat_avatar" onclick="openAvMenu(this, &#39;⥄¡!°•ᶰᵒ 𝐍𝐚𝐦𝐞•°!¡⥄&#39;,12625646,31);"><img loading="lazy" class="avsex boy " src="./غرفة║الأردن_files/avatar_user12625646_3819717620880146.jpg"></div><div class="my_text"><span class="btable"><span class="cname"><span class="rtl_fright "> <span class="chat_rank"><i style="color: #ff6600" title="عضو متألق رتبة 31" class="fa fa-fas fa-medal"></i></span><span data-uid="12625646" class="username text_med inline bgrad4">⥄¡!°•ᶰᵒ 𝐍𝐚𝐦𝐞•°!¡⥄</span> : </span> <span class="chat_message inline bcolor17 bolded">وانا <img class="emo_chat" src="./غرفة║الأردن_files/يمكن.gif"> </span><span class=" "> <div onclick="openReport(1859643845, 1);" class="cclear"><i class="fa fa-flag"></i></div></span></span></span></div></li><li id="log1859643882" data="1859643882" class="ch_logs public"><div class="chat_avatar" onclick="openAvMenu(this, &#39;اميره النجف&#39;,132392515,5);"><img loading="lazy" class="avsex girl " src="./غرفة║الأردن_files/avatar_user132392515_1335448795359951.jpg"></div><div class="my_text"><span class="btable"><span class="cname"><span class="rtl_fright "> <span class="chat_rank"><i style="color: " title="عضو مشارك رتبة 5" class="fa fa-"></i></span><span data-uid="132392515" class="username text_med inline ">اميره النجف</span> : </span> <span class="chat_message inline bcolor21">قلب قلب3 محد طلب منك</span><span class=" "> <div onclick="openReport(1859643882, 1);" class="cclear"><i class="fa fa-flag"></i></div></span></span></span></div></li><li id="log1859643887" data="1859643887" class="ch_logs public log2"><div class="chat_avatar" onclick="openAvMenu(this, &#39;❀ ملاك ❀&#39;,122992074,20);"><img loading="lazy" class="avsex girl " src="./غرفة║الأردن_files/avatar_user122992074_107856105306777.jpg"></div><div class="my_text"><span class="btable"><span class="cname"><span class="rtl_fright "> <span class="chat_rank"><i style="color: #ccc" title="عضو مميز رتبة 20" class="fa fa-fal fa-gem"></i></span><span data-uid="122992074" class="username text_med inline bcolor21">❀ ملاك ❀</span> : </span> <span class="chat_message inline ">اميره النجف دووووووم</span><span class=" "> <div onclick="openReport(1859643887, 1);" class="cclear"><i class="fa fa-flag"></i></div></span></span></span></div></li><li id="log1859643939" data="1859643939" class="ch_logs public"><div class="chat_avatar" onclick="openAvMenu(this, &#39;اميره النجف&#39;,132392515,5);"><img loading="lazy" class="avsex girl " src="./غرفة║الأردن_files/avatar_user132392515_1335448795359951.jpg"></div><div class="my_text"><span class="btable"><span class="cname"><span class="rtl_fright "> <span class="chat_rank"><i style="color: " title="عضو مشارك رتبة 5" class="fa fa-"></i></span><span data-uid="132392515" class="username text_med inline ">اميره النجف</span> : </span> <span class="chat_message inline bcolor21">❀ ملاك ❀ نبضك غلاتي</span><span class=" "> <div onclick="openReport(1859643939, 1);" class="cclear"><i class="fa fa-flag"></i></div></span></span></span></div></li><li id="log1859643958" data="1859643958" class="ch_logs public log2"><div class="chat_avatar" onclick="openAvMenu(this, &#39;⥄¡!°•ᶰᵒ 𝐍𝐚𝐦𝐞•°!¡⥄&#39;,12625646,31);"><img loading="lazy" class="avsex boy " src="./غرفة║الأردن_files/avatar_user12625646_3819717620880146.jpg"></div><div class="my_text"><span class="btable"><span class="cname"><span class="rtl_fright "> <span class="chat_rank"><i style="color: #ff6600" title="عضو متألق رتبة 31" class="fa fa-fas fa-medal"></i></span><span data-uid="12625646" class="username text_med inline bgrad4">⥄¡!°•ᶰᵒ 𝐍𝐚𝐦𝐞•°!¡⥄</span> : </span> <span class="chat_message inline bcolor17 bolded">『عـنـاد⤹ 𝑨𝑵𝑨𝑫 〆 ⤸』 ببوسو بعض قدامي <img class="emo_chat" src="./غرفة║الأردن_files/يمكن.gif"> <img class="emo_chat" src="./غرفة║الأردن_files/واع.gif"> <img class="emo_chat" src="./غرفة║الأردن_files/واع.gif"> </span><span class=" "> <div onclick="openReport(1859643958, 1);" class="cclear"><i class="fa fa-flag"></i></div></span></span></span></div></li><li id="log1859643971" data="1859643971" class="ch_logs public"><div class="chat_avatar" onclick="openAvMenu(this, &#39;✨✨🎀سہكُہررة🎀✨✨&#39;,112761170,97);"><div class="grad_small_border pgrad55"><img loading="lazy" class="small_av" src="./غرفة║الأردن_files/avatar_user112761170_3947104045423666.jpg"></div></div><div class="my_text"><span class="btable"><span class="cname"><span class="rtl_fright "> <span class="chat_rank"><i style="color: gray" title="Admin" class="fa fa-star"></i></span><span class="pgrad55 round5"><span data-uid="112761170" class="username text_med inline Arabic21">✨✨🎀سہكُہررة🎀✨✨</span></span> : </span> <span class="chat_message inline bcolor18 bolded">⥄¡!°•ᶰᵒ 𝐍𝐚𝐦𝐞•°!¡⥄ خلي كربزي</span><span class=" "> <div onclick="openReport(1859643971, 1);" class="cclear"><i class="fa fa-flag"></i></div></span></span></span></div></li><li id="log1859643978" data="1859643978" class="ch_logs public join_log log2"><div class="chat_avatar" onclick="openAvMenu(this, &#39;ملكة اذلشرفك 1&#39;,132466654,0);"><img loading="lazy" class="avsex girl " src="./غرفة║الأردن_files/132466654.svg"></div><div class="my_text"><span class="btable"><span class="cname"><span class="rtl_fright "> <span class="chat_rank"><i style="color: " title="زائر" class="fa fa-"></i></span></span> <span class="chat_message inline "><!-- login1st --> <span class="logmsg"><span data-uid="132466654" class="username bcolor23">ملكة اذلشرفك 1</span> :انضم للغرفة (# زائر #)</span></span><span class=" "> <div onclick="openReport(1859643978, 1);" class="cclear"><i class="fa fa-flag"></i></div></span></span></span></div></li><li id="log1859643998" data="1859643998" class="ch_logs public"><div class="chat_avatar" onclick="openAvMenu(this, &#39;𝙻𝙰𝚁𝙰 𐙚&#39;,129806123,21);"><img loading="lazy" class="avsex girl " src="./غرفة║الأردن_files/avatar_user129806123_4711900144258442.jpg"></div><div class="my_text"><span class="btable"><span class="cname"><span class="rtl_fright "> <span class="chat_rank"><i style="color: #ccc" title="عضو مميز رتبة 21" class="fa fa-fal fa-gem"></i></span><span data-uid="129806123" class="username text_med inline bcolor17">𝙻𝙰𝚁𝙰 𐙚</span> : </span> <span class="chat_message inline bcolor16">وردي وشوكي دامت</span><span class=" "> <div onclick="openReport(1859643998, 1);" class="cclear"><i class="fa fa-flag"></i></div></span></span></span></div></li><li id="log1859644024" data="1859644024" class="ch_logs public join_log log2"><div class="chat_avatar" onclick="openAvMenu(this, &#39;سييف4&#39;,132469796,0);"><img loading="lazy" class="avsex boy " src="./غرفة║الأردن_files/132469796.svg"></div><div class="my_text"><span class="btable"><span class="cname"><span class="rtl_fright "> <span class="chat_rank"><i style="color: " title="زائر" class="fa fa-"></i></span></span> <span class="chat_message inline "><!-- login1st --> <span class="logmsg"><span data-uid="132469796" class="username bcolor15">سييف4</span> :انضم للغرفة (# زائر #)</span></span><span class=" "> <div onclick="openReport(1859644024, 1);" class="cclear"><i class="fa fa-flag"></i></div></span></span></span></div></li><li id="log1859644035" data="1859644035" class="ch_logs public"><div class="chat_avatar" onclick="openAvMenu(this, &#39;✨✨🎀سہكُہررة🎀✨✨&#39;,112761170,97);"><div class="grad_small_border pgrad55"><img loading="lazy" class="small_av" src="./غرفة║الأردن_files/avatar_user112761170_3947104045423666.jpg"></div></div><div class="my_text"><span class="btable"><span class="cname"><span class="rtl_fright "> <span class="chat_rank"><i style="color: gray" title="Admin" class="fa fa-star"></i></span><span class="pgrad55 round5"><span data-uid="112761170" class="username text_med inline Arabic21">✨✨🎀سہكُہررة🎀✨✨</span></span> : </span> <span class="chat_message inline bcolor18 bolded"><span class="emoji">✨</span><span class="emoji">✨</span><span class="emoji">🎀</span>سہكُہررة<span class="emoji">🎀</span><span class="emoji">✨</span><span class="emoji">✨</span> كريزي</span><span class=" "> <div onclick="openReport(1859644035, 1);" class="cclear"><i class="fa fa-flag"></i></div></span></span></span></div></li><li id="log1859644044" data="1859644044" class="ch_logs public log2"><div class="chat_avatar" onclick="openAvMenu(this, &#39;∆ طبيب •°• أعشاب ∆&#39;,109088542,20);"><img loading="lazy" class="avsex boy " src="./غرفة║الأردن_files/avatar_user109088542_952560248734795.jpg"></div><div class="my_text"><span class="btable"><span class="cname"><span class="rtl_fright "> <span class="chat_rank"><i style="color: #ccc" title="عضو مميز رتبة 20" class="fa fa-fal fa-gem"></i></span><span data-uid="109088542" class="username text_med inline bcolor16">∆ طبيب •°• أعشاب ∆</span> : </span> <span class="chat_message inline bcolor19"><img class="emo_chat" src="./غرفة║الأردن_files/641.gif"> <span class="emoji">☕</span></span><span class=" "> <div onclick="openReport(1859644044, 1);" class="cclear"><i class="fa fa-flag"></i></div></span></span></span></div></li><li id="log1859644047" data="1859644047" class="ch_logs public"><div class="chat_avatar" onclick="openAvMenu(this, &#39;『عـنـاد⤹ 𝑨𝑵𝑨𝑫 〆 ⤸』&#39;,118347526,17);"><img loading="lazy" class="avsex nosex " src="./غرفة║الأردن_files/avatar_user118347526_9287339386887494.jpg"></div><div class="my_text"><span class="btable"><span class="cname"><span class="rtl_fright "> <span class="chat_rank"><i style="color: " title="عضو مجتهد رتبة 17" class="fa fa-"></i></span><span data-uid="118347526" class="username text_med inline user">『عـنـاد⤹ 𝑨𝑵𝑨𝑫 〆 ⤸』</span> : </span> <span class="chat_message inline ">⥄¡!°•ᶰᵒ 𝐍𝐚𝐦𝐞•°!¡⥄ <span class="emoji">😘</span></span><span class=" "> <div onclick="openReport(1859644047, 1);" class="cclear"><i class="fa fa-flag"></i></div></span></span></span></div></li><li id="log1859644066" data="1859644066" class="ch_logs public join_log log2"><div class="chat_avatar" onclick="openAvMenu(this, &#39;Sohayb2001&#39;,130824844,20);"><img loading="lazy" class="avsex boy " src="./غرفة║الأردن_files/avatar_user130824844_3851005058534787.jpg"></div><div class="my_text"><span class="btable"><span class="cname"><span class="rtl_fright "> <span class="chat_rank"><i style="color: #ccc" title="عضو مميز رتبة 20" class="fa fa-fal fa-gem"></i></span></span> <span class="chat_message inline "><!-- login1st --> <span class="logmsg"><span data-uid="130824844" class="username bcolor17">Sohayb2001</span> :انضم للغرفة (# عضو مميز رتبة 20 #)</span></span><span class=" "> <div onclick="openReport(1859644066, 1);" class="cclear"><i class="fa fa-flag"></i></div></span></span></span></div></li><li id="log1859644126" data="1859644126" class="ch_logs public"><div class="chat_avatar" onclick="openAvMenu(this, &#39;⥄¡!°•ᶰᵒ 𝐍𝐚𝐦𝐞•°!¡⥄&#39;,12625646,31);"><img loading="lazy" class="avsex boy " src="./غرفة║الأردن_files/avatar_user12625646_3819717620880146.jpg"></div><div class="my_text"><span class="btable"><span class="cname"><span class="rtl_fright "> <span class="chat_rank"><i style="color: #ff6600" title="عضو متألق رتبة 31" class="fa fa-fas fa-medal"></i></span><span data-uid="12625646" class="username text_med inline bgrad4">⥄¡!°•ᶰᵒ 𝐍𝐚𝐦𝐞•°!¡⥄</span> : </span> <span class="chat_message inline bcolor17 bolded"><span class="emoji">✨</span><span class="emoji">✨</span><span class="emoji">🎀</span>سہكُہررة<span class="emoji">🎀</span><span class="emoji">✨</span><span class="emoji">✨</span> كريزي نايم <span class="emoji">😤</span><span class="emoji">😤</span><span class="emoji">😤</span><span class="emoji">😤</span></span><span class=" "> <div onclick="openReport(1859644126, 1);" class="cclear"><i class="fa fa-flag"></i></div></span></span></span></div></li><li id="log1859644163" data="1859644163" class="ch_logs public log2"><div class="chat_avatar" onclick="openAvMenu(this, &#39;قلب قلب3&#39;,103054561,17);"><img loading="lazy" class="avsex boy " src="./غرفة║الأردن_files/avatar_user103054561_7878158714591985.jpg"></div><div class="my_text"><span class="btable"><span class="cname"><span class="rtl_fright "> <span class="chat_rank"><i style="color: " title="عضو مجتهد رتبة 17" class="fa fa-"></i></span><span data-uid="103054561" class="username text_med inline ">قلب قلب3</span> : </span> <span class="chat_message inline bolded">اميره النجف لفة فلافل من يم ابو المولده هههه</span><span class=" "> <div onclick="openReport(1859644163, 1);" class="cclear"><i class="fa fa-flag"></i></div></span></span></span></div></li><li id="log1859644168" data="1859644168" class="ch_logs public"><div class="chat_avatar" onclick="openAvMenu(this, &#39;✨✨🎀سہكُہررة🎀✨✨&#39;,112761170,97);"><div class="grad_small_border pgrad55"><img loading="lazy" class="small_av" src="./غرفة║الأردن_files/avatar_user112761170_3947104045423666.jpg"></div></div><div class="my_text"><span class="btable"><span class="cname"><span class="rtl_fright "> <span class="chat_rank"><i style="color: gray" title="Admin" class="fa fa-star"></i></span><span class="pgrad55 round5"><span data-uid="112761170" class="username text_med inline Arabic21">✨✨🎀سہكُہررة🎀✨✨</span></span> : </span> <span class="chat_message inline bcolor18 bolded">Sohayb2001 سهيب</span><span class=" "> <div onclick="openReport(1859644168, 1);" class="cclear"><i class="fa fa-flag"></i></div></span></span></span></div></li><li id="log1859644170" data="1859644170" class="ch_logs public log2"><div class="chat_avatar" onclick="openAvMenu(this, &#39;وردي وشوكي&#39;,129606011,15);"><img loading="lazy" class="avsex girl " src="./غرفة║الأردن_files/avatar_user129606011_1732292331557610.jpg"></div><div class="my_text"><span class="btable"><span class="cname"><span class="rtl_fright "> <span class="chat_rank"><i style="color: " title="عضو مجتهد رتبة 15" class="fa fa-"></i></span><span data-uid="129606011" class="username text_med inline bcolor1">وردي وشوكي</span> : </span> <span class="chat_message inline ">𝙻𝙰𝚁𝙰 𐙚 ئلبوشتي تدووومي يا عمري</span><span class=" "> <div onclick="openReport(1859644170, 1);" class="cclear"><i class="fa fa-flag"></i></div></span></span></span></div></li><li id="log1859644177" data="1859644177" class="ch_logs public"><div class="chat_avatar" onclick="openAvMenu(this, &#39;𝙻𝙰𝚁𝙰 𐙚&#39;,129806123,21);"><img loading="lazy" class="avsex girl " src="./غرفة║الأردن_files/avatar_user129806123_4711900144258442.jpg"></div><div class="my_text"><span class="btable"><span class="cname"><span class="rtl_fright "> <span class="chat_rank"><i style="color: #ccc" title="عضو مميز رتبة 21" class="fa fa-fal fa-gem"></i></span><span data-uid="129806123" class="username text_med inline bcolor17">𝙻𝙰𝚁𝙰 𐙚</span> : </span> <span class="chat_message inline bcolor16">Sohayb2001 نورت</span><span class=" "> <div onclick="openReport(1859644177, 1);" class="cclear"><i class="fa fa-flag"></i></div></span></span></span></div></li><li id="log1859644211" data="1859644211" class="ch_logs public join_log log2"><div class="chat_avatar" onclick="openAvMenu(this, &#39;وتر الحب15&#39;,132469802,0);"><img loading="lazy" class="avsex nosex " src="./غرفة║الأردن_files/132469802.svg"></div><div class="my_text"><span class="btable"><span class="cname"><span class="rtl_fright "> <span class="chat_rank"><i style="color: " title="زائر" class="fa fa-"></i></span></span> <span class="chat_message inline "><!-- login1st --> <span class="logmsg"><span data-uid="132469802" class="username ">وتر الحب15</span> :انضم للغرفة (# زائر #)</span></span><span class=" "> <div onclick="openReport(1859644211, 1);" class="cclear"><i class="fa fa-flag"></i></div></span></span></span></div></li><li id="log1859644218" data="1859644218" class="ch_logs public"><div class="chat_avatar" onclick="openAvMenu(this, &#39;✨✨🎀سہكُہررة🎀✨✨&#39;,112761170,97);"><div class="grad_small_border pgrad55"><img loading="lazy" class="small_av" src="./غرفة║الأردن_files/avatar_user112761170_3947104045423666.jpg"></div></div><div class="my_text"><span class="btable"><span class="cname"><span class="rtl_fright "> <span class="chat_rank"><i style="color: gray" title="Admin" class="fa fa-star"></i></span><span class="pgrad55 round5"><span data-uid="112761170" class="username text_med inline Arabic21">✨✨🎀سہكُہررة🎀✨✨</span></span> : </span> <span class="chat_message inline bcolor18 bolded">⥄¡!°•ᶰᵒ 𝐍𝐚𝐦𝐞•°!¡⥄ هههههههههههه</span><span class=" "> <div onclick="openReport(1859644218, 1);" class="cclear"><i class="fa fa-flag"></i></div></span></span></span></div></li><li id="log1859644223" data="1859644223" class="ch_logs public log2"><div class="chat_avatar" onclick="openAvMenu(this, &#39;اميره النجف&#39;,132392515,5);"><img loading="lazy" class="avsex girl " src="./غرفة║الأردن_files/avatar_user132392515_1335448795359951.jpg"></div><div class="my_text"><span class="btable"><span class="cname"><span class="rtl_fright "> <span class="chat_rank"><i style="color: " title="عضو مشارك رتبة 5" class="fa fa-"></i></span><span data-uid="132392515" class="username text_med inline ">اميره النجف</span> : </span> <span class="chat_message inline bcolor21">قلب قلب3 مابدي</span><span class=" "> <div onclick="openReport(1859644223, 1);" class="cclear"><i class="fa fa-flag"></i></div></span></span></span></div></li><li id="log1859644246" data="1859644246" class="ch_logs public"><div class="chat_avatar" onclick="openAvMenu(this, &#39;❀ ملاك ❀&#39;,122992074,20);"><img loading="lazy" class="avsex girl " src="./غرفة║الأردن_files/avatar_user122992074_107856105306777.jpg"></div><div class="my_text"><span class="btable"><span class="cname"><span class="rtl_fright "> <span class="chat_rank"><i style="color: #ccc" title="عضو مميز رتبة 20" class="fa fa-fal fa-gem"></i></span><span data-uid="122992074" class="username text_med inline bcolor21">❀ ملاك ❀</span> : </span> <span class="chat_message inline ">Sohayb2001 نورت هلا والله</span><span class=" "> <div onclick="openReport(1859644246, 1);" class="cclear"><i class="fa fa-flag"></i></div></span></span></span></div></li><li id="log1859644258" data="1859644258" class="ch_logs public log2"><div class="chat_avatar" onclick="openAvMenu(this, &#39;⥄¡!°•ᶰᵒ 𝐍𝐚𝐦𝐞•°!¡⥄&#39;,12625646,31);"><img loading="lazy" class="avsex boy " src="./غرفة║الأردن_files/avatar_user12625646_3819717620880146.jpg"></div><div class="my_text"><span class="btable"><span class="cname"><span class="rtl_fright "> <span class="chat_rank"><i style="color: #ff6600" title="عضو متألق رتبة 31" class="fa fa-fas fa-medal"></i></span><span data-uid="12625646" class="username text_med inline bgrad4">⥄¡!°•ᶰᵒ 𝐍𝐚𝐦𝐞•°!¡⥄</span> : </span> <span class="chat_message inline bcolor17 bolded">『عـنـاد⤹ 𝑨𝑵𝑨𝑫 〆 ⤸』 لا ما بدي اياها عادية <span class="emoji">🙄</span></span><span class=" "> <div onclick="openReport(1859644258, 1);" class="cclear"><i class="fa fa-flag"></i></div></span></span></span></div></li><li id="log1859644272" data="1859644272" class="ch_logs public join_log"><div class="chat_avatar" onclick="openAvMenu(this, &#39;جود237&#39;,132464051,0);"><img loading="lazy" class="avsex boy " src="./غرفة║الأردن_files/132464051.svg"></div><div class="my_text"><span class="btable"><span class="cname"><span class="rtl_fright "> <span class="chat_rank"><i style="color: " title="زائر" class="fa fa-"></i></span></span> <span class="chat_message inline "><!-- login1st --> <span class="logmsg"><span data-uid="132464051" class="username bcolor15">جود237</span> :انضم للغرفة (# زائر #)</span></span><span class=" "> <div onclick="openReport(1859644272, 1);" class="cclear"><i class="fa fa-flag"></i></div></span></span></span></div></li><li id="log1859644286" data="1859644286" class="ch_logs public log2"><div class="chat_avatar" onclick="openAvMenu(this, &#39;⥄¡!°•ᶰᵒ 𝐍𝐚𝐦𝐞•°!¡⥄&#39;,12625646,31);"><img loading="lazy" class="avsex boy " src="./غرفة║الأردن_files/avatar_user12625646_3819717620880146.jpg"></div><div class="my_text"><span class="btable"><span class="cname"><span class="rtl_fright "> <span class="chat_rank"><i style="color: #ff6600" title="عضو متألق رتبة 31" class="fa fa-fas fa-medal"></i></span><span data-uid="12625646" class="username text_med inline bgrad4">⥄¡!°•ᶰᵒ 𝐍𝐚𝐦𝐞•°!¡⥄</span> : </span> <span class="chat_message inline bcolor17 bolded"><img class="emo_chat" src="./غرفة║الأردن_files/ه3.gif"> <img class="emo_chat" src="./غرفة║الأردن_files/ه3.gif"> <img class="emo_chat" src="./غرفة║الأردن_files/ه3.gif"> <img class="emo_chat" src="./غرفة║الأردن_files/ه3.gif"> <img class="emo_chat" src="./غرفة║الأردن_files/ه3.gif"> <img class="emo_chat" src="./غرفة║الأردن_files/ه3.gif"> <img class="emo_chat" src="./غرفة║الأردن_files/ه3.gif"> <img class="emo_chat" src="./غرفة║الأردن_files/ه3.gif"> </span><span class=" "> <div onclick="openReport(1859644286, 1);" class="cclear"><i class="fa fa-flag"></i></div></span></span></span></div></li><li id="log1859644287" data="1859644287" class="ch_logs public join_log"><div class="chat_avatar" onclick="openAvMenu(this, &#39;tarek1470&#39;,132469808,0);"><img loading="lazy" class="avsex boy " src="./غرفة║الأردن_files/132469808.svg"></div><div class="my_text"><span class="btable"><span class="cname"><span class="rtl_fright "> <span class="chat_rank"><i style="color: " title="زائر" class="fa fa-"></i></span></span> <span class="chat_message inline "><!-- login1st --> <span class="logmsg"><span data-uid="132469808" class="username bcolor15">tarek1470</span> :انضم للغرفة (# زائر #)</span></span><span class=" "> <div onclick="openReport(1859644287, 1);" class="cclear"><i class="fa fa-flag"></i></div></span></span></span></div></li><li id="log1859644290" data="1859644290" class="ch_logs public log2"><div class="chat_avatar" onclick="openAvMenu(this, &#39;𝙻𝙰𝚁𝙰 𐙚&#39;,129806123,21);"><img loading="lazy" class="avsex girl " src="./غرفة║الأردن_files/avatar_user129806123_4711900144258442.jpg"></div><div class="my_text"><span class="btable"><span class="cname"><span class="rtl_fright "> <span class="chat_rank"><i style="color: #ccc" title="عضو مميز رتبة 21" class="fa fa-fal fa-gem"></i></span><span data-uid="129806123" class="username text_med inline bcolor17">𝙻𝙰𝚁𝙰 𐙚</span> : </span> <span class="chat_message inline bcolor16">وردي وشوكي يسعدو</span><span class=" "> <div onclick="openReport(1859644290, 1);" class="cclear"><i class="fa fa-flag"></i></div></span></span></span></div></li><li id="log1859644294" data="1859644294" class="ch_logs public"><div class="chat_avatar" onclick="openAvMenu(this, &#39;قلب قلب3&#39;,103054561,17);"><img loading="lazy" class="avsex boy " src="./غرفة║الأردن_files/avatar_user103054561_7878158714591985.jpg"></div><div class="my_text"><span class="btable"><span class="cname"><span class="rtl_fright "> <span class="chat_rank"><i style="color: " title="عضو مجتهد رتبة 17" class="fa fa-"></i></span><span data-uid="103054561" class="username text_med inline ">قلب قلب3</span> : </span> <span class="chat_message inline bolded"><span class="emoji">❤️</span>سفيرة المحبه <span class="emoji">❤️</span> دامت</span><span class=" "> <div onclick="openReport(1859644294, 1);" class="cclear"><i class="fa fa-flag"></i></div></span></span></span></div></li><li id="log1859644310" data="1859644310" class="ch_logs public join_log log2"><div class="chat_avatar" onclick="openAvMenu(this, &#39;شاب صعيدي عاقل&#39;,132438943,0);"><img loading="lazy" class="avsex boy " src="./غرفة║الأردن_files/132438943.svg"></div><div class="my_text"><span class="btable"><span class="cname"><span class="rtl_fright "> <span class="chat_rank"><i style="color: " title="زائر" class="fa fa-"></i></span></span> <span class="chat_message inline "><!-- login1st --> <span class="logmsg"><span data-uid="132438943" class="username bcolor15">شاب صعيدي عاقل</span> :انضم للغرفة (# زائر #)</span></span><span class=" "> <div onclick="openReport(1859644310, 1);" class="cclear"><i class="fa fa-flag"></i></div></span></span></span></div></li><li id="log1859644315" data="1859644315" class="ch_logs public join_log"><div class="chat_avatar" onclick="openAvMenu(this, &#39;محارب وحيد&#39;,106447247,10);"><img loading="lazy" class="avsex boy " src="./غرفة║الأردن_files/avatar_user106447247_9702645229552476.jpg"></div><div class="my_text"><span class="btable"><span class="cname"><span class="rtl_fright "> <span class="chat_rank"><i style="color: " title="عضو نشيط رتبة 10" class="fa fa-"></i></span></span> <span class="chat_message inline "><!-- login1st --> <span class="logmsg"><span data-uid="106447247" class="username ">محارب وحيد</span> :انضم للغرفة (# عضو نشيط رتبة 10 #)</span></span><span class=" "> <div onclick="openReport(1859644315, 1);" class="cclear"><i class="fa fa-flag"></i></div></span></span></span></div></li><li id="log1859644338" data="1859644338" class="ch_logs public log2"><div class="chat_avatar" onclick="openAvMenu(this, &#39;وردي وشوكي&#39;,129606011,15);"><img loading="lazy" class="avsex girl " src="./غرفة║الأردن_files/avatar_user129606011_1732292331557610.jpg"></div><div class="my_text"><span class="btable"><span class="cname"><span class="rtl_fright "> <span class="chat_rank"><i style="color: " title="عضو مجتهد رتبة 15" class="fa fa-"></i></span><span data-uid="129606011" class="username text_med inline bcolor1">وردي وشوكي</span> : </span> <span class="chat_message inline ">𝙻𝙰𝚁𝙰 𐙚 هلا. والله</span><span class=" "> <div onclick="openReport(1859644338, 1);" class="cclear"><i class="fa fa-flag"></i></div></span></span></span></div></li><li id="log1859644353" data="1859644353" class="ch_logs public join_log"><div class="chat_avatar" onclick="openAvMenu(this, &#39;فتى القمر12&#39;,132397335,0);"><img loading="lazy" class="avsex boy " src="https://storage.arabic.chat/avatar/g/m/132397335.svg"></div><div class="my_text"><span class="btable"><span class="cname"><span class="rtl_fright "> <span class="chat_rank"><i style="color: " title="زائر" class="fa fa-"></i></span></span> <span class="chat_message inline "><!-- login1st --> <span class="logmsg"><span data-uid="132397335" class="username bcolor15">فتى القمر12</span> :انضم للغرفة (# زائر #)</span></span><span class=" "> <div onclick="openReport(1859644353, 1);" class="cclear"><i class="fa fa-flag"></i></div></span></span></span></div></li><li id="log1859644371" data="1859644371" class="ch_logs public log2"><div class="chat_avatar" onclick="openAvMenu(this, &#39;⥄¡!°•ᶰᵒ 𝐍𝐚𝐦𝐞•°!¡⥄&#39;,12625646,31);"><img loading="lazy" class="avsex boy " src="./غرفة║الأردن_files/avatar_user12625646_3819717620880146.jpg"></div><div class="my_text"><span class="btable"><span class="cname"><span class="rtl_fright "> <span class="chat_rank"><i style="color: #ff6600" title="عضو متألق رتبة 31" class="fa fa-fas fa-medal"></i></span><span data-uid="12625646" class="username text_med inline bgrad4">⥄¡!°•ᶰᵒ 𝐍𝐚𝐦𝐞•°!¡⥄</span> : </span> <span class="chat_message inline bcolor17 bolded">طبع هيك <span class="emoji">💋</span><span class="emoji">💋</span><span class="emoji">💋</span><span class="emoji">💋</span><span class="emoji">💋</span><span class="emoji">💋</span><span class="emoji">💋</span><span class="emoji">💋</span></span><span class=" "> <div onclick="openReport(1859644371, 1);" class="cclear"><i class="fa fa-flag"></i></div></span></span></span></div></li><li id="log1859644395" data="1859644395" class="ch_logs public"><div class="chat_avatar" onclick="openAvMenu(this, &#39;✨✨🎀سہكُہررة🎀✨✨&#39;,112761170,97);"><div class="grad_small_border pgrad55"><img loading="lazy" class="small_av" src="./غرفة║الأردن_files/avatar_user112761170_3947104045423666.jpg"></div></div><div class="my_text"><span class="btable"><span class="cname"><span class="rtl_fright "> <span class="chat_rank"><i style="color: gray" title="Admin" class="fa fa-star"></i></span><span class="pgrad55 round5"><span data-uid="112761170" class="username text_med inline Arabic21">✨✨🎀سہكُہررة🎀✨✨</span></span> : </span> <span class="chat_message inline bcolor18 bolded">⥄¡!°•ᶰᵒ 𝐍𝐚𝐦𝐞•°!¡⥄ هههههههههههه هههههههههههه مش عاجبو هاي</span><span class=" "> <div onclick="openReport(1859644395, 1);" class="cclear"><i class="fa fa-flag"></i></div></span></span></span></div></li><li id="log1859644399" data="1859644399" class="ch_logs public log2"><div class="chat_avatar" onclick="openAvMenu(this, &#39;Sohayb2001&#39;,130824844,20);"><img loading="lazy" class="avsex boy " src="./غرفة║الأردن_files/avatar_user130824844_3851005058534787.jpg"></div><div class="my_text"><span class="btable"><span class="cname"><span class="rtl_fright "> <span class="chat_rank"><i style="color: #ccc" title="عضو مميز رتبة 20" class="fa fa-fal fa-gem"></i></span><span data-uid="130824844" class="username text_med inline bcolor17">Sohayb2001</span> : </span> <span class="chat_message inline "><span class="emoji">✨</span><span class="emoji">✨</span><span class="emoji">🎀</span>سہكُہررة<span class="emoji">🎀</span><span class="emoji">✨</span><span class="emoji">✨</span> <span class="emoji">✨</span><span class="emoji">✨</span><span class="emoji">🎀</span>سہكُہررة<span class="emoji">🎀</span><span class="emoji">✨</span><span class="emoji">✨</span> 𝙻𝙰𝚁𝙰 𐙚 𝙻𝙰𝚁𝙰 𐙚صصباحووو</span><span class=" "> <div onclick="openReport(1859644399, 1);" class="cclear"><i class="fa fa-flag"></i></div></span></span></span></div></li><li id="log1859644426" data="1859644426" class="ch_logs public"><div class="chat_avatar" onclick="openAvMenu(this, &#39;✨✨🎀سہكُہررة🎀✨✨&#39;,112761170,97);"><div class="grad_small_border pgrad55"><img loading="lazy" class="small_av" src="./غرفة║الأردن_files/avatar_user112761170_3947104045423666.jpg"></div></div><div class="my_text"><span class="btable"><span class="cname"><span class="rtl_fright "> <span class="chat_rank"><i style="color: gray" title="Admin" class="fa fa-star"></i></span><span class="pgrad55 round5"><span data-uid="112761170" class="username text_med inline Arabic21">✨✨🎀سہكُہررة🎀✨✨</span></span> : </span> <span class="chat_message inline bcolor18 bolded"><img class="emo_chat" src="./غرفة║الأردن_files/ه3.gif"> </span><span class=" "> <div onclick="openReport(1859644426, 1);" class="cclear"><i class="fa fa-flag"></i></div></span></span></span></div></li><li id="log1859644440" data="1859644440" class="ch_logs public log2"><div class="chat_avatar" onclick="openAvMenu(this, &#39;⥄¡!°•ᶰᵒ 𝐍𝐚𝐦𝐞•°!¡⥄&#39;,12625646,31);"><img loading="lazy" class="avsex boy " src="./غرفة║الأردن_files/avatar_user12625646_3819717620880146.jpg"></div><div class="my_text"><span class="btable"><span class="cname"><span class="rtl_fright "> <span class="chat_rank"><i style="color: #ff6600" title="عضو متألق رتبة 31" class="fa fa-fas fa-medal"></i></span><span data-uid="12625646" class="username text_med inline bgrad4">⥄¡!°•ᶰᵒ 𝐍𝐚𝐦𝐞•°!¡⥄</span> : </span> <span class="chat_message inline bcolor17 bolded"><span class="emoji">✨</span><span class="emoji">✨</span><span class="emoji">🎀</span>سہكُہررة<span class="emoji">🎀</span><span class="emoji">✨</span><span class="emoji">✨</span> <img class="emo_chat" src="./غرفة║الأردن_files/ه3.gif"> <img class="emo_chat" src="./غرفة║الأردن_files/ه3.gif"> <img class="emo_chat" src="./غرفة║الأردن_files/ه3.gif"> <img class="emo_chat" src="./غرفة║الأردن_files/ه3.gif"> <img class="emo_chat" src="./غرفة║الأردن_files/ه3.gif"> <img class="emo_chat" src="./غرفة║الأردن_files/ه3.gif"> </span><span class=" "> <div onclick="openReport(1859644440, 1);" class="cclear"><i class="fa fa-flag"></i></div></span></span></span></div></li><li id="log1859644474" data="1859644474" class="ch_logs public join_log"><div class="chat_avatar" onclick="openAvMenu(this, &#39;#الخال&#39;,131374753,8);"><img loading="lazy" class="avsex boy " src="https://storage.arabic.chat/avatar/avatar_user131374753_338568846391150.jpg"></div><div class="my_text"><span class="btable"><span class="cname"><span class="rtl_fright "> <span class="chat_rank"><i style="color: " title="عضو مشارك رتبة 8" class="fa fa-"></i></span></span> <span class="chat_message inline bolded"><!-- login1st --> <span class="logmsg"><span data-uid="131374753" class="username bcolor19">#الخال</span> :انضم للغرفة (# عضو مشارك رتبة 8 #)</span></span><span class=" "> <div onclick="openReport(1859644474, 1);" class="cclear"><i class="fa fa-flag"></i></div></span></span></span></div></li><li id="log1859644477" data="1859644477" class="ch_logs public log2"><div class="chat_avatar" onclick="openAvMenu(this, &#39;اميره النجف&#39;,132392515,5);"><img loading="lazy" class="avsex girl " src="./غرفة║الأردن_files/avatar_user132392515_1335448795359951.jpg"></div><div class="my_text"><span class="btable"><span class="cname"><span class="rtl_fright "> <span class="chat_rank"><i style="color: " title="عضو مشارك رتبة 5" class="fa fa-"></i></span><span data-uid="132392515" class="username text_med inline ">اميره النجف</span> : </span> <span class="chat_message inline bcolor21">هففففف</span><span class=" "> <div onclick="openReport(1859644477, 1);" class="cclear"><i class="fa fa-flag"></i></div></span></span></span></div></li><li id="log1859644491" data="1859644491" class="ch_logs public"><div class="chat_avatar" onclick="openAvMenu(this, &#39;✨✨🎀سہكُہررة🎀✨✨&#39;,112761170,97);"><div class="grad_small_border pgrad55"><img loading="lazy" class="small_av" src="./غرفة║الأردن_files/avatar_user112761170_3947104045423666.jpg"></div></div><div class="my_text"><span class="btable"><span class="cname"><span class="rtl_fright "> <span class="chat_rank"><i style="color: gray" title="Admin" class="fa fa-star"></i></span><span class="pgrad55 round5"><span data-uid="112761170" class="username text_med inline Arabic21">✨✨🎀سہكُہررة🎀✨✨</span></span> : </span> <span class="chat_message inline bcolor18 bolded">Sohayb2001 سباحو</span><span class=" "> <div onclick="openReport(1859644491, 1);" class="cclear"><i class="fa fa-flag"></i></div></span></span></span></div></li><li id="log1859644509" data="1859644509" class="ch_logs public join_log log2"><div class="chat_avatar" onclick="openAvMenu(this, &#39;نـ♔ـآدٍرٍ𓅃&#39;,110566478,23);"><img loading="lazy" class="avsex boy " src="https://storage.arabic.chat/avatar/avatar_user110566478_8552200416311274.jpg"></div><div class="my_text"><span class="btable"><span class="cname"><span class="rtl_fright "> <span class="chat_rank"><i style="color: #ccc" title="عضو مميز رتبة 23" class="fa fa-fal fa-gem"></i></span></span> <span class="chat_message inline bcolor9 bolded"><!-- login1st --> <span class="logmsg"><span data-uid="110566478" class="username ">نـ♔ـآدٍرٍ𓅃</span> :انضم للغرفة (# عضو مميز رتبة 23 #)</span></span><span class=" "> <div onclick="openReport(1859644509, 1);" class="cclear"><i class="fa fa-flag"></i></div></span></span></span></div></li><li id="log1859644544" data="1859644544" class="ch_logs public join_log"><div class="chat_avatar" onclick="openAvMenu(this, &#39;محمد16054&#39;,123611273,1);"><img loading="lazy" class="avsex nosex " src="https://storage.arabic.chat/avatar/Google_16fe56f4f23d95e183fb58c4d9bb8a69.jpg"></div><div class="my_text"><span class="btable"><span class="cname"><span class="rtl_fright "> <span class="chat_rank"><i style="color: " title="عضو رتبة 1" class="fa fa-"></i></span></span> <span class="chat_message inline "><!-- login1st --> <span class="logmsg"><span data-uid="123611273" class="username user">محمد16054</span> :انضم للغرفة (# عضو رتبة 1 #)</span></span><span class=" "> <div onclick="openReport(1859644544, 1);" class="cclear"><i class="fa fa-flag"></i></div></span></span></span></div></li><li id="log1859644550" data="1859644550" class="ch_logs public log2"><div class="chat_avatar" onclick="openAvMenu(this, &#39;Sohayb2001&#39;,130824844,20);"><img loading="lazy" class="avsex boy " src="./غرفة║الأردن_files/avatar_user130824844_3851005058534787.jpg"></div><div class="my_text"><span class="btable"><span class="cname"><span class="rtl_fright "> <span class="chat_rank"><i style="color: #ccc" title="عضو مميز رتبة 20" class="fa fa-fal fa-gem"></i></span><span data-uid="130824844" class="username text_med inline bcolor17">Sohayb2001</span> : </span> <span class="chat_message inline ">❀ ملاك ❀ صباحك فل</span><span class=" "> <div onclick="openReport(1859644550, 1);" class="cclear"><i class="fa fa-flag"></i></div></span></span></span></div></li><li id="log1859644552" data="1859644552" class="ch_logs public join_log"><div class="chat_avatar" onclick="openAvMenu(this, &#39;نحكا بين شوارب&#39;,132461235,0);"><img loading="lazy" class="avsex boy " src="https://storage.arabic.chat/avatar/g/m/132461235.svg"></div><div class="my_text"><span class="btable"><span class="cname"><span class="rtl_fright "> <span class="chat_rank"><i style="color: " title="زائر" class="fa fa-"></i></span></span> <span class="chat_message inline "><!-- login1st --> <span class="logmsg"><span data-uid="132461235" class="username bcolor15">نحكا بين شوارب</span> :انضم للغرفة (# زائر #)</span></span><span class=" "> <div onclick="openReport(1859644552, 1);" class="cclear"><i class="fa fa-flag"></i></div></span></span></span></div></li></ul>
+                            </ul>
+                        </div>
+                        <div value="0" id="main_emoticon" class="background_box" style="display: none;">
+                            <div class="emo_head main_emo_head">
+                                                                    <div data="base_emo" class="dark_selected emo_menu emo_menu_item"><img class="emo_select" src="./غرفة║الأردن_files/base_emo.png"></div>
+                                    <div data="food" class="emo_menu emo_menu_item"><img class="emo_select" src="./غرفة║الأردن_files/food.png"></div><div data="sticker_animals" class="emo_menu emo_menu_item"><img class="emo_select" src="./غرفة║الأردن_files/sticker_animals.png"></div>                                                                <div class="empty_emo">
+                                </div>
+                                <div class="emo_menu" onclick="hideEmoticon();">
+                                    <i class="fa fa-times"></i>
+                                </div>
+                            </div>
+                            <div id="main_emo" class="emo_content">
+                                <div title=":amazing:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/amazing.png" src="https://www.arabic.chat/" onclick="emoticon(document.chat_data.content, &#39;:amazing:&#39;)"></div><div title=":angel:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/angel.png" src="https://www.arabic.chat/" onclick="emoticon(document.chat_data.content, &#39;:angel:&#39;)"></div><div title=":angry:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/angry.png" src="https://www.arabic.chat/" onclick="emoticon(document.chat_data.content, &#39;:angry:&#39;)"></div><div title=":anxious:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/anxious.png" src="https://www.arabic.chat/" onclick="emoticon(document.chat_data.content, &#39;:anxious:&#39;)"></div><div title=":bad:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/bad.png" src="https://www.arabic.chat/" onclick="emoticon(document.chat_data.content, &#39;:bad:&#39;)"></div><div title=":bigsmile:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/bigsmile.png" src="https://www.arabic.chat/" onclick="emoticon(document.chat_data.content, &#39;:bigsmile:&#39;)"></div><div title=":blink:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/blink.png" src="https://www.arabic.chat/" onclick="emoticon(document.chat_data.content, &#39;:blink:&#39;)"></div><div title=":cool:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/cool.png" src="https://www.arabic.chat/" onclick="emoticon(document.chat_data.content, &#39;:cool:&#39;)"></div><div title=":crisped:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/crisped.png" src="https://www.arabic.chat/" onclick="emoticon(document.chat_data.content, &#39;:crisped:&#39;)"></div><div title=":cry:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/cry.png" src="https://www.arabic.chat/" onclick="emoticon(document.chat_data.content, &#39;:cry:&#39;)"></div><div title=":cry2:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/cry2.png" src="https://www.arabic.chat/" onclick="emoticon(document.chat_data.content, &#39;:cry2:&#39;)"></div><div title=":dead:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/dead.png" src="https://www.arabic.chat/" onclick="emoticon(document.chat_data.content, &#39;:dead:&#39;)"></div><div title=":desperate:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/desperate.png" src="https://www.arabic.chat/" onclick="emoticon(document.chat_data.content, &#39;:desperate:&#39;)"></div><div title=":devil:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/devil.png" src="https://www.arabic.chat/" onclick="emoticon(document.chat_data.content, &#39;:devil:&#39;)"></div><div title=":doubt:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/doubt.png" src="https://www.arabic.chat/" onclick="emoticon(document.chat_data.content, &#39;:doubt:&#39;)"></div><div title=":feelgood:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/feelgood.png" src="https://www.arabic.chat/" onclick="emoticon(document.chat_data.content, &#39;:feelgood:&#39;)"></div><div title=":funny:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/funny.png" src="https://www.arabic.chat/" onclick="emoticon(document.chat_data.content, &#39;:funny:&#39;)"></div><div title=":good:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/good.png" src="https://www.arabic.chat/" onclick="emoticon(document.chat_data.content, &#39;:good:&#39;)"></div><div title=":happy:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/happy.png" src="https://www.arabic.chat/" onclick="emoticon(document.chat_data.content, &#39;:happy:&#39;)"></div><div title=":happy3:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/happy3.png" src="https://www.arabic.chat/" onclick="emoticon(document.chat_data.content, &#39;:happy3:&#39;)"></div><div title=":hee:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/hee.png" src="https://www.arabic.chat/" onclick="emoticon(document.chat_data.content, &#39;:hee:&#39;)"></div><div title=":heu:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/heu.png" src="https://www.arabic.chat/" onclick="emoticon(document.chat_data.content, &#39;:heu:&#39;)"></div><div title=":hilarous:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/hilarous.png" src="https://www.arabic.chat/" onclick="emoticon(document.chat_data.content, &#39;:hilarous:&#39;)"></div><div title=":hmm:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/hmm.png" src="https://www.arabic.chat/" onclick="emoticon(document.chat_data.content, &#39;:hmm:&#39;)"></div><div title=":hono:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/hono.png" src="https://www.arabic.chat/" onclick="emoticon(document.chat_data.content, &#39;:hono:&#39;)"></div><div title=":hoo:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/hoo.png" src="https://www.arabic.chat/" onclick="emoticon(document.chat_data.content, &#39;:hoo:&#39;)"></div><div title=":hooo:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/hooo.png" src="https://www.arabic.chat/" onclick="emoticon(document.chat_data.content, &#39;:hooo:&#39;)"></div><div title=":idontcare:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/idontcare.png" src="https://www.arabic.chat/" onclick="emoticon(document.chat_data.content, &#39;:idontcare:&#39;)"></div><div title=":indiferent:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/indiferent.png" src="https://www.arabic.chat/" onclick="emoticon(document.chat_data.content, &#39;:indiferent:&#39;)"></div><div title=":kiss:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/kiss.png" src="https://www.arabic.chat/" onclick="emoticon(document.chat_data.content, &#39;:kiss:&#39;)"></div><div title=":kiss2:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/kiss2.png" src="https://www.arabic.chat/" onclick="emoticon(document.chat_data.content, &#39;:kiss2:&#39;)"></div><div title=":kiss3:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/kiss3.png" src="https://www.arabic.chat/" onclick="emoticon(document.chat_data.content, &#39;:kiss3:&#39;)"></div><div title=":kiss4:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/kiss4.png" src="https://www.arabic.chat/" onclick="emoticon(document.chat_data.content, &#39;:kiss4:&#39;)"></div><div title=":med:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/med.png" src="https://www.arabic.chat/" onclick="emoticon(document.chat_data.content, &#39;:med:&#39;)"></div><div title=":medsmile:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/medsmile.png" src="https://www.arabic.chat/" onclick="emoticon(document.chat_data.content, &#39;:medsmile:&#39;)"></div><div title=":muted:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/muted.png" src="https://www.arabic.chat/" onclick="emoticon(document.chat_data.content, &#39;:muted:&#39;)"></div><div title=":nana:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/nana.png" src="https://www.arabic.chat/" onclick="emoticon(document.chat_data.content, &#39;:nana:&#39;)"></div><div title=":neutral:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/neutral.png" src="https://www.arabic.chat/" onclick="emoticon(document.chat_data.content, &#39;:neutral:&#39;)"></div><div title=":noooo:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/noooo.png" src="https://www.arabic.chat/" onclick="emoticon(document.chat_data.content, &#39;:noooo:&#39;)"></div><div title=":nosebleed:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/nosebleed.png" src="https://www.arabic.chat/" onclick="emoticon(document.chat_data.content, &#39;:nosebleed:&#39;)"></div><div title=":omg:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/omg.png" src="https://www.arabic.chat/" onclick="emoticon(document.chat_data.content, &#39;:omg:&#39;)"></div><div title=":omgomg:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/omgomg.png" src="https://www.arabic.chat/" onclick="emoticon(document.chat_data.content, &#39;:omgomg:&#39;)"></div><div title=":pokerface:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/pokerface.png" src="https://www.arabic.chat/" onclick="emoticon(document.chat_data.content, &#39;:pokerface:&#39;)"></div><div title=":reverse:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/reverse.png" src="https://www.arabic.chat/" onclick="emoticon(document.chat_data.content, &#39;:reverse:&#39;)"></div><div title=":sad:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/sad.png" src="https://www.arabic.chat/" onclick="emoticon(document.chat_data.content, &#39;:sad:&#39;)"></div><div title=":sad2:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/sad2.png" src="https://www.arabic.chat/" onclick="emoticon(document.chat_data.content, &#39;:sad2:&#39;)"></div><div title=":scared:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/scared.png" src="https://www.arabic.chat/" onclick="emoticon(document.chat_data.content, &#39;:scared:&#39;)"></div><div title=":sick2:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/sick2.png" src="https://www.arabic.chat/" onclick="emoticon(document.chat_data.content, &#39;:sick2:&#39;)"></div><div title=":sleep:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/sleep.png" src="https://www.arabic.chat/" onclick="emoticon(document.chat_data.content, &#39;:sleep:&#39;)"></div><div title=":smile:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/smile.png" src="https://www.arabic.chat/" onclick="emoticon(document.chat_data.content, &#39;:smile:&#39;)"></div><div title=":smileface:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/smileface.png" src="https://www.arabic.chat/" onclick="emoticon(document.chat_data.content, &#39;:smileface:&#39;)"></div><div title=":smileteeth:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/smileteeth.png" src="https://www.arabic.chat/" onclick="emoticon(document.chat_data.content, &#39;:smileteeth:&#39;)"></div><div title=":sweat:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/sweat.png" src="https://www.arabic.chat/" onclick="emoticon(document.chat_data.content, &#39;:sweat:&#39;)"></div><div title=":tongue:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/tongue.png" src="https://www.arabic.chat/" onclick="emoticon(document.chat_data.content, &#39;:tongue:&#39;)"></div><div title=":tongue2:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/tongue2.png" src="https://www.arabic.chat/" onclick="emoticon(document.chat_data.content, &#39;:tongue2:&#39;)"></div><div title=":tongue3:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/tongue3.png" src="https://www.arabic.chat/" onclick="emoticon(document.chat_data.content, &#39;:tongue3:&#39;)"></div><div title=":toro:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/toro.png" src="https://www.arabic.chat/" onclick="emoticon(document.chat_data.content, &#39;:toro:&#39;)"></div><div title=":totalangry:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/totalangry.png" src="https://www.arabic.chat/" onclick="emoticon(document.chat_data.content, &#39;:totalangry:&#39;)"></div><div title=":totallove:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/totallove.png" src="https://www.arabic.chat/" onclick="emoticon(document.chat_data.content, &#39;:totallove:&#39;)"></div><div title=":verysad:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/verysad.png" src="https://www.arabic.chat/" onclick="emoticon(document.chat_data.content, &#39;:verysad:&#39;)"></div><div title=":whaaa:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/whaaa.png" src="https://www.arabic.chat/" onclick="emoticon(document.chat_data.content, &#39;:whaaa:&#39;)"></div><div title=":whocare:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/whocare.png" src="https://www.arabic.chat/" onclick="emoticon(document.chat_data.content, &#39;:whocare:&#39;)"></div><div title=":wot:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/wot.png" src="https://www.arabic.chat/" onclick="emoticon(document.chat_data.content, &#39;:wot:&#39;)"></div>                            </div>
+                        </div>
+                        <div id="main_input_extra" class="add_shadow log2">
+                                                                                </div>
+                    </div>
+                        
+                                                    <div id="special_space" style="width:100%; position:absolute; height: 146px; top:0; left:0; text-align: center; padding-top:20px; padding-bottom: 20px; z-index:2;" class="ad_box">
+                            <div id="arabic_chat_728x90_in_chat_desktop" style="min-height:90px">
+    <script>
+      googletag.cmd.push(function() { googletag.display('arabic_chat_728x90_in_chat_desktop'); });
+    </script>
+</div>
+<div style="float: right; position: absolute; top: 136px; left: 0px; padding: 10px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; font-weight: bold; margin-top: 10px; display: block;" class="ad_box" onclick="hideTopAd()" id="top_ad_close"><i class="fa fa-times-circle"></i></div>
+						</div>
+                                            <div class="clear"></div>
+                </div>
+                <div class="chat_input_container">
+                    <div id="top_chat_container">
+                        <div id="container_input" class="input_wrap">
+                            <form id="main_input" name="chat_data" action="https://www.arabic.chat/" method="post" data-gtm-form-interact-id="0">
+                                <div class="input_table">
+                                    <div id="ok_sub_item" class="input_item main_item base_main sub_hidden" onclick="getChatSub();">
+                                        <i class="fa fa-plus input_icon bblock" id="chat_plus_icon"></i>
+                                    </div>
+     <!--                                <div value="0" class="input_item main_item base_main" onclick="showEmoticon();"
+                                         id="emo_item">
+                                        <i class="far fa-smile bblock"></i>
+                                    </div> -->
+                                    <div class="input_item main_item sub_main main_hide">
+                                        <i class="fa fa-minus input_icon bblock"></i>
+                                    </div>
+                                                                        <div id="main_input_box" class="td_input brelative">
+                                        <input type="text" spellcheck="false" name="content" placeholder="اكتب هنا..." maxlength="200" id="content" autocomplete="off" data-gtm-form-interact-field-id="0">
+                                         <button id="emo_item" onclick="showEmoticon()" value="0" class="input_item" type="button"><i class="far fa-grin bblock"></i></button>
+                                    </div>
+                                                                    <div id="inputt_right" class="main_item">
+                                        <button type="submit" class="default_btn csend" id="submit_button"><i class="fa fa-paper-plane"></i></button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+            <div id="chat_tall_right" class="background_chat ad-box" style="display: flex; align-items: center; justify-content: center; height:100%; width: 180px; padding-right: 10px; padding-left: 10px;">
+        <div id="arabic_chat_160x600_in_chat_right_desktop">
+    <script>
+      googletag.cmd.push(function() { googletag.display('arabic_chat_160x600_in_chat_right_desktop'); });
+    </script>
+</div>        </div>
+    
+    <div id="chat_right" class="chat_panel prheight cright2" style="display: none; height: 354px; width: 255px;">
+        <div id="chat_right_content" class="prheight" style="height: 354px;">
+            <div class="wrap_right_data prheight" style="height: 354px;">
+                                                                <!-- <div id="right_banner" style="height: 270px">
+                                    <iframe id="arabic.chat_300x250_desktop_DFP" data-id="arabic.chat_300x250_desktop_DFP" FRAMEBORDER="0" SCROLLING="no" MARGINHEIGHT="0" MARGINWIDTH="0" TOPMARGIN="0" LEFTMARGIN="0" width="1" height="1" style="margin-top: 10px"></iframe>
+                                    <div onclick="hideRightAd()" class="panel_bar_item" style="position: relative;text-align: center; float: right;margin-top: 4px;width: 100%;display: none;font-size:0.95em;" id="hide_ad_btn" tabindex="0">
+                                        <a href="#">إخفاء الاعلان</a>
+                                    </div>
+                            </div> -->
+                                        
+                <div id="right_panel_bar" class="panel_bar">
+                    <div onclick="toggleRight();" class="panel_bar_item">
+                        <i class="fa fa-times"></i>
+                    </div>
+                    <div class="bcell_mid tcenter">
+                        
+                        <div class="list_element left_item" onclick="getSearchUser();">
+
+<!--                             <div class="left_item_icon">
+
+                            </div> -->
+                            <div class="left_item_text">
+                                <i class="fa fa-search menui"></i>
+                                <span id="user_search_text">البحث عن أشخاص</span>
+
+                                <span style="display: none" id="total_wrapper">
+                                    <span class="theme_color" id="total_online"></span>
+                                    <i class="fa fa-users"></i>
+                                </span>
+                            </div>
+
+
+
+
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="chat_right_data" class="crheight" style="height: 312px;">
+                    <div id="container_user" data-placeholder="true" style="width: 100%; height: 313px; overflow: auto; position: relative;" class="container"><tr style="opacity: 0; position: absolute; width: 1px; height: 13676px; top: 0px;"></tr><div class="user_count vrow" style="color: white; font-weight: bold; border-radius: 5px; padding: 5px; text-align: center; background-color: green; height: 26px; position: absolute; top: 0px;"><div class="bcell">متصل <span class="">290</span><span> <i class="fa fa-users fa-1x" style="color:white;"></i></span></div></div><div class="user_item drop_fuser shgrad4 round10 margrad vrow" data-uid="15202316" data-rank="97" data-uname="★مُـهَـ𝑴𝑶𝑯𝑵𝑫 ـنَـدْ★" data-bot="0" style="position: absolute; top: 26px;"><div class="user_item_avatar"><div class="grad_bigger_border pgrad80"><img loading="lazy" class="small_user_av" src="./غرفة║الأردن_files/avatar_user15202316_5842814370391550.jpg"></div></div><div class="user_item_data"><p class="username Arabic2">★مُـهَـ𝑴𝑶𝑯𝑵𝑫 ـنَـدْ★</p><p class="text_xsmall bustate bellips">جاري A لكتابه.....</p></div><div class="user_item_icon icrank"><i style="color: gray" title="Admin" class="fa fa-star"></i></div></div><div class="user_item drop_fuser pgrad55 shgrad7 round10 margrad vrow" data-uid="112761170" data-rank="97" data-uname="✨✨🎀سہكُہررة🎀✨✨" data-bot="0" style="position: absolute; top: 78px;"><div class="user_item_avatar"><div class="grad_bigger_border pgrad55"><img loading="lazy" class="small_user_av" src="./غرفة║الأردن_files/avatar_user112761170_3947104045423666.jpg"></div></div><div class="user_item_data"><p class="username Arabic21">✨✨🎀سہكُہررة🎀✨✨</p><p class="text_xsmall bustate_white bellips">👑أنا فتاة لا تكرر مرتين 👑😌</p></div><div class="user_item_icon icrank"><i style="color: gray" title="Admin" class="fa fa-star"></i></div></div><div class="user_item drop_fuser pgrad80 round10 margrad vrow" data-uid="128623655" data-rank="97" data-uname="シ᭄دِ•ڪتتآاتوُور 卍亗" data-bot="0" style="position: absolute; top: 130px;"><div class="user_item_avatar"><div class="grad_bigger_border pgrad4"><img loading="lazy" class="small_user_av" src="./غرفة║الأردن_files/avatar_user128623655_4709017095069584.jpg"></div></div><div class="user_item_data"><p class="username Arabic20">シ᭄دِ•ڪتتآاتوُور 卍亗</p></div><div class="user_item_icon icrank"><i style="color: gray" title="Admin" class="fa fa-star"></i></div><div class="user_item_flag"><img src="./غرفة║الأردن_files/JO.png"></div></div><div class="user_item drop_fuser pgrad4 shgrad29 round10 margrad vrow" data-uid="123982976" data-rank="89" data-uname="❤️سفيرة المحبه ❤️" data-bot="0" style="position: absolute; top: 182px;"><div class="user_item_avatar"><div class="grad_bigger_border pgrad4"><img loading="lazy" class="small_user_av" src="./غرفة║الأردن_files/avatar_user123982976_8066826325465389.jpg"></div></div><div class="user_item_data"><p class="username bgrad60">❤️سفيرة المحبه ❤️</p><p class="text_xsmall bustate_white bellips">امرأه لم تخلق للنسيان 👑💞</p></div><div class="user_item_icon icrank"><i style="color: gold" title="Premium" class="fa fa-fa fa-award"></i></div><div class="user_item_flag"><img src="./غرفة║الأردن_files/TR.png"></div></div><div class="user_item drop_fuser vrow" data-uid="568949" data-rank="88" data-uname="Superbot" data-bot="1" style="position: absolute; top: 234px;"><div class="user_item_avatar"><img loading="lazy" class="avsex nosex" src="./غرفة║الأردن_files/default_bot.png"></div><div class="user_item_data"><p class="username bgrad25">Superbot</p><p class="text_xsmall bustate bellips">شات عربي</p></div><div class="user_item_icon icrank"><i title="بوت" class="ico_bot fab fa-android"></i></div></div><div class="user_item drop_fuser vrow" data-uid="83347167" data-rank="31" data-uname="⚓⚜️ 𝕿𝖍𝖊𝖘𝖆𝖎𝖑𝖔𝖗𝖒𝖆𝖓 ⚜️⚓" data-bot="0" style="position: absolute; top: 281px;"><div class="user_item_avatar"><img loading="lazy" class="avsex boy" src="./غرفة║الأردن_files/avatar_user83347167_7535597531471343.jpg"></div><div class="user_item_data"><p class="username bgrad8">⚓⚜️ 𝕿𝖍𝖊𝖘𝖆𝖎𝖑𝖔𝖗𝖒𝖆𝖓 ⚜️⚓</p><p class="text_xsmall bustate bellips">لا تتصنع فالطبيعي نكهته مميزة</p></div><div class="user_item_icon icrank"><i style="color: #ff6600" title="عضو متألق رتبة 31" class="fa fa-fas fa-medal"></i></div><div class="user_item_flag"><img src="./غرفة║الأردن_files/JO.png"></div></div><div class="user_item drop_fuser vrow" data-uid="12625646" data-rank="31" data-uname="⥄¡!°•ᶰᵒ 𝐍𝐚𝐦𝐞•°!¡⥄" data-bot="0" style="position: absolute; top: 328px;"><div class="user_item_avatar"><img loading="lazy" class="avsex boy" src="./غرفة║الأردن_files/avatar_user12625646_3819717620880146.jpg"><i title="بعيد" class="fa absent fa-circle ustatus"></i></div><div class="user_item_data"><p class="username bgrad4">⥄¡!°•ᶰᵒ 𝐍𝐚𝐦𝐞•°!¡⥄</p><p class="text_xsmall bustate bellips">الكآرما المرعبة ✨️</p></div><div class="user_item_icon icrank"><i style="color: #ff6600" title="عضو متألق رتبة 31" class="fa fa-fas fa-medal"></i></div><div class="user_item_flag"><img src="./غرفة║الأردن_files/NOFLAG2.png"></div></div><div class="user_item drop_fuser vrow" data-uid="91365324" data-rank="29" data-uname="Ayla ♡" data-bot="0" style="position: absolute; top: 375px;"><div class="user_item_avatar"><img loading="lazy" class="avsex girl" src="./غرفة║الأردن_files/avatar_user91365324_1390514722301391.jpg"><i title="بعيد" class="fa absent fa-circle ustatus"></i></div><div class="user_item_data"><p class="username bcolor16">Ayla ♡</p><p class="text_xsmall bustate bellips">البلقآوي❤️</p></div><div class="user_item_icon icrank"><i style="color: #ff6600" title="عضو لامع رتبة 29" class="fa fa-fal fa-gem"></i></div><div class="user_item_flag"><img src="./غرفة║الأردن_files/KW.png"></div></div><div class="user_item drop_fuser vrow" data-uid="62347998" data-rank="25" data-uname="عبود Abood" data-bot="0" style="position: absolute; top: 422px;"><div class="user_item_avatar"><img loading="lazy" class="avsex boy" src="./غرفة║الأردن_files/avatar_user62347998_416235276440602.jpg"></div><div class="user_item_data"><p class="username bcolor9">عبود Abood</p><p class="text_xsmall bustate bellips">الرمثاM💞Aانتا الروح</p></div><div class="user_item_icon icrank"><i style="color: #ff6600" title="عضو لامع رتبة 25" class="fa fa-fal fa-gem"></i></div><div class="user_item_flag"><img src="./غرفة║الأردن_files/JO.png"></div></div><div class="user_item drop_fuser vrow" data-uid="95985089" data-rank="22" data-uname="عمر كركى" data-bot="0" style="position: absolute; top: 469px;"><div class="user_item_avatar"><img loading="lazy" class="avsex boy" src="./غرفة║الأردن_files/avatar_user95985089_4879936294474111.jpg"></div><div class="user_item_data"><p class="username bcolor17">عمر كركى</p><p class="text_xsmall bustate bellips">عشقي قهوة...مذه.....</p></div><div class="user_item_icon icrank"><i style="color: #ccc" title="عضو مميز رتبة 22" class="fa fa-fal fa-gem"></i></div><div class="user_item_flag"><img src="./غرفة║الأردن_files/JO.png"></div></div><div class="user_item drop_fuser vrow" data-uid="129806123" data-rank="21" data-uname="𝙻𝙰𝚁𝙰 𐙚" data-bot="0" style="position: absolute; top: 516px;"><div class="user_item_avatar"><img loading="lazy" class="avsex girl" src="./غرفة║الأردن_files/avatar_user129806123_4711900144258442.jpg"><i title="مشغول" class="fa gone fa-circle ustatus"></i></div><div class="user_item_data"><p class="username bcolor17">𝙻𝙰𝚁𝙰 𐙚</p><p class="text_xsmall bustate bellips">رضا الناس غايه طُز فيها 🖤.</p></div><div class="user_item_icon icrank"><i style="color: #ccc" title="عضو مميز رتبة 21" class="fa fa-fal fa-gem"></i></div><div class="user_item_flag"><img src="./غرفة║الأردن_files/JO.png"></div></div><div class="user_item drop_fuser vrow" data-uid="109088542" data-rank="20" data-uname="∆ طبيب •°• أعشاب ∆" data-bot="0" style="position: absolute; top: 563px;"><div class="user_item_avatar"><img loading="lazy" class="avsex boy" src="./غرفة║الأردن_files/avatar_user109088542_952560248734795.jpg"></div><div class="user_item_data"><p class="username bcolor16">∆ طبيب •°• أعشاب ∆</p><p class="text_xsmall bustate bellips">تجميل نسائي في طب الاعشاب</p></div><div class="user_item_icon icrank"><i style="color: #ccc" title="عضو مميز رتبة 20" class="fa fa-fal fa-gem"></i></div><div class="user_item_flag"><img src="./غرفة║الأردن_files/LB.png"></div></div><div class="user_item drop_fuser vrow" data-uid="122992074" data-rank="20" data-uname="❀ ملاك ❀" data-bot="0" style="position: absolute; top: 610px;"><div class="user_item_avatar"><img loading="lazy" class="avsex girl" src="./غرفة║الأردن_files/avatar_user122992074_107856105306777.jpg"></div><div class="user_item_data"><p class="username bcolor21">❀ ملاك ❀</p></div><div class="user_item_icon icrank"><i style="color: #ccc" title="عضو مميز رتبة 20" class="fa fa-fal fa-gem"></i></div><div class="user_item_flag"><img src="./غرفة║الأردن_files/NOFLAG2.png"></div></div><div class="user_item drop_fuser vrow" data-uid="93941840" data-rank="20" data-uname="𝕭𝖆𝖗𝖍𝖔𝖔𝖒" data-bot="0" style="position: absolute; top: 657px;"><div class="user_item_avatar"><img loading="lazy" class="avsex boy" src="./غرفة║الأردن_files/avatar_user93941840_4653301565525490.jpg"></div><div class="user_item_data"><p class="username ">𝕭𝖆𝖗𝖍𝖔𝖔𝖒</p></div><div class="user_item_icon icrank"><i style="color: #ccc" title="عضو مميز رتبة 20" class="fa fa-fal fa-gem"></i></div><div class="user_item_flag"><img src="./غرفة║الأردن_files/JO.png"></div></div><div class="user_item drop_fuser vrow" data-uid="49532855" data-rank="19" data-uname="JJAmal" data-bot="0" style="position: absolute; top: 704px;"><div class="user_item_avatar"><img loading="lazy" class="avsex boy" src="./غرفة║الأردن_files/default_avatar.svg"></div><div class="user_item_data"><p class="username bcolor17">JJAmal</p><p class="text_xsmall bustate bellips">🙋</p></div><div class="user_item_sex boy"><i class="fa fa-mars"></i></div><div class="user_item_flag"><img src="./غرفة║الأردن_files/JO.png"></div></div><div class="user_item drop_fuser vrow" data-uid="4920094" data-rank="18" data-uname="Dr.yanal" data-bot="0" style="position: absolute; top: 751px;"><div class="user_item_avatar"><img loading="lazy" class="avsex boy" src="./غرفة║الأردن_files/default_avatar.svg"></div><div class="user_item_data"><p class="username bcolor15">Dr.yanal</p></div><div class="user_item_sex boy"><i class="fa fa-mars"></i></div><div class="user_item_flag"><img src="./غرفة║الأردن_files/JO.png"></div></div><div class="user_item drop_fuser vrow" data-uid="118347526" data-rank="17" data-uname="『عـنـاد⤹ 𝑨𝑵𝑨𝑫 〆 ⤸』" data-bot="0" style="position: absolute; top: 798px;"><div class="user_item_avatar"><img loading="lazy" class="avsex nosex" src="./غرفة║الأردن_files/avatar_user118347526_9287339386887494.jpg"></div><div class="user_item_data"><p class="username user">『عـنـاد⤹ 𝑨𝑵𝑨𝑫 〆 ⤸』</p></div><div class="user_item_sex nosex"><i class="fa fa-ankh"></i></div><div class="user_item_flag"><img src="./غرفة║الأردن_files/MO.png"></div></div><div class="user_item drop_fuser vrow" data-uid="47663596" data-rank="17" data-uname="Ahmad Ali 69" data-bot="0" style="position: absolute; top: 845px;"><div class="user_item_avatar"><img loading="lazy" class="avsex boy" src="./غرفة║الأردن_files/avatar_user47663596_4048909992714719.jpg"></div><div class="user_item_data"><p class="username bcolor18">Ahmad Ali 69</p></div><div class="user_item_sex boy"><i class="fa fa-mars"></i></div><div class="user_item_flag"><img src="./غرفة║الأردن_files/JO.png"></div></div><div class="user_item drop_fuser vrow" data-uid="103054561" data-rank="17" data-uname="قلب قلب3" data-bot="0" style="position: absolute; top: 892px;"><div class="user_item_avatar"><img loading="lazy" class="avsex boy" src="./غرفة║الأردن_files/avatar_user103054561_7878158714591985.jpg"></div><div class="user_item_data"><p class="username ">قلب قلب3</p></div><div class="user_item_sex boy"><i class="fa fa-mars"></i></div><div class="user_item_flag"><img src="./غرفة║الأردن_files/JO.png"></div></div><div class="user_item drop_fuser vrow" data-uid="43144420" data-rank="16" data-uname="$ K H A L E D $" data-bot="0" style="position: absolute; top: 939px;"><div class="user_item_avatar"><img loading="lazy" class="avsex boy" src="./غرفة║الأردن_files/avatar_user43144420_92050469139484.jpg"></div><div class="user_item_data"><p class="username bcolor9">$ K H A L E D $</p><p class="text_xsmall bustate bellips">العقرب</p></div><div class="user_item_sex boy"><i class="fa fa-mars"></i></div><div class="user_item_flag"><img src="./غرفة║الأردن_files/JO.png"></div></div><div class="user_item drop_fuser vrow" data-uid="129606011" data-rank="15" data-uname="وردي وشوكي" data-bot="0" style="position: absolute; top: 986px;"><div class="user_item_avatar"><img loading="lazy" class="avsex girl" src="./غرفة║الأردن_files/avatar_user129606011_1732292331557610.jpg"></div><div class="user_item_data"><p class="username bcolor1">وردي وشوكي</p></div><div class="user_item_sex girl"><i class="fa fa-venus"></i></div><div class="user_item_flag"><img src="./غرفة║الأردن_files/JO.png"></div></div><div class="user_item drop_fuser vrow" data-uid="60802331" data-rank="13" data-uname="97Abood97" data-bot="0" style="position: absolute; top: 1033px;"><div class="user_item_avatar"><img loading="lazy" class="avsex boy" src="./غرفة║الأردن_files/avatar_user60802331_7421236447010287.jpg"></div><div class="user_item_data"><p class="username ">97Abood97</p><p class="text_xsmall bustate bellips">ولنا في ذكراهم اثر ❤️</p></div><div class="user_item_sex boy"><i class="fa fa-mars"></i></div><div class="user_item_flag"><img src="./غرفة║الأردن_files/JO.png"></div></div><div class="user_item drop_fuser vrow" data-uid="43423755" data-rank="12" data-uname="ثلاثيني عايف حالي" data-bot="0" style="position: absolute; top: 1080px;"><div class="user_item_avatar"><img loading="lazy" class="avsex boy" src="./غرفة║الأردن_files/avatar_user43423755_8047725691430564.jpg"></div><div class="user_item_data"><p class="username bcolor2">ثلاثيني عايف حالي</p></div><div class="user_item_sex boy"><i class="fa fa-mars"></i></div><div class="user_item_flag"><img src="./غرفة║الأردن_files/JO.png"></div></div><div class="user_item drop_fuser vrow" data-uid="129066397" data-rank="12" data-uname="البلقآوي" data-bot="0" style="position: absolute; top: 1127px;"><div class="user_item_avatar"><img loading="lazy" class="avsex boy" src="./غرفة║الأردن_files/avatar_user129066397_6704954151145188.jpg"></div><div class="user_item_data"><p class="username bcolor15">البلقآوي</p><p class="text_xsmall bustate bellips">🤎آيلاااا🤎</p></div><div class="user_item_sex boy"><i class="fa fa-mars"></i></div><div class="user_item_flag"><img src="./غرفة║الأردن_files/JO.png"></div></div><div class="user_item drop_fuser vrow" data-uid="61120781" data-rank="12" data-uname="𓅓☾ آدُمْ ☽𓅓" data-bot="0" style="position: absolute; top: 1174px;"><div class="user_item_avatar"><img loading="lazy" class="avsex boy" src="./غرفة║الأردن_files/avatar_user61120781_1837316656642796.jpg"></div><div class="user_item_data"><p class="username ">𓅓☾ آدُمْ ☽𓅓</p><p class="text_xsmall bustate bellips">“هدوء القلب راحة لا تضاهى.”</p></div><div class="user_item_sex boy"><i class="fa fa-mars"></i></div><div class="user_item_flag"><img src="./غرفة║الأردن_files/NOFLAG2.png"></div></div><div class="user_item drop_fuser vrow" data-uid="2994465" data-rank="11" data-uname="Ali Yousef❤️" data-bot="0" style="position: absolute; top: 1221px;"><div class="user_item_avatar"><img loading="lazy" class="avsex girl" src="./غرفة║الأردن_files/avatar_user2994465_9272313837123290.jpg"></div><div class="user_item_data"><p class="username bcolor22">Ali Yousef❤️</p></div><div class="user_item_sex girl"><i class="fa fa-venus"></i></div><div class="user_item_flag"><img src="./غرفة║الأردن_files/NOFLAG2.png"></div></div><div class="user_item drop_fuser vrow" data-uid="84596831" data-rank="11" data-uname="عاشق الروح الجميله" data-bot="0" style="position: absolute; top: 1268px;"><div class="user_item_avatar"><img loading="lazy" class="avsex boy" src="./غرفة║الأردن_files/avatar_user84596831_1844655121991201.jpg"></div><div class="user_item_data"><p class="username bcolor9">عاشق الروح الجميله</p></div><div class="user_item_sex boy"><i class="fa fa-mars"></i></div><div class="user_item_flag"><img src="./غرفة║الأردن_files/JO.png"></div></div><div class="user_item drop_fuser vrow" data-uid="53771651" data-rank="11" data-uname="Alawi_" data-bot="0" style="position: absolute; top: 1315px;"><div class="user_item_avatar"><img loading="lazy" class="avsex boy" src="./غرفة║الأردن_files/default_avatar.svg"></div><div class="user_item_data"><p class="username bcolor18">Alawi_</p></div><div class="user_item_sex boy"><i class="fa fa-mars"></i></div><div class="user_item_flag"><img src="./غرفة║الأردن_files/JO.png"></div></div><div class="user_item drop_fuser vrow" data-uid="124703268" data-rank="11" data-uname="𝘽𝙡𝙖𝙘𝙠 𝙃𝙚𝙖𝙧𝙩 🖤" data-bot="0" style="position: absolute; top: 1362px;"><div class="user_item_avatar"><img loading="lazy" class="avsex boy" src="./غرفة║الأردن_files/default_avatar.svg"></div><div class="user_item_data"><p class="username ">𝘽𝙡𝙖𝙘𝙠 𝙃𝙚𝙖𝙧𝙩 🖤</p></div><div class="user_item_sex boy"><i class="fa fa-mars"></i></div><div class="user_item_flag"><img src="./غرفة║الأردن_files/EC.png"></div></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<div id="private_box" style="height: 260px;" class="ui-draggable">
+    <div class="top_panel btable top_background ui-draggable-handle" id="private_top">
+<!--        --><!--            <div class="bcell_mid crt_item">-->
+<!--                <i class="fa fa-user"></i>-->
+<!--            </div>-->
+<!--        -->        <div id="private_name" class="bcell_mid bellips lpad10">
+            <p class="bellips"></p>
+        </div>
+
+           
+        <div onclick="showMenu(&#39;private_menu&#39;);" class="bcell_mid crt_item private_opt">
+            <i class="fa fa-cog menutrig"></i>
+            <div id="private_menu" class="sysmenu sub_menu fmenu" style="display: none;">
+
+            <div class="sub_menu_item" onclick="ignoreThisUser();" id="pmenu_act_ignore">
+                    <div class="sub_menu_icon">
+                        <i class="fa fa-ban"></i>
+                    </div>
+                    <div class="sub_menu_text">
+                        تجاهل                    </div>
+            </div>
+
+            <div class="sub_menu_item" onclick="unignoreThisUser();" id="pmenu_act_unignore">
+                    <div class="sub_menu_icon">
+                        <i class="far fa-circle"></i>
+                    </div>
+                    <div class="sub_menu_text">
+                        إلغاء التجاهل                    </div>
+            </div>
+
+            <div class="sub_menu_item" onclick="lockPrivateThisUser();" id="pmenu_act_lock">
+                <div class="sub_menu_icon">
+                    <i class="fa fa-comment-slash"></i>
+                </div>
+                <div class="sub_menu_text">
+                    غلق الخاص                </div>
+            </div>
+
+            <div class="sub_menu_item" onclick="unlockPrivateThisUser();" id="pmenu_act_unlock">
+                <div class="sub_menu_icon">
+                    <i class="fa fa-comment"></i>
+                </div>
+                <div class="sub_menu_text">
+                    تشغيل الخاص                </div>
+            </div>
+
+                            <div class="sub_menu_item" onclick="allowMediaThisUser();" id="pmenu_act_allow_media">
+                    <div class="sub_menu_icon">
+                        <i class="fa fa-paperclip"></i>
+                    </div>
+                    <div class="sub_menu_text">
+                        استقبال الوسائط 
+                    </div>
+                </div>
+            
+            <div class="sub_menu_item" id="private_delete">
+                <div class="sub_menu_icon">
+                    <i class="fa fa-trash"></i>
+                </div>
+                <div class="sub_menu_text">
+                    حذف                </div>
+            </div>
+
+            </div>
+        </div>
+
+        <div title="إغلاق" id="private_close" class="bcell_mid crt_item">
+            <i class="fa fa-times"></i>
+        </div>
+    </div>
+
+        
+    <div id="private_wrap_content" style="position:relative;">
+    <div id="private_content" class="background_box" value="1">
         <ul>
-            <li class="p-2 bg-gray-800 rounded mb-2">محادثة جديدة</li>
         </ul>
     </div>
-
-    <!-- منطقة الدردشة -->
-    <div class="flex-1 flex flex-col">
-        <div class="flex-1 p-6 overflow-y-auto">
-            <!-- رسالة المستخدم -->
-            <div class="bg-white p-4 rounded-lg shadow mb-4 self-end">أهلاً، كيف يمكنني مساعدتك؟</div>
-            <!-- رسالة البوت -->
-            <div class="bg-blue-100 p-4 rounded-lg shadow mb-4">أهلاً بك! أنا جاهز للمساعدة.</div>
-        </div>
-
-        <!-- صندوق الإدخال -->
-        <div class="p-4 bg-white border-t">
-            <input type="text" class="w-full p-3 border rounded-lg" placeholder="اكتب رسالتك هنا...">
+    <div id="priv_input_extra" class="add_shadow log2">
+            </div>
+</div>
+    <div id="private_input" class="input_wrap">
+        <form id="message_form" action="https://www.arabic.chat/" method="post" name="private_form">
+            <div class="input_table">
+                <div id="priv_arrow" class="input_item main_item" style="display: none; cursor: pointer;">
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+                
+                                    <div class="input_item main_item" id="priv_upload_item">
+                        <div id="priv_upload_progress">
+                            <span class="percentage"></span>
+                        </div>
+                        <i id="private_file_icon" data="fa-paperclip" class="fa fa-paperclip"></i>
+                        <input id="private_file" onchange="previewImage(0);" type="file">
+                    </div>
+                <!--                 <div value="0" id="emo_item_priv" class="input_item main_item">
+                    <i class="far fa-smile"></i>
+                </div> -->
+                <div class="input_item main_item" role="button" id="priv_mic"><!--<button id="record_priv_btn" type="button">--><i class="fa fa-microphone record" id="record_private"></i><!--</button>--></div><div id="private_input_box" class="td_input brelative">
+                    <input spellcheck="false" id="message_content" placeholder="اكتب هنا..." maxlength="500" data-target="" autocomplete="off">
+                        <i class="far fa-grin input_item" id="emo_item_priv" value="0" tabindex="0" role="button"></i>
+                </div>
+                <div id="message_send" class="main_item">
+                    <button class="default_btn csend" id="private_send"><i class="fa fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </form>
+        <div id="private_emoticon" class="background_box">
+            <div class="emo_head private_emo_head">
+                                    <div data="base_emo" class="dark_selected emo_menu emo_menu_item_priv"><img class="emo_select" src="./غرفة║الأردن_files/base_emo.png">
+                    </div>
+                    <div data="food" class="emo_menu emo_menu_item_priv"><img class="emo_select" src="./غرفة║الأردن_files/food.png"></div><div data="sticker_animals" class="emo_menu emo_menu_item_priv"><img class="emo_select" src="./غرفة║الأردن_files/sticker_animals.png"></div>                                <div class="empty_emo">
+                </div>
+                <div class="emo_menu" id="emo_close_priv" tabindex="0">
+                    <i class="fa fa-times"></i>
+                </div>
+            </div>
+            <div id="private_emo" class="emo_content_priv">
+                <div title=":amazing:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/amazing.png" src="https://www.arabic.chat/" onclick="emoticon(document.private_form.message_content, &#39;:amazing:&#39;)"></div><div title=":angel:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/angel.png" src="https://www.arabic.chat/" onclick="emoticon(document.private_form.message_content, &#39;:angel:&#39;)"></div><div title=":angry:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/angry.png" src="https://www.arabic.chat/" onclick="emoticon(document.private_form.message_content, &#39;:angry:&#39;)"></div><div title=":anxious:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/anxious.png" src="https://www.arabic.chat/" onclick="emoticon(document.private_form.message_content, &#39;:anxious:&#39;)"></div><div title=":bad:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/bad.png" src="https://www.arabic.chat/" onclick="emoticon(document.private_form.message_content, &#39;:bad:&#39;)"></div><div title=":bigsmile:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/bigsmile.png" src="https://www.arabic.chat/" onclick="emoticon(document.private_form.message_content, &#39;:bigsmile:&#39;)"></div><div title=":blink:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/blink.png" src="https://www.arabic.chat/" onclick="emoticon(document.private_form.message_content, &#39;:blink:&#39;)"></div><div title=":cool:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/cool.png" src="https://www.arabic.chat/" onclick="emoticon(document.private_form.message_content, &#39;:cool:&#39;)"></div><div title=":crisped:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/crisped.png" src="https://www.arabic.chat/" onclick="emoticon(document.private_form.message_content, &#39;:crisped:&#39;)"></div><div title=":cry:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/cry.png" src="https://www.arabic.chat/" onclick="emoticon(document.private_form.message_content, &#39;:cry:&#39;)"></div><div title=":cry2:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/cry2.png" src="https://www.arabic.chat/" onclick="emoticon(document.private_form.message_content, &#39;:cry2:&#39;)"></div><div title=":dead:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/dead.png" src="https://www.arabic.chat/" onclick="emoticon(document.private_form.message_content, &#39;:dead:&#39;)"></div><div title=":desperate:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/desperate.png" src="https://www.arabic.chat/" onclick="emoticon(document.private_form.message_content, &#39;:desperate:&#39;)"></div><div title=":devil:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/devil.png" src="https://www.arabic.chat/" onclick="emoticon(document.private_form.message_content, &#39;:devil:&#39;)"></div><div title=":doubt:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/doubt.png" src="https://www.arabic.chat/" onclick="emoticon(document.private_form.message_content, &#39;:doubt:&#39;)"></div><div title=":feelgood:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/feelgood.png" src="https://www.arabic.chat/" onclick="emoticon(document.private_form.message_content, &#39;:feelgood:&#39;)"></div><div title=":funny:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/funny.png" src="https://www.arabic.chat/" onclick="emoticon(document.private_form.message_content, &#39;:funny:&#39;)"></div><div title=":good:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/good.png" src="https://www.arabic.chat/" onclick="emoticon(document.private_form.message_content, &#39;:good:&#39;)"></div><div title=":happy:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/happy.png" src="https://www.arabic.chat/" onclick="emoticon(document.private_form.message_content, &#39;:happy:&#39;)"></div><div title=":happy3:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/happy3.png" src="https://www.arabic.chat/" onclick="emoticon(document.private_form.message_content, &#39;:happy3:&#39;)"></div><div title=":hee:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/hee.png" src="https://www.arabic.chat/" onclick="emoticon(document.private_form.message_content, &#39;:hee:&#39;)"></div><div title=":heu:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/heu.png" src="https://www.arabic.chat/" onclick="emoticon(document.private_form.message_content, &#39;:heu:&#39;)"></div><div title=":hilarous:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/hilarous.png" src="https://www.arabic.chat/" onclick="emoticon(document.private_form.message_content, &#39;:hilarous:&#39;)"></div><div title=":hmm:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/hmm.png" src="https://www.arabic.chat/" onclick="emoticon(document.private_form.message_content, &#39;:hmm:&#39;)"></div><div title=":hono:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/hono.png" src="https://www.arabic.chat/" onclick="emoticon(document.private_form.message_content, &#39;:hono:&#39;)"></div><div title=":hoo:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/hoo.png" src="https://www.arabic.chat/" onclick="emoticon(document.private_form.message_content, &#39;:hoo:&#39;)"></div><div title=":hooo:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/hooo.png" src="https://www.arabic.chat/" onclick="emoticon(document.private_form.message_content, &#39;:hooo:&#39;)"></div><div title=":idontcare:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/idontcare.png" src="https://www.arabic.chat/" onclick="emoticon(document.private_form.message_content, &#39;:idontcare:&#39;)"></div><div title=":indiferent:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/indiferent.png" src="https://www.arabic.chat/" onclick="emoticon(document.private_form.message_content, &#39;:indiferent:&#39;)"></div><div title=":kiss:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/kiss.png" src="https://www.arabic.chat/" onclick="emoticon(document.private_form.message_content, &#39;:kiss:&#39;)"></div><div title=":kiss2:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/kiss2.png" src="https://www.arabic.chat/" onclick="emoticon(document.private_form.message_content, &#39;:kiss2:&#39;)"></div><div title=":kiss3:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/kiss3.png" src="https://www.arabic.chat/" onclick="emoticon(document.private_form.message_content, &#39;:kiss3:&#39;)"></div><div title=":kiss4:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/kiss4.png" src="https://www.arabic.chat/" onclick="emoticon(document.private_form.message_content, &#39;:kiss4:&#39;)"></div><div title=":med:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/med.png" src="https://www.arabic.chat/" onclick="emoticon(document.private_form.message_content, &#39;:med:&#39;)"></div><div title=":medsmile:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/medsmile.png" src="https://www.arabic.chat/" onclick="emoticon(document.private_form.message_content, &#39;:medsmile:&#39;)"></div><div title=":muted:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/muted.png" src="https://www.arabic.chat/" onclick="emoticon(document.private_form.message_content, &#39;:muted:&#39;)"></div><div title=":nana:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/nana.png" src="https://www.arabic.chat/" onclick="emoticon(document.private_form.message_content, &#39;:nana:&#39;)"></div><div title=":neutral:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/neutral.png" src="https://www.arabic.chat/" onclick="emoticon(document.private_form.message_content, &#39;:neutral:&#39;)"></div><div title=":noooo:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/noooo.png" src="https://www.arabic.chat/" onclick="emoticon(document.private_form.message_content, &#39;:noooo:&#39;)"></div><div title=":nosebleed:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/nosebleed.png" src="https://www.arabic.chat/" onclick="emoticon(document.private_form.message_content, &#39;:nosebleed:&#39;)"></div><div title=":omg:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/omg.png" src="https://www.arabic.chat/" onclick="emoticon(document.private_form.message_content, &#39;:omg:&#39;)"></div><div title=":omgomg:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/omgomg.png" src="https://www.arabic.chat/" onclick="emoticon(document.private_form.message_content, &#39;:omgomg:&#39;)"></div><div title=":pokerface:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/pokerface.png" src="https://www.arabic.chat/" onclick="emoticon(document.private_form.message_content, &#39;:pokerface:&#39;)"></div><div title=":reverse:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/reverse.png" src="https://www.arabic.chat/" onclick="emoticon(document.private_form.message_content, &#39;:reverse:&#39;)"></div><div title=":sad:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/sad.png" src="https://www.arabic.chat/" onclick="emoticon(document.private_form.message_content, &#39;:sad:&#39;)"></div><div title=":sad2:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/sad2.png" src="https://www.arabic.chat/" onclick="emoticon(document.private_form.message_content, &#39;:sad2:&#39;)"></div><div title=":scared:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/scared.png" src="https://www.arabic.chat/" onclick="emoticon(document.private_form.message_content, &#39;:scared:&#39;)"></div><div title=":sick2:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/sick2.png" src="https://www.arabic.chat/" onclick="emoticon(document.private_form.message_content, &#39;:sick2:&#39;)"></div><div title=":sleep:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/sleep.png" src="https://www.arabic.chat/" onclick="emoticon(document.private_form.message_content, &#39;:sleep:&#39;)"></div><div title=":smile:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/smile.png" src="https://www.arabic.chat/" onclick="emoticon(document.private_form.message_content, &#39;:smile:&#39;)"></div><div title=":smileface:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/smileface.png" src="https://www.arabic.chat/" onclick="emoticon(document.private_form.message_content, &#39;:smileface:&#39;)"></div><div title=":smileteeth:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/smileteeth.png" src="https://www.arabic.chat/" onclick="emoticon(document.private_form.message_content, &#39;:smileteeth:&#39;)"></div><div title=":sweat:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/sweat.png" src="https://www.arabic.chat/" onclick="emoticon(document.private_form.message_content, &#39;:sweat:&#39;)"></div><div title=":tongue:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/tongue.png" src="https://www.arabic.chat/" onclick="emoticon(document.private_form.message_content, &#39;:tongue:&#39;)"></div><div title=":tongue2:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/tongue2.png" src="https://www.arabic.chat/" onclick="emoticon(document.private_form.message_content, &#39;:tongue2:&#39;)"></div><div title=":tongue3:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/tongue3.png" src="https://www.arabic.chat/" onclick="emoticon(document.private_form.message_content, &#39;:tongue3:&#39;)"></div><div title=":toro:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/toro.png" src="https://www.arabic.chat/" onclick="emoticon(document.private_form.message_content, &#39;:toro:&#39;)"></div><div title=":totalangry:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/totalangry.png" src="https://www.arabic.chat/" onclick="emoticon(document.private_form.message_content, &#39;:totalangry:&#39;)"></div><div title=":totallove:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/totallove.png" src="https://www.arabic.chat/" onclick="emoticon(document.private_form.message_content, &#39;:totallove:&#39;)"></div><div title=":verysad:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/verysad.png" src="https://www.arabic.chat/" onclick="emoticon(document.private_form.message_content, &#39;:verysad:&#39;)"></div><div title=":whaaa:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/whaaa.png" src="https://www.arabic.chat/" onclick="emoticon(document.private_form.message_content, &#39;:whaaa:&#39;)"></div><div title=":whocare:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/whocare.png" src="https://www.arabic.chat/" onclick="emoticon(document.private_form.message_content, &#39;:whocare:&#39;)"></div><div title=":wot:" class="emoticon "><img class="lazyboom" data-img="https://storage.arabic.chat/emoticon/wot.png" src="https://www.arabic.chat/" onclick="emoticon(document.private_form.message_content, &#39;:wot:&#39;)"></div>            </div>
         </div>
     </div>
 
-</body>
-</html>
+            <div id="privacy_message" class="input_wrap" style="display: none;">
+            <div class="input_table" style="height: 44px;">
+                <p style="padding: 2px; color: red; font-weight: bold; text-align: center; vertical-align: middle;">عفواً هذا العضو قامَ بإغلاق الرسائل الخاصة</p>
+                <p style="padding: 2px; font-weight: bold; text-align: center;" id="priv_ask_msg">ولكن يمكنك إرسال طلب <a href="https://www.arabic.chat/#" onclick="askUserToTalk()">أضغط هنا</a> للتحدث معك.</p>
+                <p style="padding: 2px; font-weight: bold; text-align: center;" id="priv_req_sent">تم ارسال الطلب</p>
+            </div>
+        </div>
+    
+</div>
+<div id="container_stream" class="background_stream ui-draggable ui-draggable-handle">
+    <div id="stream_header">
+        <div id="close_stream_div" style="display: inline-block;">
+            <i id="close_stream" class="fa fa-times"></i>
+        </div>
+        <div id="hide_stream_div" style="display: inline-block;">
+            <i id="hide_stream" class="fa fa-minus"></i>
+        </div>
+    </div>
+    <div id="wrap_stream">
+        <iframe src="./غرفة║الأردن_files/saved_resource.html" allowfullscreen="" scrolling="no" frameborder="0" style="display: none;"></iframe>
+        <video src="" style="display: none; width:100%;height:100%;z-index:999999 !important;" id="wrap_video" controls="" preload="auto"></video>
+    </div>
+</div><iframe name="__tcfapiLocator" style="display: none;" src="./غرفة║الأردن_files/saved_resource(1).html"></iframe>
+<div id="wrap_footer" data="1">
+    <div class="chat_footer" id="menu_container">
+        <div id="menu_container_inside">
+                            <div id="player_options" class="player_options sysmenu add_shadow hideall hidden" style="display: none;">
+                                            <div class="player_list_container">
+                            <p class="text_xsmall bold bpad10 rtl_elem">
+                                قائمة المحطات
+<span style="font-size: 14px" class="rtl_fleft" onclick="showMenu(&#39;player_options&#39;);"><i class="fa fa-times"></i></span>
+
+                            </p>
+                            <div id="player_listing">
+                                <div id="radio-play1" class="radio_element sub_list_item" data="https://stream.radiojar.com/8s5u5tpdtwzuv"><div class="sub_list_name">Quran</div></div><div id="radio-play5" class="radio_element sub_list_item" data="https://9090streaming.mobtada.com/9090FMEGYPT"><div class="sub_list_name">9090</div></div><div id="radio-play8" class="radio_element sub_list_item" data="https://audio.nrpstream.com/listen/nogoumfm/radio.mp3"><div class="sub_list_name">100.6</div></div><div id="radio-play21" class="radio_element sub_list_item" data="https://radio95.radioca.st/stream/1/"><div class="sub_list_name">Shaaby</div></div>
+                            </div>
+                        </div>
+                                        <div class="player_volume">
+                        <div id="sound_display" class="bcell_mid">
+                            <i class="fa fa-volume-down show_sound"></i>
+                        </div>
+                        <div id="player_volume" class="bcell_mid boom_slider">
+                            <div id="slider" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"><div class="ui-slider-range ui-widget-header ui-corner-all ui-slider-range-min" style="width: 50%;"></div><span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 50%;"></span></div>
+                        </div>
+                    </div>
+                </div>
+                        <div id="my_menu">
+                <div class="chat_footer_empty bcell_mid">
+                                            <div class="chat_player">
+                            <div class="player_menu player_elem" onclick="showMenu(&#39;player_options&#39;);">
+                                <i class="fa fa-sliders-h"></i>
+                            </div>
+                            <div id="player_actual_status" class="player_elem player_button turn_on_play">
+                                <i id="current_play_btn" class="fa fa-play-circle"></i>
+                            </div>
+                            <div id="current_player" class="player_elem player_current">
+                                <p class="bellips text_xsmall theme_color" style="text-align: left">Radio</p>
+                                <p class="bellips" id="current_station" style="text-align: left">9090</p>
+                            </div>
+                        </div>
+                                    </div>
+                
+
+                <div onclick="getRoomList();" class="chat_footer_item">
+                    <i class="i_btm fa fa-home"></i>
+
+                                        <p style="font-size:12px">الغرف</p>
+                                    </div>
+                <div title="قائمة المتواجدين" onclick="userReload(1);" class="chat_footer_item">
+                    <i class="i_btm fa fa-users"></i>
+
+                                        <p style="font-size:12px">المتصلين</p>
+                                    </div>
+                
+                
+
+                                    <div onclick="editProfileOptions();" class="chat_footer_item">
+                        <i class="i_btm fa fa-cog"></i>
+
+
+                                                <p style="font-size:12px">خيارات</p>
+                        
+                    </div>
+                            </div>
+        </div>
+    </div>
+</div>
+<div id="av_menu" class="sub_menu" style="direction: rtl; z-index: 999999;">
+    <ul class="avlist">
+        <li data="" value="" class="avitem gprivate avpriv" onclick="resetAvMenu();">محادثة خاصة</li>
+        <li data="" class="avitem get_info" onclick="resetAvMenu();">عرض الملف الشخصي</li>
+    </ul>
+</div>
+<div id="monitor_data" onclick="getMonitor();">
+    <p>Count: <span id="logs_counter">64</span></p>
+    <p>Speed: <span id="current_speed">2625</span></p>
+    <p>Latency: <span id="current_latency">114</span></p>
+    <p>Server: <span id="server_latency">0.74</span></p>
+</div>
+<div id="action_menu" class="hidden">
+    <div data="" value="" class="aclist aclist_name gprivate rself">
+	<span class="list_icon"><i class="fa fa-comments theme_color"></i></span>محادثة خاصة</div>
+<div data="" class="aclist get_info rglobal">
+	<span class="list_icon"><i class="fa fa-user default_color"></i></span>عرض الملف الشخصي</div>
+<!--
+-->
+</div>
+<script data-cfasync="false">
+var use_fast = true;
+var ev_delay = (function() {
+  var timer = 0;
+  return function(callback, ms) {
+    clearTimeout(timer);
+    timer = setTimeout(callback, ms);
+  };
+})();
+getSearchUser = function() {
+  window.preventRightPanelHide = true;
+  closeLeft();
+  panelIt(400);
+
+  if(use_fast) {
+      $('#total_wrapper').hide();
+      
+	  $.post('addons/user_search/system/user_search_template_fast.php', {
+	    token: utk,
+		}, function(response) {
+			chatRightIt(response);
+			selectIt();
+			window.preventRightPanelHide = false;
+	  });
+  } else {
+	  $.post('addons/user_search/system/user_search_template.php', {
+	    token: utk,
+		}, function(response) {
+			chatRightIt(response);
+			selectIt();
+	  });
+  }
+}
+evSearchUser = function(force){
+	$("#ev_user_results").fadeIn().html('<div class="centered_element vpad15"><i class="fa fa-spinner fa-spin fa-3x fa-fw"></i></div>');
+
+    var delay = 300;
+    if(force) {
+        delay = 1;
+    }
+    ev_delay(function() {
+        $.post('addons/user_search/system/action_fast.php', {
+            query: $('#ev_search_users').val(),
+            search_type: $('#ev_search_type').val(),
+            search_order: $('#ev_search_order').val(),
+            search_country: $('#ev_search_country').val(),
+            search_online: $('#ev_search_online').is(':checked') ? 1 : 0,
+            token: utk,
+        }, function(response) {
+            $('#ev_user_results').fadeIn();
+            $("#ev_user_results").html(response);
+        });
+    }, delay);
+}
+
+$(document).ready(function() {
+	appLeftMenu('search', 'بحث', 'getSearchUser();');
+	$(document).on('change', '#ev_search_type, #ev_search_order, #ev_search_country, #ev_search_online', function() {
+		evSearchUser();
+	});
+	$(document).on('keyup', '#ev_search_users', function() {
+        if($(this).val().length >= 2 || $(this).val().length == 0)
+		    evSearchUser();
+	});
+
+    $(document).on('focus', '#ev_search_users', function() {
+        if(!$('[data-id="arabic.chat_336x320_mobile_DFP"]').length) return;
+        $('#right_banner').hide(); adjustHeight();
+    });
+    $(document).on('focusout', '#ev_search_users', function() {
+        if(!$('[data-id="arabic.chat_336x320_mobile_DFP"]').length) return;
+
+        $('#right_banner').show();
+        adjustHeight();
+
+    });
+});
+
+
+appLeftMenu('crown', system.rankGiftsTop, 'getRankGiftsTop();');
+appLeftMenu('gem', system.pointsTop, 'getPointsTop();');
+
+
+</script>
+<script data-cfasync="false">
+$(document).ready(function(){
+	boomAddCss('addons/adnoyer/files/adnoyer.css');
+});
+</script><script data-cfasync="false">
+openContactUs = function(){
+	$.post('addons/contact_us/system/contact_us.php', {
+		token: utk,
+		}, function(response) {
+			showModal(response, 500);
+	});
+}
+sendContactUs = function(){
+	var semail = $('#contact_us_email').val();
+	var smessage = $('#contact_us_message').val();
+	var ssubject = $('#contact_us_subject').val();
+	if(semail == '' || smessage == ''){
+		callSaved(system.emptyField, 3);
+		event.preventDefault();
+	}
+	else if (/^\s+$/.test(semail) || /^\s+$/.test(smessage)){
+		callSaved(system.emptyField, 3);
+		event.preventDefault();
+	}
+	else {
+		$('#contact_us_form').hide();
+		$('#contact_us_sending').show();
+		$.post('/system/action.php', {token: utk, gc: 1}, function(r) {
+			$.post('addons/contact_us/system/action.php', { 
+				email: semail,
+				message: smessage,
+				subject: ssubject,
+				token: utk,
+				s: fnxy.s(r.gc)
+			}, function(response) {
+				if(response == 1){
+					$('#contact_us_form').remove();
+					$('#contact_us_sending').hide();
+					$('#contact_us_sent').show();
+				}
+				else if(response == 2){
+					$('#contact_us_sending').hide();
+					$('#contact_us_form').show();
+					$('#contact_us_email').val('');
+					callSaved(system.invalidEmail, 3);
+				}
+				else {
+					hideModal();
+					callSaved(system.error, 3);
+					return false;
+				}
+			});
+		});
+		
+	}
+}
+$(document).ready(function() {
+	appLeftMenu('envelope', 'إتصل بنا', 'openContactUs();');
+});
+</script>
+<script data-cfasync="false" src="./غرفة║الأردن_files/function.js.تنزيل"></script>
+<script data-cfasync="false" src="./غرفة║الأردن_files/player.js.تنزيل"></script>
+
+<script data-cfasync="false" src="./غرفة║الأردن_files/vmsg.min.js.تنزيل"></script>
+
+
+<script data-cfasync="false" src="./غرفة║الأردن_files/android.js.تنزيل"></script>
+
+
+<script>
+    $(document).ready(function() {
+        if($('#chat_right:visible').length) {
+            loadRightAd();
+        }
+    });
+</script>
+
+<div id="side_content" class="chat_side_panel">
+	<div id="side_close" class="panel_top btable">
+		<div class="side_close_btn bcell_mid" onclick="closeSide();">
+			<i class="fa fa-times"></i>
+		</div>
+		<div class="side_close_empty bcell_mid">
+		</div>
+	</div>
+	<div id="side_inside" style="height: 354px;">
+	</div>
+</div>
+<div id="small_modal" class="small_modal_out modal_back" style="display: none;">
+	<div class="small_modal_in modal_in">
+		<div class="modal_top">
+			<div class="modal_top_empty">
+			</div>
+			<div class="modal_top_element close_modal">
+				<i class="fa fa-times"></i>
+			</div>
+		</div>
+		<div id="small_modal_content" class="modal_content small_modal_content"></div>
+	</div>
+</div>
+<div id="large_modal" class="large_modal_out modal_back" style="display: none;">
+	<div class="large_modal_in modal_in" style="position: relative; max-width: 400px;">
+<div id="pro_ad" style="display: none; height: 126px;" class="top_background brelative centered_element tpad10">
+<iframe class="stpd-ad" data-id="arabic.chat_320x100_mobile_2_DFP" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" topmargin="0" leftmargin="0" width="1" height="1" src="./غرفة║الأردن_files/saved_resource(2).html"></iframe>
+</div>
+		<div id="large_modal_content" class="modal_content large_modal_content"></div>
+	</div> 
+</div>
+<div id="over_modal" class="over_modal_out modal_back">
+	<div class="over_modal_in modal_in">
+		<div class="modal_top">
+			<div class="modal_top_empty">
+			</div>
+			<div class="modal_top_element close_over">
+				<i class="fa fa-times"></i>
+			</div>
+		</div>
+		<div id="over_modal_content" class="modal_content over_modal_content">
+		</div>
+	</div>
+</div> 
+<div id="over_emodal" class="over_emodal_out modal_back">
+	<div class="over_emodal_in modal_in">
+		<div id="over_emodal_content" class="modal_content over_emodal_content">
+		</div>
+	</div>
+</div>
+<div class="saved_data saved_error" style="display: none;">
+	<span class="saved_span">عفواً لا يمكنك المشاركة العامة، يجب تسجيل حساب، بإمكانك الآن استخدام الدردشة الخاصة فقط.!</span>
+</div>
+<audio preload="none" class="hidden" id="private_sound" src="/sounds/private.mp3"></audio>
+<audio preload="none" class="hidden" id="message_sound" src="/sounds/new_messages.mp3"></audio>
+<audio preload="none" class="hidden" id="username_sound" src="/sounds/username.mp3"></audio>
+<audio preload="none" class="hidden" id="whistle_sound" src="/sounds/whistle.mp3"></audio>
+<audio preload="none" class="hidden" id="notify_sound" src="/sounds/notify.mp3"></audio>
+<audio preload="none" class="hidden" id="news_sound" src="/sounds/new_news.mp3"></audio>
+
+<script src="./غرفة║الأردن_files/api(1).js.تنزيل" defer=""></script>
+
+<div></div><iframe src="./غرفة║الأردن_files/syncframe.html" width="0" height="0" frameborder="0" sandbox="allow-scripts allow-same-origin" aria-hidden="true" tabindex="-1" title="Criteo GUM iframe" style="border-width: 0px; margin: 0px; display: none;"></iframe><div><iframe src="./غرفة║الأردن_files/pd.html" width="0" height="0" style="display:none;"></iframe></div></body></html>
