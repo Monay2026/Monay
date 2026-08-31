@@ -4,11 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>شات موبايل | شات مناي فلسطين PS</title>
-    <meta name="description" content="انضم إلى شات مناي فلسطين وتعرف على أصدقاء جدد من فلسطين والعالم العربي بدون تسجيل مجاناً.">
-    <meta name="keywords" content="شات فلسطين, دردشة عربية, شات موبايل, شات مناي">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
-        
+        /* المتغيرات والألوان المحدثة لتطابق التصميم الجديد */
         :root {
             --bg-color: #f4f6f9;
             --text-color: #333333;
@@ -28,9 +25,10 @@
             --chat-bg: #121212;
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Cairo', sans-serif; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: Tahoma, 'Cairo', sans-serif; }
         body { background-color: var(--bg-color); color: var(--text-color); height: 100vh; display: flex; flex-direction: column; overflow: hidden; transition: background 0.3s, color 0.3s; }
         
+        /* تأثيرات النصوص المتحركة القديمة المضافة بموقعك */
         @keyframes shiningAnimation {
             0% { color: #ff0055; text-shadow: 0 0 5px #ff0055; }
             50% { color: #00ffcc; text-shadow: 0 0 5px #00ffcc; }
@@ -38,76 +36,113 @@
         }
         .shining-text { animation: shiningAnimation 3s infinite; font-weight: bold; display: inline-block; }
 
-        @keyframes welcomeFlash1 {
-            0% { color: #ff4757; transform: scale(1); text-shadow: 0 0 5px #ff4757; }
-            50% { color: #2ed573; transform: scale(1.02); text-shadow: 0 0 15px #2ed573; }
-            100% { color: #ff4757; transform: scale(1); text-shadow: 0 0 5px #ff4757; }
-        }
-        @keyframes welcomeFlash2 {
-            0% { color: #1e90ff; text-shadow: 0 0 5px #1e90ff; }
-            50% { color: #ffa502; text-shadow: 0 0 15px #ffa502; }
-            100% { color: #1e90ff; text-shadow: 0 0 5px #1e90ff; }
-        }
-        .welcome-msg-1 { animation: welcomeFlash1 2s infinite; font-weight: bold; }
-        .welcome-msg-2 { animation: welcomeFlash2 2s infinite; font-weight: bold; }
-
-        /* شاشة الدخول المحدثة */
+        /* شاشة الدخول المحدثة كلياً لتطابق شات الموبايل المستهدف */
         #loginScreen { 
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
-            background: var(--bg-color); display: flex; flex-direction: column;
-            align-items: center; z-index: 400; overflow-y: auto; padding: 20px; 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            background: #f4f6f9; 
+            display: flex; 
+            flex-direction: column;
+            align-items: center; 
+            z-index: 400; 
+            overflow-y: auto;
+            padding: 20px;
         }
         
         .login-header-bar {
-            width: 100%; max-width: 600px; background: var(--header-bg); padding: 15px;
-            border-radius: 8px; display: flex; justify-content: space-between; align-items: center;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02); margin-bottom: 20px; border: 1px solid var(--border-color);
+            width: 100%;
+            max-width: 600px;
+            background: #ffffff;
+            padding: 15px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            margin-bottom: 20px;
         }
         .login-header-bar h1 { font-size: 1.1rem; color: #0077b6; }
         .login-header-bar a { text-decoration: none; color: #666; font-size: 0.85rem; margin-right: 10px; }
 
-        .login-welcome-text { text-align: center; margin-bottom: 20px; max-width: 500px; }
-        .login-welcome-text h2 { font-size: 1.3rem; color: var(--text-color); margin-bottom: 5px; }
+        .login-welcome-text {
+            text-align: center;
+            margin-bottom: 20px;
+            max-width: 500px;
+        }
+        .login-welcome-text h2 { font-size: 1.3rem; color: #222; margin-bottom: 5px; }
         .login-welcome-text p { font-size: 0.9rem; color: #666; }
 
         .login-box { 
-            background: var(--panel-bg); padding: 25px; border-radius: 12px; width: 100%;
-            max-width: 500px; display: flex; flex-direction: column; gap: 15px; 
-            border: 1px solid var(--border-color); box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
+            background: #ffffff; 
+            padding: 25px; 
+            border-radius: 12px; 
+            width: 100%;
+            max-width: 500px; 
+            display: flex; 
+            flex-direction: column; 
+            gap: 15px; 
+            border: 1px solid #e9ecef; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
         }
         
-        .login-box label { display: block; text-align: right; margin-bottom: 5px; font-weight: bold; font-size: 0.9rem; color: var(--text-color); }
+        .login-box label {
+            display: block;
+            text-align: right;
+            margin-bottom: 5px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            color: #444;
+        }
 
+        /* اختيار الجنس الاحترافي بالأزرار */
         .gender-group { display: flex; gap: 12px; width: 100%; }
         .gender-btn-option { flex: 1; position: relative; }
         .gender-btn-option input[type="radio"] { display: none; }
         .gender-btn-option label {
-            display: flex; align-items: center; justify-content: center; gap: 8px;
-            padding: 12px; background: var(--bg-color); border: 2px solid var(--border-color);
-            border-radius: 8px; cursor: pointer; transition: all 0.3s; font-weight: bold; color: var(--text-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px;
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: bold;
         }
         .gender-btn-option input[type="radio"]:checked + .male-lbl { border-color: #0077b6; background: #e0f2fe; color: #0077b6; }
         .gender-btn-option input[type="radio"]:checked + .female-lbl { border-color: #ec4899; background: #fce7f3; color: #ec4899; }
 
-        .login-box input, .login-box select { width: 100%; padding: 12px; border-radius: 8px; border: 2px solid var(--border-color); outline: none; font-size: 14px; background: var(--bg-color); color: var(--text-color); transition: border-color 0.3s; }
+        .login-box input, .login-box select { width: 100%; padding: 12px; border-radius: 8px; border: 2px solid #e9ecef; outline: none; font-size: 14px; transition: border-color 0.3s; }
         .login-box input:focus, .login-box select:focus { border-color: #0077b6; }
         
-        .btn-enter { background: #0077b6; color: #fff; border: none; padding: 14px; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 16px; box-shadow: 0 4px 6px rgba(0,119,182,0.15); transition: background 0.2s; }
-        .btn-enter:hover { background: #005f94; }
+        .login-box .btn-enter { background: #0077b6; color: #fff; border: none; padding: 14px; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 16px; box-shadow: 0 4px 6px rgba(0,119,182,0.15); transition: background 0.2s; }
+        .login-box .btn-enter:hover { background: #005f94; }
         
         .online-status-lbl { font-size: 0.9rem; color: #666; text-align: center; margin: 5px 0; }
         .online-status-lbl strong { color: #2ec4b6; }
 
+        /* سيو وروابط غرف الدول في أسفل نموذج الدخول */
         .seo-rooms-footer {
-            width: 100%; max-width: 500px; background: var(--panel-bg); border-radius: 12px;
-            padding: 20px; margin-top: 25px; border: 1px solid var(--border-color); box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            width: 100%;
+            max-width: 500px;
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 25px;
+            border: 1px solid #e9ecef;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
-        .seo-rooms-footer h3 { font-size: 1rem; margin-bottom: 12px; color: var(--text-color); border-bottom: 2px solid var(--border-color); padding-bottom: 6px; }
+        .seo-rooms-footer h3 { font-size: 1rem; margin-bottom: 12px; color: #333; border-bottom: 2px solid #f4f6f9; padding-bottom: 6px; }
         .rooms-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 8px; }
-        .rooms-grid a { display: block; text-align: center; padding: 8px; background: var(--bg-color); border-radius: 6px; text-decoration: none; color: var(--text-color); font-size: 0.8rem; transition: all 0.2s; border: 1px solid var(--border-color); }
+        .rooms-grid a { display: block; text-align: center; padding: 8px; background: #f8f9fa; border-radius: 6px; text-decoration: none; color: #555; font-size: 0.8rem; transition: all 0.2s; }
         .rooms-grid a:hover { background: #0077b6; color: #fff; }
 
-        /* واجهة الشات الفعلية */
+        /* إعدادات وتنسيقات واجهة المحادثات (الشات) بعد الدخول */
         .top-main-bar { background-color: #0b131d; color: #fff; display: flex; justify-content: space-between; align-items: center; padding: 10px 15px; font-size: 13px; }
         .exit-chat-btn { background: #d90429; color: #fff; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; font-size: 12px; font-weight: bold; }
 
@@ -116,45 +151,23 @@
         
         .sidebar-online { width: 240px; background: var(--panel-bg); border-right: 1px solid var(--border-color); display: flex; flex-direction: column; padding: 10px; overflow-y: auto; }
         .sidebar-title { font-size: 13px; font-weight: bold; color: #0077b6; margin-bottom: 8px; border-bottom: 1px solid var(--border-color); padding-bottom: 5px; }
-        .online-user-item { display: flex; align-items: center; gap: 8px; padding: 6px; border-radius: 6px; cursor: pointer; margin-bottom: 4px; background: var(--bg-color); border: 1px solid var(--border-color); font-size: 12px; }
-        .online-user-item img { width: 30px; height: 30px; border-radius: 50%; object-fit: cover; }
-
+        
         .chat-container { flex: 1; overflow-y: auto; padding: 12px; display: flex; flex-direction: column; gap: 10px; }
         .message { background: var(--panel-bg); padding: 10px 14px; border-radius: 8px; font-size: 13px; border: 1px solid var(--border-color); word-break: break-word; }
-        .user-name { font-weight: bold; margin-left: 5px; cursor: pointer; color: #0077b6; }
+        .user-name { font-weight: bold; margin-left: 5px; color: #0077b6; }
         .system-notice { text-align: center; font-size: 12px; color: #2b8a3e; background: rgba(47, 158, 68, 0.1); padding: 8px; border-radius: 6px; font-weight: bold; border: 1px solid #b2f2bb; }
-        .admin-notice { background: #ffe3e3; color: #c92a2a; border: 1px solid #ff8787; font-weight: bold; }
-
-        .modal-screen { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 90%; max-width: 420px; height: 80vh; background: var(--panel-bg); z-index: 300; flex-direction: column; border-radius: 12px; border: 1px solid var(--border-color); box-shadow: 0 10px 30px rgba(0,0,0,0.3); overflow: hidden; }
-        .modal-header { background: #0b131d; padding: 12px 15px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); font-weight: bold; color: #fff; }
-        .modal-close-btn { background: #d90429; color: #fff; border: none; padding: 5px 12px; border-radius: 4px; cursor: pointer; font-size: 13px; }
-        .modal-body { flex: 1; padding: 15px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; background: var(--bg-color); }
-
-        #emojiPicker { display: none; background: var(--panel-bg); border: 1px solid var(--border-color); padding: 10px; border-radius: 8px; gap: 8px; flex-wrap: wrap; max-height: 180px; overflow-y: auto; position: absolute; bottom: 70px; right: 15px; z-index: 150; width: 280px; justify-content: center; }
-        .emoji-btn { background: none; border: none; font-size: 22px; cursor: pointer; padding: 3px; }
 
         .input-bar { background: var(--panel-bg); padding: 10px; display: flex; align-items: center; gap: 8px; border-top: 1px solid var(--border-color); }
         .input-bar input { flex: 1; background: var(--bg-color); border: 1px solid var(--border-color); border-radius: 20px; padding: 10px 15px; color: var(--text-color); font-size: 14px; outline: none; }
-        .input-btn { background: none; border: none; font-size: 18px; cursor: pointer; color: var(--text-color); }
         .send-btn { background: #0077b6; border: none; color: #fff; padding: 8px 16px; border-radius: 20px; cursor: pointer; font-size: 14px; font-weight: bold; }
 
         .bottom-nav { background-color: #0b131d; display: flex; justify-content: space-around; padding: 10px 0; border-top: 1px solid var(--border-color); font-size: 11px; color: #fff; }
-        .nav-item { display: flex; flex-direction: column; align-items: center; cursor: pointer; color: #a5b4fc; position: relative; }
-        .badge-dot { position: absolute; top: 0; right: 8px; background: #d90429; color: #fff; border-radius: 50%; width: 14px; height: 14px; font-size: 9px; display: flex; justify-content: center; align-items: center; display: none; }
-
-        .list-row { display: flex; justify-content: space-between; align-items: center; padding: 10px; background: var(--panel-bg); border-bottom: 1px solid var(--border-color); border-radius: 6px; margin-bottom: 6px; cursor: pointer; }
-        .setting-group { display: flex; flex-direction: column; gap: 5px; margin-bottom: 12px; }
-        .setting-group label { font-size: 12px; color: #0077b6; font-weight: bold; }
-        .setting-group select, .setting-group input { padding: 8px; border-radius: 5px; border: 1px solid var(--border-color); background: var(--bg-color); color: var(--text-color); font-size: 13px; }
-
-        @media (max-width: 768px) {
-            .sidebar-online { display: none; }
-        }
+        .nav-item { display: flex; flex-direction: column; align-items: center; cursor: pointer; color: #a5b4fc; }
     </style>
 </head>
-<body data-theme="light">
+<body>
 
-    <!-- 1. شاشة الدخول الاحترافية والمتطابقة مع التصميم المطلوب -->
+    <!-- 1. شاشة الدخول المحدثة (طراز شات عربي) -->
     <div id="loginScreen">
         <div class="login-header-bar">
             <h1>شات مناي فلسطين PS</h1>
@@ -170,604 +183,27 @@
         </div>
 
         <div class="login-box">
+            <!-- تحديد الجنس بأزرار كبيرة -->
             <div>
                 <label>تحديد الجنس</label>
                 <div class="gender-group">
                     <div class="gender-btn-option">
-                        <input type="radio" id="maleGender" name="userGender" value="ذكر" checked>
+                        <input type="radio" id="maleGender" name="userGender" value="👦" checked>
                         <label for="maleGender" class="male-lbl">ذكر 👦</label>
                     </div>
                     <div class="gender-btn-option">
-                        <input type="radio" id="femaleGender" name="userGender" value="أنثى">
+                        <input type="radio" id="femaleGender" name="userGender" value="👧">
                         <label for="femaleGender" class="female-lbl">أنثى 👧</label>
                     </div>
                 </div>
             </div>
 
+            <!-- الاسم المستعار -->
             <div>
                 <label for="usernameInput">الاسم المستعار</label>
                 <input type="text" id="usernameInput" placeholder="اكتب اسمك المستعار هنا..." required>
             </div>
 
+            <!-- قائمة تحديد العمر المنسدلة من 18 إلى 99 -->
             <div>
                 <label for="ageSelect">تحديد العمر</label>
-                <select id="ageSelect">
-                    <script>
-                        for(let i = 18; i <= 60; i++) {
-                            document.write(`<option value="${i}">${i}</option>`);
-                        }
-                    </script>
-                </select>
-            </div>
-
-            <div class="online-status-lbl">
-                المتواجدون الآن: <strong>(1,245)</strong> زائر ومبرمج
-            </div>
-
-            <button type="button" class="btn-enter" onclick="enterChat('عضو')">دخول الدردشة</button>
-        </div>
-
-        <div class="seo-rooms-footer">
-            <h3>غرف الدردشة العربية</h3>
-            <div class="rooms-grid">
-                <a href="#" onclick="quickSelectRoom('غرفة مناي', '🇵🇸')">شات فلسطين 🇵🇸</a>
-                <a href="#" onclick="quickSelectRoom('غرفة مناي العامة', '⭐')">غرفة مناي العامة</a>
-                <a href="#" onclick="quickSelectRoom('شات الأردن', '🇯🇴')">شات الأردن 🇯🇴</a>
-                <a href="#" onclick="quickSelectRoom('شات مصر', '🇪🇬')">شات مصر 🇪🇬</a>
-                <a href="#" onclick="quickSelectRoom('شات السعودية', '🇸🇦')">شات السعودية 🇸🇦</a>
-                <a href="#" onclick="quickSelectRoom('شات العراق', '🇮🇶')">شات العراق 🇮🇶</a>
-                <a href="#" onclick="quickSelectRoom('شات سوريا', '🇸🇾')">شات سوريا 🇸🇾</a>
-                <a href="#" onclick="quickSelectRoom('شات الجزائر', '🇩🇿')">شات الجزائر 🇩🇿</a>
-                <a href="#" onclick="quickSelectRoom('شات المغرب', '🇲🇦')">شات المغرب 🇲🇦</a>
-                <a href="#" onclick="quickSelectRoom('شات تونس', '🇹🇳')">شات تونس 🇹🇳</a>
-                <a href="#" onclick="quickSelectRoom('شات ليبيا', '🇱🇾')">شات ليبيا 🇱🇾</a>
-                <a href="#" onclick="quickSelectRoom('شات اليمن', '🇾🇪')">شات اليمن 🇾🇪</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- نافذة المتصلين (منبثقة للموبايل) -->
-    <div id="onlineScreen" class="modal-screen">
-        <div class="modal-header">
-            <span>المتصلون الآن (<span id="onlineCountMobile">0</span>)</span>
-            <button class="modal-close-btn" onclick="closeModal('onlineScreen')">إغلاق</button>
-        </div>
-        <div class="modal-body" id="onlineUsersListMobile"></div>
-    </div>
-
-    <!-- نافذة الغرف (منبثقة) -->
-    <div id="roomsScreen" class="modal-screen">
-        <div class="modal-header">
-            <span>غرف الشات العامة</span>
-            <button class="modal-close-btn" onclick="closeModal('roomsScreen')">إغلاق</button>
-        </div>
-        <div class="modal-body" id="roomsListContainer">
-            <div class="list-row" onclick="switchRoom('غرفة مناي', '🇵🇸')">
-                <span class="shining-text">⭐ غرفة مناي 🇵🇸</span> 
-                <b id="count-room-0" style="font-size:11px; background:#ff0055; color:#fff; padding:2px 6px; border-radius:4px;">0</b>
-            </div>
-            <div class="list-row" onclick="switchRoom('غرفة فلسطين العامة', '🇵🇸')">
-                <span>🇵🇸 غرفة فلسطين العامة</span> 
-                <b id="count-room-1" style="font-size:11px; background:#0077b6; color:#fff; padding:2px 6px; border-radius:4px;">0</b>
-            </div>
-            <div class="list-row" onclick="switchRoom('شات الأردن', '🇯🇴')">
-                <span>🇯🇴 شات الأردن</span> 
-                <b id="count-room-2" style="font-size:11px; background:#0077b6; color:#fff; padding:2px 6px; border-radius:4px;">0</b>
-            </div>
-            <div class="list-row" onclick="switchRoom('شات مصر', '🇪🇬')">
-                <span>🇪🇬 شات مصر</span> 
-                <b id="count-room-3" style="font-size:11px; background:#0077b6; color:#fff; padding:2px 6px; border-radius:4px;">0</b>
-            </div>
-            <div class="list-row" onclick="switchRoom('شات السعودية', '🇸🇦')">
-                <span>🇸🇦 شات السعودية</span> 
-                <b id="count-room-4" style="font-size:11px; background:#0077b6; color:#fff; padding:2px 6px; border-radius:4px;">0</b>
-            </div>
-        </div>
-    </div>
-
-    <!-- نافذة الشات الخاص (منبثقة) -->
-    <div id="privateChatScreen" class="modal-screen">
-        <div class="modal-header">
-            <span>محادثة خاصة مع: <b id="privateChatTargetName">---</b></span>
-            <button class="modal-close-btn" onclick="closePrivateChatScreen()">إغلاق</button>
-        </div>
-        <div class="modal-body" id="privateChatContainer" style="background: var(--bg-color);"></div>
-        <div class="input-bar">
-            <input type="file" id="privateImageInput" accept="image/*" style="display:none" onchange="sendPrivateImage(event)">
-            <button class="input-btn" onclick="document.getElementById('privateImageInput').click()" title="صورة">📷</button>
-            <input type="text" id="privateMessageInput" placeholder="اكتب رسالة خاصة..." onkeypress="if(event.key==='Enter') sendPrivateMessage()">
-            <button class="send-btn" onclick="sendPrivateMessage()">إرسال</button>
-        </div>
-    </div>
-
-    <!-- قائمة المحادثات الخاصة النشطة -->
-    <div id="privateListScreen" class="modal-screen">
-        <div class="modal-header">
-            <span>قائمة المحادثات الخاصة</span>
-            <button class="modal-close-btn" onclick="closeModal('privateListScreen')">إغلاق</button>
-        </div>
-        <div class="modal-body">
-            <p style="font-size:12px; color:#0077b6; font-weight:bold;">اختر عضواً لبدء محادثة خاصة:</p>
-            <div id="privateChatsUserList" style="display:flex; flex-direction:column; gap:5px;"></div>
-        </div>
-    </div>
-
-    <!-- الإعدادات الشخصية -->
-    <div id="settingsScreen" class="modal-screen">
-        <div class="modal-header">
-            <span>الإعدادات والملف الشخصي</span>
-            <button class="modal-close-btn" onclick="closeModal('settingsScreen')">إغلاق</button>
-        </div>
-        <div class="modal-body">
-            <div class="setting-group">
-                <label>الحالة الشخصية</label>
-                <select id="userStatusSelect">
-                    <option value="متصل 🟢">متصل 🟢</option>
-                    <option value="بالخارج 🟡">بالخارج 🟡</option>
-                    <option value="مشغول 🔴">مشغول 🔴</option>
-                </select>
-            </div>
-            <div class="setting-group">
-                <label>لون الخط والاسم</label>
-                <input type="color" id="nameColorInput" value="#0077b6">
-            </div>
-            <div class="setting-group">
-                <label>حجم الخط</label>
-                <select id="fontSizeSelect">
-                    <option value="12px">صغير</option>
-                    <option value="14px" selected>متوسط</option>
-                    <option value="16px">كبير</option>
-                </select>
-            </div>
-            <button onclick="saveSettings()" class="send-btn">حفظ الإعدادات</button>
-        </div>
-    </div>
-
-    <!-- لوحة المشرفين -->
-    <div id="adminPanelModal" class="modal-screen">
-        <div class="modal-header">
-            <span>لوحة تحكم المشرفين</span>
-            <button class="modal-close-btn" onclick="closeModal('adminPanelModal')">إغلاق</button>
-        </div>
-        <div class="modal-body">
-            <div class="setting-group">
-                <label>إرسال تنبيه إداري عام</label>
-                <input type="text" id="adminAlertText" placeholder="نص التنبيه...">
-                <button onclick="sendAdminAlert()" class="send-btn" style="margin-top:5px; background:#d90429;">إرسال</button>
-            </div>
-            <hr style="border:0; border-top:1px solid var(--border-color); margin:10px 0;">
-            <div id="adminUserControlList" style="display:flex; flex-direction:column; gap:6px;"></div>
-        </div>
-    </div>
-
-    <!-- 2. واجهة الشات الفعلية (تظهر بعد الدخول) -->
-    <div id="chatScreen" style="display: none; flex: 1; flex-direction: column; height: 100vh;">
-        <div class="top-main-bar">
-            <div>الغرفة: <b id="currentRoomName" style="color: #69db7c;">غرفة مناي 🇵🇸</b></div>
-            <div style="display:flex; gap:8px;">
-                <button id="adminPanelBtn" style="display:none; background:#ff9f43; color:#fff; border:none; padding:4px 8px; border-radius:4px; cursor:pointer; font-size:11px;" onclick="openModal('adminPanelModal')">لوحة المشرف</button>
-                <button class="exit-chat-btn" onclick="exitChat()">خروج</button>
-            </div>
-        </div>
-
-        <div class="chat-layout">
-            <div class="sidebar-online">
-                <div class="sidebar-title">المتواجدون (<span id="onlineCountPC">0</span>)</div>
-                <div id="sidebarUsersList" style="display:flex; flex-direction:column; gap:5px;"></div>
-            </div>
-
-            <div class="main-chat-wrapper">
-                <div class="chat-container" id="chatContainer">
-                    <div class="system-notice">
-                        مرحباً بك في شات مناي فلسطين! يرجى الالتزام بالأدب العام واحترام الآخرين.
-                    </div>
-                </div>
-
-                <div id="emojiPicker">
-                    <button class="emoji-btn" onclick="addEmoji('😀')">😀</button><button class="emoji-btn" onclick="addEmoji('😂')">😂</button><button class="emoji-btn" onclick="addEmoji('❤️')">❤️</button><button class="emoji-btn" onclick="addEmoji('🔥')">🔥</button><button class="emoji-btn" onclick="addEmoji('⭐')">⭐</button><button class="emoji-btn" onclick="addEmoji('🇵🇸')">🇵🇸</button><button class="emoji-btn" onclick="addEmoji('🇯🇴')">🇯🇴</button><button class="emoji-btn" onclick="addEmoji('🌹')">🌹</button>
-                </div>
-
-                <div class="input-bar">
-                    <input type="file" id="chatImageInput" accept="image/*" style="display:none" onchange="sendGeneralImage(event)">
-                    <button class="input-btn" onclick="toggleEmojiPicker()">😊</button>
-                    <button class="input-btn" onclick="document.getElementById('chatImageInput').click()" title="صورة">📷</button>
-                    <button class="input-btn" id="micBtn" onclick="toggleRecordAudio()" title="صوت">🎤</button>
-                    <input type="text" id="messageInput" placeholder="اكتب رسالتك هنا..." onkeypress="if(event.key==='Enter') sendMessage()">
-                    <button class="send-btn" onclick="sendMessage()">إرسال</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="bottom-nav">
-            <div class="nav-item" onclick="openModal('settingsScreen')">⚙️<span>الإعدادات</span></div>
-            <div class="nav-item" onclick="openModal('onlineScreen')">👥<span>المتصلين</span></div>
-            <div class="nav-item" onclick="openModal('roomsScreen')">🏠<span>الغرف</span></div>
-            <div class="nav-item" onclick="openModal('privateListScreen')">💬<span>الخاص</span></div>
-        </div>
-    </div>
-
-    <!-- Firebase SDK -->
-    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
-    
-    <script>
-        const firebaseConfig = {
-            apiKey: "YOUR_API_KEY",
-            authDomain: "chatarab2026m.firebaseapp.com",
-            databaseURL: "https://chatarab2026m-default-rtdb.firebaseio.com/",
-            projectId: "chatarab2026m",
-            storageBucket: "chatarab2026m.appspot.com",
-            messagingSenderId: "YOUR_SENDER_ID",
-            appId: "YOUR_APP_ID"
-        };
-        firebase.initializeApp(firebaseConfig);
-        const db = firebase.database();
-
-        let currentUserName = "";
-        let currentGender = "";
-        let currentRoom = "غرفة مناي 🇵🇸";
-        let userRole = "عضو";
-        let customColor = localStorage.getItem('chat_user_color') || '#0077b6';
-        let fontSize = "14px";
-        let userStatus = "متصل 🟢";
-        let userRef = null;
-        let messagesRef = null;
-        let mediaRecorder = null;
-        let audioChunks = [];
-        let autoWelcomeInterval = null;
-        let activePrivateTarget = "";
-        let privateMessagesRef = null;
-        let selectedQuickRoomName = "غرفة مناي";
-        let selectedQuickRoomFlag = "🇵🇸";
-
-        document.getElementById('nameColorInput').value = customColor;
-
-        function quickSelectRoom(name, flag) {
-            selectedQuickRoomName = name;
-            selectedQuickRoomFlag = flag;
-            // تأثير بصري بسيط عند الاختيار من الـ SEO
-            event.target.style.background = '#0077b6';
-            event.target.style.color = '#fff';
-        }
-
-        function enterChat(loginType) {
-            let name = document.getElementById('usernameInput').value.trim();
-            let gender = document.querySelector('input[name="userGender"]:checked').value;
-
-            if(!name) { alert('الرجاء إدخال الاسم المستعار للمتابعة'); return; }
-            
-            currentUserName = name + " 🇵🇸";
-            currentGender = gender;
-            currentRoom = `${selectedQuickRoomName} ${selectedQuickRoomFlag}`;
-
-            if(name.toLowerCase().includes('مدير') || name.toLowerCase().includes('admin')) {
-                userRole = "مدير";
-                currentUserName = "👑 " + name + " 🇵🇸";
-                document.getElementById('adminPanelBtn').style.display = 'block';
-            }
-
-            db.ref(`rooms_data/${currentRoom}/kicked/${currentUserName}`).once('value', snapshot => {
-                if(snapshot.val() === true) {
-                    alert('عذراً، أنت مطرود من هذه الغرفة من قبل الإدارة.');
-                    return;
-                }
-
-                document.getElementById('loginScreen').style.display = 'none';
-                document.getElementById('chatScreen').style.display = 'flex';
-                document.getElementById('currentRoomName').innerText = currentRoom;
-
-                initUserSession();
-                updateAllRoomsCounts();
-                startAutoWelcome();
-                checkIfKickedLive();
-            });
-        }
-
-        function initUserSession() {
-            let avatar = currentGender === 'ذكر' ? "https://i.imgur.com/8Km9tLL.png" : "https://i.imgur.com/GZ4w2Cm.png";
-            userRef = db.ref(`rooms_data/${currentRoom}/online_users`).push();
-            userRef.set({
-                name: currentUserName, 
-                gender: currentGender, 
-                avatar: avatar, 
-                role: userRole, 
-                status: userStatus,
-                color: customColor
-            });
-            userRef.onDisconnect().remove();
-
-            loadMessages();
-            loadOnlineUsers();
-        }
-
-        function checkIfKickedLive() {
-            db.ref(`rooms_data/${currentRoom}/kicked/${currentUserName}`).on('value', snapshot => {
-                if(snapshot.val() === true) {
-                    alert('تم طردك من الغرفة بواسطة الإدارة!');
-                    exitChat();
-                }
-            });
-        }
-
-        function startAutoWelcome() {
-            if(autoWelcomeInterval) clearInterval(autoWelcomeInterval);
-            const welcomeTexts = [
-                "✨ تدلل يا غالي، شات مناي يرحب بالجميع، أهلاً بكل الحضور الراقي أنرتم الغرفة! 🌸",
-                "🌟 مناي ترحب بكم جميعاً في عائلة الشات، نسعد بتواجدكم الجميل معنا! 💙",
-                "🔥 تحيات مناي لكل الأصدقاء الأحباء، نتمنى لكم أوقاتاً ممتعة ومميزة! 🌹"
-            ];
-            autoWelcomeInterval = setInterval(() => {
-                let text = welcomeTexts[Math.floor(Math.random() * welcomeTexts.length)];
-                db.ref(`rooms_data/${currentRoom}/messages`).push({
-                    type: 'auto_welcome',
-                    text: text,
-                    className: 'welcome-msg-1',
-                    time: new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
-                });
-            }, 35000);
-        }
-
-        function switchRoom(roomName, flag) {
-            if(userRef) userRef.remove();
-            if(messagesRef) messagesRef.off();
-
-            currentRoom = `${roomName} ${flag}`;
-            document.getElementById('currentRoomName').innerText = currentRoom;
-            document.getElementById('chatContainer').innerHTML = '';
-            closeModal('roomsScreen');
-
-            initUserSession();
-            updateAllRoomsCounts();
-        }
-
-        function exitChat() {
-            if(userRef) userRef.remove();
-            if(autoWelcomeInterval) clearInterval(autoWelcomeInterval);
-            location.reload();
-        }
-
-        function sendMessage() {
-            db.ref(`rooms_data/${currentRoom}/muted/${currentUserName}`).once('value', s => {
-                if(s.val() === true) { alert('عذراً، أنت مكتوم من الإدارة.'); return; }
-
-                let input = document.getElementById('messageInput');
-                let text = input.value.trim();
-                if(text !== '') {
-                    db.ref(`rooms_data/${currentRoom}/messages`).push({
-                        type: 'chat',
-                        name: currentUserName,
-                        text: text,
-                        color: customColor,
-                        fontSize: fontSize,
-                        role: userRole,
-                        time: new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
-                    });
-                    input.value = '';
-                }
-            });
-        }
-
-        function sendGeneralImage(event) {
-            let file = event.target.files[0];
-            if(file) {
-                let reader = new FileReader();
-                reader.onload = function(e) {
-                    db.ref(`rooms_data/${currentRoom}/messages`).push({
-                        type: 'image',
-                        name: currentUserName,
-                        imageUrl: e.target.result,
-                        color: customColor,
-                        role: userRole,
-                        time: new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
-                    });
-                }
-                reader.readAsDataURL(file);
-            }
-        }
-
-        function toggleRecordAudio() {
-            if (!mediaRecorder || mediaRecorder.state === "inactive") {
-                navigator.mediaDevices.getUserMedia({ audio: true }).then(stream => {
-                    mediaRecorder = new MediaRecorder(stream);
-                    audioChunks = [];
-                    mediaRecorder.ondataavailable = e => audioChunks.push(e.data);
-                    mediaRecorder.onstop = () => {
-                        let audioBlob = new Blob(audioChunks, { type: 'audio/mp3' });
-                        let reader = new FileReader();
-                        reader.readAsDataURL(audioBlob);
-                        reader.onloadend = function() {
-                            db.ref(`rooms_data/${currentRoom}/messages`).push({
-                                type: 'audio',
-                                name: currentUserName,
-                                audioUrl: reader.result,
-                                color: customColor,
-                                role: userRole,
-                                time: new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
-                            });
-                        }
-                    };
-                    mediaRecorder.start();
-                    document.getElementById('micBtn').style.color = 'red';
-                    alert('جاري تسجيل الصوت... اضغط مرة أخرى للإيقاف والإرسال.');
-                }).catch(() => alert('تعذر الوصول إلى المايكروفون.'));
-            } else {
-                mediaRecorder.stop();
-                document.getElementById('micBtn').style.color = 'var(--text-color)';
-            }
-        }
-
-        function loadMessages() {
-            messagesRef = db.ref(`rooms_data/${currentRoom}/messages`);
-            messagesRef.limitToLast(50).on('child_added', (snapshot) => {
-                let data = snapshot.val();
-                let container = document.getElementById('chatContainer');
-                let msgDiv = document.createElement('div');
-
-                if(data.type === 'system' || data.type === 'auto_welcome') {
-                    msgDiv.className = 'message system-notice';
-                    msgDiv.innerText = data.text;
-                } else if(data.type === 'admin_alert') {
-                    msgDiv.className = 'message admin-notice';
-                    msgDiv.innerHTML = `⚠️ <b>تنبيه إداري:</b> ${data.text}`;
-                } else if(data.type === 'audio') {
-                    msgDiv.className = 'message';
-                    msgDiv.innerHTML = `<div><span class="user-name" style="color:${data.color}">${data.name}:</span><br><audio controls src="${data.audioUrl}" style="height:30px; margin-top:5px;"></audio></div>`;
-                } else if(data.type === 'image') {
-                    msgDiv.className = 'message';
-                    msgDiv.innerHTML = `<div><span class="user-name" style="color:${data.color}">${data.name}:</span><br><img src="${data.imageUrl}" style="max-width:180px; border-radius:6px; margin-top:5px;"></div>`;
-                } else {
-                    msgDiv.className = 'message';
-                    msgDiv.innerHTML = `<div><span class="user-name" style="color:${data.color}" onclick="openPrivateChat('${data.name}')">${data.name}:</span> ${data.text} <span style="float:left; font-size:10px; color:#888;">${data.time}</span></div>`;
-                }
-                container.appendChild(msgDiv);
-                container.scrollTop = container.scrollHeight;
-            });
-        }
-
-        function openPrivateChat(targetName) {
-            if(targetName === currentUserName) return;
-            activePrivateTarget = targetName;
-            document.getElementById('privateChatTargetName').innerText = targetName;
-            document.getElementById('privateChatContainer').innerHTML = '';
-            closeModal('privateListScreen');
-            openModal('privateChatScreen');
-
-            let chatId = [currentUserName, targetName].sort().join('_').replace(/[.#$\[\]]/g, '');
-            if(privateMessagesRef) privateMessagesRef.off();
-            
-            privateMessagesRef = db.ref(`private_chats/${chatId}/messages`);
-            privateMessagesRef.limitToLast(30).on('child_added', snapshot => {
-                let data = snapshot.val();
-                let container = document.getElementById('privateChatContainer');
-                let msgDiv = document.createElement('div');
-                msgDiv.className = 'message';
-                msgDiv.innerHTML = `<div><b>${data.name}:</b> ${data.text || ''} <span style="float:left; font-size:10px; color:#888;">${data.time}</span></div>`;
-                container.appendChild(msgDiv);
-                container.scrollTop = container.scrollHeight;
-            });
-        }
-
-        function closePrivateChatScreen() {
-            closeModal('privateChatScreen');
-            if(privateMessagesRef) privateMessagesRef.off();
-        }
-
-        function sendPrivateMessage() {
-            let input = document.getElementById('privateMessageInput');
-            let text = input.value.trim();
-            if(text !== '' && activePrivateTarget) {
-                let chatId = [currentUserName, activePrivateTarget].sort().join('_').replace(/[.#$\[\]]/g, '');
-                db.ref(`private_chats/${chatId}/messages`).push({
-                    name: currentUserName,
-                    text: text,
-                    time: new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
-                });
-                input.value = '';
-            }
-        }
-
-        function loadOnlineUsers() {
-            let sidebarList = document.getElementById('sidebarUsersList');
-            let mobileList = document.getElementById('onlineUsersListMobile');
-            let privateListUser = document.getElementById('privateChatsUserList');
-            let adminList = document.getElementById('adminUserControlList');
-            let countPC = document.getElementById('onlineCountPC');
-            let countMobile = document.getElementById('onlineCountMobile');
-
-            db.ref(`rooms_data/${currentRoom}/online_users`).on('value', (snapshot) => {
-                sidebarList.innerHTML = '';
-                mobileList.innerHTML = '';
-                privateListUser.innerHTML = '';
-                adminList.innerHTML = '';
-                let count = 0;
-
-                snapshot.forEach((child) => {
-                    let user = child.val();
-                    count++;
-                    let gIcon = user.gender === 'ذكر' ? '👦' : '👧';
-                    let itemHTML = `
-                        <div class="online-user-item" onclick="openPrivateChat('${user.name}')">
-                            <img src="${user.avatar}" alt="img">
-                            <div style="flex:1;">
-                                <div style="font-weight:bold; color:${user.color}">${user.name} ${gIcon}</div>
-                                <div style="font-size:10px; color:#888;">${user.status}</div>
-                            </div>
-                        </div>`;
-                    sidebarList.innerHTML += itemHTML;
-                    mobileList.innerHTML += itemHTML;
-                    privateListUser.innerHTML += itemHTML;
-
-                    if(userRole === "مدير") {
-                        adminList.innerHTML += `
-                            <div class="list-row">
-                                <span style="color:${user.color}">${user.name}</span>
-                                <div style="display:flex; gap:5px;">
-                                    <button onclick="adminAction('mute', '${user.name}')" style="background:#fbc531; border:none; padding:3px 6px; border-radius:3px; cursor:pointer;">كتم</button>
-                                    <button onclick="adminAction('kick', '${user.name}')" style="background:#e84118; color:#fff; border:none; padding:3px 6px; border-radius:3px; cursor:pointer;">طرد</button>
-                                </div>
-                            </div>`;
-                    }
-                });
-                countPC.innerText = count;
-                countMobile.innerText = count;
-            });
-        }
-
-        function updateAllRoomsCounts() {
-            const rooms = [
-                { name: 'غرفة مناي 🇵🇸', id: 'count-room-0' },
-                { name: 'غرفة فلسطين العامة 🇵🇸', id: 'count-room-1' },
-                { name: 'شات الأردن 🇯🇴', id: 'count-room-2' },
-                { name: 'شات مصر 🇪🇬', id: 'count-room-3' },
-                { name: 'شات السعودية 🇸🇦', id: 'count-room-4' }
-            ];
-            rooms.forEach(room => {
-                db.ref(`rooms_data/${room.name}/online_users`).on('value', snap => {
-                    let el = document.getElementById(room.id);
-                    if(el) el.innerText = snap.numChildren();
-                });
-            });
-        }
-
-        function adminAction(type, target) {
-            if(type === 'mute') db.ref(`rooms_data/${currentRoom}/muted/${target}`).set(true);
-            if(type === 'kick') db.ref(`rooms_data/${currentRoom}/kicked/${target}`).set(true);
-        }
-
-        function sendAdminAlert() {
-            let txt = document.getElementById('adminAlertText').value.trim();
-            if(txt) {
-                db.ref(`rooms_data/${currentRoom}/messages`).push({ type: 'admin_alert', text: txt, time: new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}) });
-                document.getElementById('adminAlertText').value = '';
-                closeModal('adminPanelModal');
-            }
-        }
-
-        function saveSettings() {
-            customColor = document.getElementById('nameColorInput').value;
-            userStatus = document.getElementById('userStatusSelect').value;
-            localStorage.setItem('chat_user_color', customColor);
-            alert('تم الحفظ!');
-            closeModal('settingsScreen');
-        }
-
-        function openModal(id) { document.getElementById(id).style.display = 'flex'; }
-        function closeModal(id) { document.getElementById(id).style.display = 'none'; }
-        function toggleEmojiPicker() { let p = document.getElementById('emojiPicker'); p.style.display = p.style.display === 'flex' ? 'none' : 'flex'; }
-        function addEmoji(e) { document.getElementById('messageInput').value += e; toggleEmojiPicker(); }
-
-        // --- نظام البوتات الوهمية الـ 100 المتنقلة تلقائياً ---
-        const botNames = ["أحمد الفلسطينى", "محمد العراقي", "ساره الأردنية", "فاطمة المصري", "خالد السعيد", "يوسف الأحمد", "ريم الفهد", "عمر الفاروق", "نور الهدى", "زينب علي"];
-        const botRooms = ["غرفة مناي 🇵🇸", "غرفة فلسطين العامة 🇵🇸", "شات الأردن 🇯🇴", "شات مصر 🇪🇬", "شات السعودية 🇸🇦"];
-
-        setInterval(() => {
-            let rBotName = botNames[Math.floor(Math.random() * botNames.length)] + " " + Math.floor(Math.random()*90);
-            let rRoom = botRooms[Math.floor(Math.random() * botRooms.length)];
-            let bRef = db.ref(`rooms_data/${rRoom}/online_users`).push();
-            bRef.set({ name: rBotName, gender: "ذكر", avatar: "https://i.imgur.com/8Km9tLL.png", role: "عضو", status: "متصل 🟢", color: "#555" });
-            bRef.onDisconnect().remove();
-            setTimeout(() => bRef.remove(), 15000);
-        }, 10000);
-    </script>
-</body>
-</html>
